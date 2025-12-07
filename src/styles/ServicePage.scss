@@ -1,3 +1,7 @@
+// Import des variables de couleurs
+@use 'variables' as *;
+@use 'sass:color';
+
 .service-page {
   .container {
     width: 100%;
@@ -8,22 +12,23 @@
   .service-hero {
     text-align: center;
     padding: 80px 0 60px;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    background: $light-bg; // Section 1 : Crème
     
     h1 {
       font-size: 3rem;
-      color: #2c5aa0;
+      color: $primary-color;
       margin-bottom: 1rem;
     }
     
     .service-subtitle {
       font-size: 1.3rem;
-      color: #666;
+      color: $text-color;
     }
   }
   
   .objectives-section {
     padding: 60px 20px;
+    background: rgba(241, 183, 183, 0.15); // Section 2 : Rose doux (couleur de la charte)
     
     .objectives-container {
       max-width: 1200px;
@@ -32,7 +37,7 @@
     
     h2 {
       font-size: 2.2rem;
-      color: #2c5aa0;
+      color: $primary-color;
       margin-bottom: 2rem;
       text-align: center;
     }
@@ -55,7 +60,7 @@
         
         &::before {
           content: '✓';
-          color: #28a745;
+          color: $accent-color;
           font-weight: bold;
           margin-right: 1rem;
           font-size: 1.2rem;
@@ -75,12 +80,12 @@
         background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
         border-radius: 15px;
         padding: 2.5rem 2rem;
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+        box-shadow: 0 8px 25px rgba(117, 145, 178, 0.15);
         display: flex;
         align-items: flex-start;
         gap: 1.5rem;
         transition: all 0.3s ease;
-        border-left: 4px solid #667eea;
+        border-left: 4px solid $secondary-color;
         position: relative;
         overflow: hidden;
         
@@ -91,14 +96,14 @@
           left: 0;
           width: 100%;
           height: 3px;
-          background: linear-gradient(90deg, #667eea, #764ba2);
+          background: $secondary-color;
           opacity: 0;
           transition: opacity 0.3s;
         }
         
         &:hover {
           transform: translateY(-8px);
-          box-shadow: 0 15px 35px rgba(102, 126, 234, 0.25);
+          box-shadow: 0 15px 35px rgba(117, 145, 178, 0.25);
           
           &::before {
             opacity: 1;
@@ -106,18 +111,18 @@
         }
         
         .objective-check {
-          background: linear-gradient(135deg, #667eea, #764ba2);
+          background: $secondary-color; // Bleu de la charte graphique
           color: white;
           width: 45px;
           height: 45px;
-          border-radius: 50%;
+          border-radius: 8px; // Carré avec coins arrondis
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 1.5rem;
           font-weight: bold;
           flex-shrink: 0;
-          box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+          box-shadow: 0 4px 15px rgba(117, 145, 178, 0.3);
         }
         
         p {
@@ -133,12 +138,12 @@
         background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
         border-radius: 15px;
         padding: 2.5rem 2rem;
-        box-shadow: 0 8px 25px rgba(44, 90, 160, 0.15);
+        box-shadow: 0 8px 25px rgba(241, 183, 183, 0.15);
         display: flex;
         align-items: flex-start;
         gap: 1.5rem;
         transition: all 0.3s ease;
-        border-left: 4px solid #2c5aa0;
+        border-left: 4px solid $primary-color;
         position: relative;
         overflow: hidden;
         
@@ -149,14 +154,14 @@
           left: 0;
           width: 100%;
           height: 3px;
-          background: linear-gradient(90deg, #2c5aa0, #1e3d6f);
+          background: $primary-color;
           opacity: 0;
           transition: opacity 0.3s;
         }
         
         &:hover {
           transform: translateY(-8px);
-          box-shadow: 0 15px 35px rgba(44, 90, 160, 0.25);
+          box-shadow: 0 15px 35px rgba(241, 183, 183, 0.25);
           
           &::before {
             opacity: 1;
@@ -164,18 +169,18 @@
         }
         
         .objective-check {
-          background: linear-gradient(135deg, #2c5aa0, #1e3d6f);
+          background: $primary-color; // Rose de la charte graphique
           color: white;
           width: 45px;
           height: 45px;
-          border-radius: 50%;
+          border-radius: 8px; // Carré avec coins arrondis
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 1.5rem;
           font-weight: bold;
           flex-shrink: 0;
-          box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);
+          box-shadow: 0 4px 15px rgba(241, 183, 183, 0.3);
         }
         
         p {
@@ -191,12 +196,12 @@
         background: linear-gradient(135deg, #ffffff 0%, #fff9e6 100%);
         border-radius: 15px;
         padding: 2.5rem 2rem;
-        box-shadow: 0 8px 25px rgba(255, 193, 7, 0.15);
+        box-shadow: 0 8px 25px rgba(193, 200, 167, 0.15);
         display: flex;
         align-items: flex-start;
         gap: 1.5rem;
         transition: all 0.3s ease;
-        border-left: 4px solid #ffc107;
+        border-left: 4px solid $accent-color;
         position: relative;
         overflow: hidden;
         
@@ -207,14 +212,14 @@
           left: 0;
           width: 100%;
           height: 3px;
-          background: linear-gradient(90deg, #ffc107, #ff9800);
+          background: $accent-color;
           opacity: 0;
           transition: opacity 0.3s;
         }
         
         &:hover {
           transform: translateY(-8px);
-          box-shadow: 0 15px 35px rgba(255, 193, 7, 0.25);
+          box-shadow: 0 15px 35px rgba(193, 200, 167, 0.25);
           
           &::before {
             opacity: 1;
@@ -222,18 +227,18 @@
         }
         
         .objective-check {
-          background: linear-gradient(135deg, #ffc107, #ff9800);
+          background: $accent-color; // Vert sauge de la charte graphique
           color: white;
           width: 45px;
           height: 45px;
-          border-radius: 50%;
+          border-radius: 8px; // Carré avec coins arrondis
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 1.5rem;
           font-weight: bold;
           flex-shrink: 0;
-          box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+          box-shadow: 0 4px 15px rgba(193, 200, 167, 0.3);
         }
         
         p {
@@ -249,7 +254,7 @@
   
   .details-section {
     padding: 60px 20px;
-    background: #f8f9fa;
+    background: $light-bg; // Section 3 : Crème
     
     .details-container {
       max-width: 1200px;
@@ -271,7 +276,7 @@
       
       h3 {
         font-size: 1.3rem;
-        color: #2c5aa0;
+        color: $primary-color;
         margin-bottom: 1rem;
       }
       
@@ -282,7 +287,7 @@
         &.price {
           font-size: 1.3rem;
           font-weight: bold;
-          color: #28a745;
+          color: $accent-color;
         }
       }
     }
@@ -290,6 +295,7 @@
   
   .specific-content {
     padding: 80px 20px;
+    background: rgba(241, 183, 183, 0.15); // Section 4 : Rose doux (couleur de la charte)
     
     .specific-container {
       max-width: 1200px;
@@ -298,7 +304,7 @@
     
     h2 {
       font-size: 2.5rem;
-      color: #2c5aa0;
+      color: $primary-color;
       text-align: center;
       margin-bottom: 2rem;
     }
@@ -327,62 +333,122 @@
       }
       
       .gift-box {
-        background: #d4edda;
-        border: 3px solid #28a745;
+        background: rgba(193, 200, 167, 0.2);
+        border: 3px solid $accent-color;
         border-radius: 15px;
         padding: 2.5rem;
         text-align: center;
-        box-shadow: 0 5px 20px rgba(40, 167, 69, 0.2);
+        box-shadow: 0 5px 20px rgba(193, 200, 167, 0.2);
         
         h2 {
           font-size: 2rem;
-          color: #155724;
+          color: $accent-color;
           margin-bottom: 1rem;
         }
         
         .pack-price {
           font-size: 2.5rem;
           font-weight: bold;
-          color: #155724;
+          color: $accent-color;
           margin: 1rem 0;
         }
         
         .pack-description {
           font-size: 1.2rem;
-          color: #155724;
+          color: $accent-color;
           margin: 0;
         }
       }
     }
     
-    .benefits-section, .process-section, .themes-section, .modalities-section, .testimonials-section, .schedule-section, .coaching-scolaire-section, .approche-section {
+    .benefits-section, .process-section, .themes-section, .modalities-section, .testimonials-section, .schedule-section, .coaching-scolaire-section, .approche-section, .bilan-section, .suivi-section, .public-section, .competences-section, .legos-section {
       margin-bottom: 4rem;
       
       h3 {
         font-size: 2rem;
-        color: #2c5aa0;
+        color: $color-rose;
         text-align: center;
         margin-bottom: 2rem;
       }
       
       p {
         font-size: 1.1rem;
-        color: #666;
+        color: $text-color;
         line-height: 1.7;
         max-width: 800px;
         margin: 0 auto 1.5rem;
+        text-align: left;
+      }
+
+      .formulaire-info {
+        background: rgba(117, 145, 178, 0.1);
+        padding: 1rem;
+        border-radius: 8px;
+        border-left: 4px solid $primary-color;
+        margin-top: 1.5rem;
+      }
+
+      .objectif-final {
+        background: rgba(193, 200, 167, 0.15);
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-top: 2rem;
+        font-size: 1.15rem;
         text-align: center;
+      }
+    }
+
+    .competences-list {
+      list-style: none;
+      padding: 0;
+      max-width: 700px;
+      margin: 2rem auto;
+      
+      li {
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+        background: $light-bg;
+        border-left: 4px solid $accent-color;
+        border-radius: 5px;
+        font-size: 1.05rem;
+        color: $text-color;
+        
+        &::before {
+          content: '✓';
+          color: $accent-color;
+          font-weight: bold;
+          margin-right: 1rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .lego-colors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+      
+      .lego-color {
+        padding: 0.75rem 1.5rem;
+        border-radius: 25px;
+        font-weight: 500;
+        font-size: 1rem;
+        background: $light-bg;
+        border: 2px solid $accent-color;
+        color: $text-dark;
       }
     }
     
     // Carte principale Reiki
     .reiki-main-card {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: $accent-color;
       border-radius: 20px;
       padding: 3rem;
       margin: 3rem auto;
       max-width: 900px;
-      box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+      box-shadow: 0 10px 40px rgba(117, 145, 178, 0.3);
       color: white;
       
       .reiki-card-content {
@@ -416,7 +482,7 @@
       max-width: 800px;
       margin: 0 auto 2rem;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      border-left: 4px solid #2c5aa0;
+      border-left: 4px solid $primary-color;
       
       p {
         margin: 0;
@@ -528,7 +594,7 @@
       
       h4 {
         font-size: 1.3rem;
-        color: #2c5aa0;
+        color: $primary-color;
         margin-bottom: 1rem;
         font-weight: 600;
       }
@@ -556,7 +622,7 @@
       .step-number {
         width: 60px;
         height: 60px;
-        background: linear-gradient(135deg, #2c5aa0, #1e3d6f);
+        background: linear-gradient(135deg, $primary-color, color.adjust($primary-color, $lightness: -15%));
         color: white;
         border-radius: 50%;
         display: flex;
@@ -569,7 +635,7 @@
       
       h4 {
         font-size: 1.3rem;
-        color: #2c5aa0;
+        color: $primary-color;
         margin-bottom: 1rem;
         font-weight: 600;
       }
@@ -592,7 +658,7 @@
       padding: 2rem;
       border-radius: 15px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      border-left: 4px solid #2c5aa0;
+      border-left: 4px solid $primary-color;
       
       p {
         font-style: italic;
@@ -603,14 +669,14 @@
       }
       
       .author {
-        color: #2c5aa0;
+        color: $primary-color;
         font-weight: 600;
         font-size: 0.9rem;
       }
     }
     
     .schedule-info {
-      background: linear-gradient(135deg, #2c5aa0, #1e3d6f);
+      background: linear-gradient(135deg, $primary-color, color.adjust($primary-color, $lightness: -15%));
       color: #ffffff;
       padding: 2.5rem;
       border-radius: 15px;
@@ -653,8 +719,8 @@
   
   .service-cta {
     padding: 80px 0;
-    background: linear-gradient(135deg, #2c5aa0, #1e3d6f);
-    color: white;
+    background: $light-bg; // Section 5 : Crème (alternance)
+    color: $text-color;
     text-align: center;
     
     h2 {
@@ -683,7 +749,7 @@
         
         &.primary {
           background: white;
-          color: #2c5aa0;
+          color: $primary-color;
           
           &:hover {
             background: #f8f9fa;
@@ -697,7 +763,7 @@
           
           &:hover {
             background: white;
-            color: #2c5aa0;
+            color: $primary-color;
           }
         }
       }

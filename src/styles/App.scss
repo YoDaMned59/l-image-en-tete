@@ -1,8 +1,6 @@
-// Variables SCSS
-$primary-color: #2c5aa0;
-$secondary-color: #4a90e2;
-$text-color: #333;
-$light-bg: #f8f9fa;
+// Import des variables et fonts de la charte graphique
+@use 'variables' as *;
+@use 'fonts' as *;
 
 * {
   margin: 0;
@@ -11,7 +9,7 @@ $light-bg: #f8f9fa;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: $font-body;
   line-height: 1.6;
   color: $text-color;
   background-color: $light-bg;
@@ -23,7 +21,7 @@ body {
 
 .app {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: $light-bg; // Fond crème de la charte graphique
   display: flex;
   flex-direction: column;
   

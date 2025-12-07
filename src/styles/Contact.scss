@@ -1,3 +1,6 @@
+// Import des variables de la charte graphique
+@use 'variables' as *;
+
 .contact {
   .container {
     width: 100%;
@@ -8,17 +11,17 @@
   .contact-hero {
     text-align: center;
     padding: 80px 0 60px;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    background: $light-bg;
     
     h1 {
       font-size: 3rem;
-      color: #2c5aa0;
+      color: $primary-color;
       margin-bottom: 1rem;
     }
     
     .hero-subtitle {
       font-size: 1.3rem;
-      color: #666;
+      color: $text-color;
     }
   }
   
@@ -34,7 +37,7 @@
   .contact-form-section {
     h2 {
       font-size: 2rem;
-      color: #2c5aa0;
+      color: $primary-color;
       margin-bottom: 2rem;
     }
     
@@ -46,20 +49,20 @@
           display: block;
           margin-bottom: 0.5rem;
           font-weight: 600;
-          color: #333;
+          color: $text-color;
         }
         
         input, textarea {
           width: 100%;
           padding: 12px;
-          border: 2px solid #ddd;
+          border: 2px solid rgba(241, 183, 183, 0.3);
           border-radius: 5px;
           font-size: 1rem;
           transition: border-color 0.3s;
           
           &:focus {
             outline: none;
-            border-color: #2c5aa0;
+            border-color: $primary-color;
           }
         }
         
@@ -70,7 +73,7 @@
       }
       
       .submit-button {
-        background: #2c5aa0;
+        background: $primary-color;
         color: white;
         padding: 15px 30px;
         border: none;
@@ -80,7 +83,7 @@
         transition: background 0.3s;
         
         &:hover {
-          background: #1e3d6f;
+          background: $color-rose;
         }
       }
     }
@@ -89,7 +92,7 @@
   .contact-info-section {
     h2 {
       font-size: 2rem;
-      color: #2c5aa0;
+      color: $primary-color;
       margin-bottom: 2rem;
     }
     
@@ -110,12 +113,12 @@
         .contact-text {
           h3 {
             font-size: 1.2rem;
-            color: #333;
+            color: $text-color;
             margin-bottom: 0.5rem;
           }
           
           p {
-            color: #666;
+            color: $text-muted;
             font-size: 1rem;
           }
         }
@@ -127,7 +130,7 @@
       
       h3 {
         font-size: 1.3rem;
-        color: #2c5aa0;
+        color: $primary-color;
         margin-bottom: 1rem;
       }
       
@@ -136,15 +139,15 @@
         gap: 1rem;
         
         .social-link {
-          color: #2c5aa0;
+          color: $primary-color;
           text-decoration: none;
           padding: 8px 16px;
-          border: 2px solid #2c5aa0;
+          border: 2px solid $primary-color;
           border-radius: 5px;
           transition: all 0.3s;
           
           &:hover {
-            background: #2c5aa0;
+            background: $primary-color;
             color: white;
           }
         }
@@ -153,7 +156,7 @@
     
     .free-consultation {
       .highlight-box {
-        background: linear-gradient(135deg, #28a745, #20c997);
+        background: $gradient-accent;
         color: white;
         padding: 2rem;
         border-radius: 10px;

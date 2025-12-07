@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { siteData } from '../data/data';
 import { normalizePath, navigate } from '../utils/pathUtils';
+import logoImage from '../assets/Sans titre - 1 (3).png';
 import '../styles/Header.scss';
 
 const Header = () => {
@@ -71,16 +72,12 @@ const Header = () => {
       <div className="header-container">
         {/* Logo Section */}
         <div className="logo-section">
-          <div className="logo">
-            <div className="logo-icon">
-              <div className="graduation-cap">🎓</div>
-              <div className="paper-plane">✈️</div>
-              <div className="arc-line"></div>
-            </div>
-            <div className="logo-text">
-              <span className="logo-line1">L'image</span>
-              <span className="logo-line2">en tête</span>
-            </div>
+          <div className="logo" onClick={() => navigateToPage('/')} style={{ cursor: 'pointer' }}>
+            <img 
+              src={logoImage} 
+              alt="L'image en tête - Logo" 
+              className="logo-image"
+            />
           </div>
         </div>
 

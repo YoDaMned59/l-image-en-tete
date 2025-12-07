@@ -1,3 +1,6 @@
+// Import des variables de la charte graphique
+@use 'variables' as *;
+
 .about {
   .container {
     width: 100%;
@@ -8,17 +11,17 @@
   .about-hero {
     text-align: center;
     padding: 80px 0 60px;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    background: $light-bg;
     
     h1 {
       font-size: 3rem;
-      color: #2c5aa0;
+      color: $primary-color;
       margin-bottom: 1rem;
     }
     
     .hero-subtitle {
       font-size: 1.3rem;
-      color: #666;
+      color: $text-color;
     }
   }
   
@@ -36,20 +39,20 @@
       .text-content {
         h2 {
           font-size: 2.2rem;
-          color: #2c5aa0;
+          color: $primary-color;
           margin-bottom: 1.5rem;
         }
         
         h3 {
           font-size: 1.5rem;
-          color: #333;
+          color: $text-color;
           margin: 2rem 0 1rem;
         }
         
         p {
           font-size: 1.1rem;
           line-height: 1.7;
-          color: #666;
+          color: $text-muted;
           margin-bottom: 1.5rem;
         }
         
@@ -75,15 +78,25 @@
               box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
             }
             
-            .engagement-icon {
+            .engagement-check {
+              background: $accent-color; // Vert sauge de la charte graphique
+              color: white;
+              width: 40px;
+              height: 40px;
+              border-radius: 8px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
               font-size: 1.5rem;
+              font-weight: bold;
               flex-shrink: 0;
+              box-shadow: 0 2px 8px rgba(193, 200, 167, 0.3);
             }
             
             p {
               margin: 0;
               font-size: 1.1rem;
-              color: #555;
+              color: $text-color;
               line-height: 1.5;
             }
           }
@@ -101,7 +114,7 @@
           .image-placeholder {
             width: 100%;
             height: 300px;
-            background: linear-gradient(135deg, #2c5aa0, #1e3d6f);
+            background: $gradient-secondary;
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -117,7 +130,7 @@
   
   .methods {
     padding: 80px 20px;
-    background: #f8f9fa;
+    background: $light-bg;
     
     .methods-container {
       max-width: 1200px;
@@ -127,7 +140,7 @@
     h2 {
       text-align: center;
       font-size: 2.5rem;
-      color: #2c5aa0;
+      color: $primary-color;
       margin-bottom: 3rem;
     }
     
@@ -156,12 +169,12 @@
       
       h3 {
         font-size: 1.3rem;
-        color: #2c5aa0;
+        color: $primary-color;
         margin-bottom: 1rem;
       }
       
       p {
-        color: #666;
+        color: $text-muted;
         line-height: 1.6;
       }
     }
@@ -170,7 +183,7 @@
   // Section Pack cadeau
   .pack-section {
     padding: 60px 20px;
-    background: #f8f9fa;
+    background: $light-bg;
     
     .pack-container {
       max-width: 600px;
@@ -178,8 +191,8 @@
     }
     
     .gift-box {
-      background: #d4edda;
-      border: 3px solid #28a745;
+      background: rgba(193, 200, 167, 0.2);
+      border: 3px solid $accent-color;
       border-radius: 15px;
       padding: 2.5rem;
       text-align: center;
@@ -187,20 +200,20 @@
       
       h2 {
         font-size: 2rem;
-        color: #155724;
+        color: $accent-color;
         margin-bottom: 1rem;
       }
       
       .pack-price {
         font-size: 2.5rem;
         font-weight: bold;
-        color: #155724;
+        color: $accent-color;
         margin: 1rem 0;
       }
       
       .pack-description {
         font-size: 1.2rem;
-        color: #155724;
+        color: $accent-color;
         margin: 0;
       }
     }
@@ -218,13 +231,13 @@
       h2 {
         text-align: center;
         font-size: 2.5rem;
-        color: #2c5aa0;
+        color: $primary-color;
         margin-bottom: 3rem;
       }
       
       .themes-title {
         font-size: 2rem;
-        color: #2c5aa0;
+        color: $primary-color;
         margin: 4rem 0 2rem;
         text-align: center;
       }
@@ -237,7 +250,7 @@
       }
       
       .reason-card {
-        background: #f8f9fa;
+        background: $light-bg;
         padding: 2rem;
         border-radius: 10px;
         text-align: center;
@@ -254,7 +267,7 @@
         
         h3 {
           font-size: 1.3rem;
-          color: #2c5aa0;
+          color: $secondary-color;
           margin-bottom: 1rem;
         }
         
@@ -276,9 +289,9 @@
           align-items: flex-start;
           gap: 1rem;
           padding: 1.5rem;
-          background: #f8f9fa;
+          background: $light-bg;
           border-radius: 10px;
-          border-left: 4px solid #2c5aa0;
+          border-left: 4px solid $primary-color;
           
           .theme-bullet {
             font-size: 1.5rem;
@@ -286,7 +299,7 @@
           
           div {
             flex: 1;
-            color: #555;
+            color: $text-color;
             line-height: 1.6;
           }
         }
@@ -297,7 +310,7 @@
   // Section Bilan et suivis
   .bilan-section {
     padding: 80px 20px;
-    background: #f8f9fa;
+    background: $light-bg;
     
     .bilan-container {
       max-width: 1200px;
@@ -306,7 +319,7 @@
       h2 {
         text-align: center;
         font-size: 2.5rem;
-        color: #2c5aa0;
+        color: $primary-color;
         margin-bottom: 3rem;
       }
       
@@ -319,7 +332,7 @@
         
         h3 {
           font-size: 1.8rem;
-          color: #2c5aa0;
+          color: $primary-color;
           margin-bottom: 1.5rem;
         }
       }
@@ -332,7 +345,7 @@
           padding: 1rem 0;
           padding-left: 1.5rem;
           position: relative;
-          color: #555;
+          color: $text-color;
           line-height: 1.7;
           font-size: 1.1rem;
           
@@ -340,7 +353,7 @@
             content: "✓";
             position: absolute;
             left: 0;
-            color: #28a745;
+            color: $accent-color;
             font-weight: bold;
             font-size: 1.2rem;
           }
@@ -367,20 +380,20 @@
         .tarif-price {
           font-size: 2rem;
           font-weight: bold;
-          color: #2c5aa0;
+          color: $primary-color;
         }
       }
       
       .cesu-note {
         margin-top: 1.5rem;
         padding: 1rem;
-        background: #fff3cd;
-        border-left: 4px solid #ffc107;
+        background: rgba(241, 183, 183, 0.2);
+        border-left: 4px solid $primary-color;
         border-radius: 5px;
         
         p {
           margin: 0;
-          color: #856404;
+          color: $primary-color;
           font-size: 1.1rem;
         }
       }
@@ -399,7 +412,7 @@
       h2 {
         text-align: center;
         font-size: 2.5rem;
-        color: #2c5aa0;
+        color: $primary-color;
         margin-bottom: 3rem;
       }
       
@@ -410,12 +423,12 @@
       }
       
       .benefit-card {
-        background: linear-gradient(135deg, #2c5aa0, #1e3d6f);
+        background: $gradient-secondary;
         color: white;
         padding: 2.5rem;
         border-radius: 10px;
         text-align: center;
-        box-shadow: 0 5px 20px rgba(44, 90, 160, 0.3);
+        box-shadow: 0 5px 20px $shadow;
         transition: transform 0.3s;
         
         &:hover {
@@ -438,7 +451,7 @@
   // Section Approche en 3 étapes
   .approach-section {
     padding: 80px 20px;
-    background: #f8f9fa;
+    background: $light-bg;
     
     .approach-container {
       max-width: 1200px;
@@ -447,7 +460,7 @@
       h2 {
         text-align: center;
         font-size: 2.5rem;
-        color: #2c5aa0;
+        color: $primary-color;
         margin-bottom: 3rem;
       }
       
@@ -473,7 +486,7 @@
         .step-number {
           width: 60px;
           height: 60px;
-          background: linear-gradient(135deg, #2c5aa0, #1e3d6f);
+          background: $gradient-secondary;
           color: white;
           border-radius: 50%;
           display: flex;
@@ -486,12 +499,12 @@
         
         h3 {
           font-size: 1.5rem;
-          color: #2c5aa0;
+          color: $primary-color;
           margin-bottom: 1rem;
         }
         
         p {
-          color: #666;
+          color: $text-muted;
           line-height: 1.7;
           font-size: 1.1rem;
         }
@@ -511,7 +524,7 @@
       
       h2 {
         font-size: 2.5rem;
-        color: #2c5aa0;
+        color: $primary-color;
         margin-bottom: 2rem;
       }
       
@@ -522,7 +535,7 @@
           justify-content: center;
           gap: 1rem;
           font-size: 1.3rem;
-          color: #555;
+          color: $text-color;
           
           .contact-icon {
             font-size: 2rem;
@@ -530,7 +543,7 @@
           
           .contact-text {
             strong {
-              color: #2c5aa0;
+              color: $primary-color;
             }
           }
         }
@@ -541,7 +554,7 @@
   .about-cta {
     padding: 80px 0;
     text-align: center;
-    background: linear-gradient(135deg, #2c5aa0, #1e3d6f);
+    background: $gradient-secondary;
     color: white;
     
     h2 {
@@ -557,7 +570,7 @@
     
     .cta-button {
       background: white;
-      color: #2c5aa0;
+      color: $secondary-color;
       padding: 15px 30px;
       border-radius: 5px;
       text-decoration: none;
@@ -565,7 +578,7 @@
       transition: all 0.3s;
       
       &:hover {
-        background: #f8f9fa;
+        background: $light-bg;
         transform: translateY(-2px);
       }
     }

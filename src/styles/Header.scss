@@ -1,14 +1,9 @@
-// Variables pour le header
-$primary-teal: #2c5aa0;
-$accent-orange: #ff8c42;
-$text-dark: #333;
-$white: #ffffff;
-$light-gray: #f8f9fa;
-$shadow: rgba(0, 0, 0, 0.1);
+// Import des variables de la charte graphique
+@use 'variables' as *;
 
 .header {
-  background: $white;
-  box-shadow: 0 2px 10px $shadow;
+  background: $light-bg; // Fond crème de la charte graphique
+  box-shadow: 0 2px 10px $shadow-soft;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -39,60 +34,28 @@ $shadow: rgba(0, 0, 0, 0.1);
     .logo {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
       min-width: 0;
+      transition: opacity 0.3s ease;
 
-      .logo-icon {
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-
-        .graduation-cap {
-          font-size: 1.8rem;
-          color: $primary-teal;
-        }
-
-        .paper-plane {
-          font-size: 1.4rem;
-          color: $accent-orange;
-          transform: rotate(15deg);
-          animation: float 3s ease-in-out infinite;
-        }
-
-        .arc-line {
-          position: absolute;
-          width: 50px;
-          height: 2px;
-          background: linear-gradient(90deg, $accent-orange, transparent);
-          border-radius: 2px;
-          top: 50%;
-          left: 25px;
-          transform: rotate(15deg);
-          animation: arcMove 3s ease-in-out infinite;
-        }
+      &:hover {
+        opacity: 0.8;
       }
 
-      .logo-text {
-        display: flex;
-        flex-direction: column;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: $primary-teal;
-        font-weight: 600;
-        min-width: 0;
-        flex-shrink: 1;
-
-        .logo-line1 {
-          font-size: 1.4rem;
-          line-height: 1;
-          white-space: nowrap;
+      .logo-image {
+        height: auto;
+        max-height: 60px;
+        width: auto;
+        max-width: 200px;
+        object-fit: contain;
+        
+        @media (max-width: 768px) {
+          max-height: 50px;
+          max-width: 150px;
         }
 
-        .logo-line2 {
-          font-size: 1.2rem;
-          line-height: 1;
-          margin-left: 0.5rem;
-          white-space: nowrap;
+        @media (max-width: 480px) {
+          max-height: 40px;
+          max-width: 120px;
         }
       }
     }
@@ -107,7 +70,7 @@ $shadow: rgba(0, 0, 0, 0.1);
     .tagline {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       font-size: 1.3rem;
-      color: $accent-orange;
+      color: $secondary-color;
       margin: 0;
       font-weight: 500;
       line-height: 1.3;
@@ -144,7 +107,7 @@ $shadow: rgba(0, 0, 0, 0.1);
     .hamburger-line {
       width: 25px;
       height: 3px;
-      background: $primary-teal;
+      background: $primary-color;
       transition: all 0.3s ease;
 
       @media (max-width: 480px) {
@@ -154,16 +117,16 @@ $shadow: rgba(0, 0, 0, 0.1);
     }
 
     &:hover .hamburger-line {
-      background: $accent-orange;
+      background: $secondary-color;
     }
   }
 
   // Navigation Section - Centered
   .navigation {
     width: 100%;
-    background: $light-gray;
+    background: $light-bg;
     padding: 1rem 0;
-    border-top: 1px solid rgba(44, 90, 160, 0.1);
+    border-top: 1px solid rgba(241, 183, 183, 0.2);
 
     .nav-links {
       max-width: 1200px;
@@ -182,23 +145,24 @@ $shadow: rgba(0, 0, 0, 0.1);
         border: none;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 1rem;
-        color: $text-dark;
+        color: $text-color;
         cursor: pointer;
         padding: 0.75rem 1.5rem;
         transition: all 0.3s ease;
         position: relative;
         border-radius: 25px;
         font-weight: 500;
+        color: $color-bleu; // Utilise uniquement la couleur bleue de la charte
 
         &:hover {
-          color: $accent-orange;
-          background: rgba(255, 140, 66, 0.1);
+          color: $color-bleu;
+          background: rgba(117, 145, 178, 0.1);
           transform: translateY(-2px);
         }
 
         &.active {
-          color: $accent-orange;
-          background: rgba(255, 140, 66, 0.15);
+          color: $color-bleu;
+          background: rgba(117, 145, 178, 0.15);
           font-weight: 600;
         }
 
@@ -209,7 +173,7 @@ $shadow: rgba(0, 0, 0, 0.1);
           left: 50%;
           width: 0;
           height: 2px;
-          background: $accent-orange;
+          background: $secondary-color;
           transition: all 0.3s ease;
           transform: translateX(-50%);
         }
@@ -228,7 +192,7 @@ $shadow: rgba(0, 0, 0, 0.1);
             top: 100%;
             left: 50%;
             transform: translateX(-50%);
-            background: $white;
+            background: $light-bg;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             padding: 0.5rem 0;
@@ -246,7 +210,7 @@ $shadow: rgba(0, 0, 0, 0.1);
               display: block;
               width: 100%;
               padding: 0.75rem 1.5rem;
-              color: $text-dark;
+              color: $text-color;
               text-decoration: none;
               transition: all 0.3s ease;
               font-size: 0.95rem;
@@ -263,19 +227,19 @@ $shadow: rgba(0, 0, 0, 0.1);
               white-space: nowrap;
 
               &:hover {
-                background: rgba(255, 140, 66, 0.1);
-                color: $accent-orange;
+                background: rgba(117, 145, 178, 0.1);
+                color: $secondary-color;
                 transform: none;
               }
 
               &:active {
                 transform: none;
-                background: rgba(255, 140, 66, 0.15);
+                background: rgba(117, 145, 178, 0.15);
               }
 
               &:focus {
                 outline: none;
-                background: rgba(255, 140, 66, 0.1);
+                background: rgba(117, 145, 178, 0.1);
               }
             }
           }
@@ -296,8 +260,8 @@ $shadow: rgba(0, 0, 0, 0.1);
     top: 100%;
     left: 0;
     right: 0;
-    background: $white;
-    box-shadow: 0 4px 10px $shadow;
+    background: $light-bg;
+    box-shadow: 0 4px 10px $shadow-soft;
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -308,7 +272,7 @@ $shadow: rgba(0, 0, 0, 0.1);
       border: none;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       font-size: 1rem;
-      color: $text-dark;
+      color: $color-bleu;
       cursor: pointer;
       padding: 0.75rem 1rem;
       text-align: left;
@@ -317,31 +281,13 @@ $shadow: rgba(0, 0, 0, 0.1);
       font-weight: 500;
 
       &:hover {
-        background: $light-gray;
-        color: $accent-orange;
+        background: $light-bg;
+        color: $secondary-color;
       }
     }
   }
 }
 
-// Animations
-@keyframes float {
-  0%, 100% {
-    transform: rotate(15deg) translateY(0);
-  }
-  50% {
-    transform: rotate(15deg) translateY(-3px);
-  }
-}
-
-@keyframes arcMove {
-  0%, 100% {
-    transform: rotate(15deg) scaleX(1);
-  }
-  50% {
-    transform: rotate(15deg) scaleX(1.1);
-  }
-}
 
 // Responsive Design
 @media (max-width: 1024px) {
@@ -363,19 +309,6 @@ $shadow: rgba(0, 0, 0, 0.1);
     .header-container {
       padding: 1rem;
 
-      .logo-section .logo {
-        gap: 0.5rem;
-
-        .logo-text {
-          .logo-line1 {
-            font-size: 1.2rem;
-          }
-
-          .logo-line2 {
-            font-size: 1rem;
-          }
-        }
-      }
     }
 
     .navigation {
@@ -396,31 +329,6 @@ $shadow: rgba(0, 0, 0, 0.1);
         gap: 0.5rem;
         min-width: 0;
         
-        .logo-icon {
-          flex-shrink: 0;
-          
-          .graduation-cap {
-            font-size: 1.4rem;
-          }
-
-          .paper-plane {
-            font-size: 1.1rem;
-          }
-        }
-
-        .logo-text {
-          flex-shrink: 1;
-          min-width: 0;
-          
-          .logo-line1 {
-            font-size: 0.95rem;
-          }
-
-          .logo-line2 {
-            font-size: 0.85rem;
-            margin-left: 0.3rem;
-          }
-        }
       }
     }
   }
@@ -435,26 +343,7 @@ $shadow: rgba(0, 0, 0, 0.1);
     .logo-section .logo {
       gap: 0.4rem;
       
-      .logo-icon {
-        .graduation-cap {
-          font-size: 1.3rem;
-        }
 
-        .paper-plane {
-          font-size: 1rem;
-        }
-      }
-
-      .logo-text {
-        .logo-line1 {
-          font-size: 0.9rem;
-        }
-
-        .logo-line2 {
-          font-size: 0.8rem;
-          margin-left: 0.25rem;
-        }
-      }
     }
   }
 }

@@ -1,3 +1,6 @@
+// Import des variables de la charte graphique
+@use 'variables' as *;
+
 .home {
   .hero-section {
     height: 60vh;
@@ -45,7 +48,7 @@
       }
       
       .cta-button {
-        background: #2c5aa0;
+        background: $primary-color;
         color: white;
         padding: 15px 30px;
         border: none;
@@ -55,7 +58,7 @@
         transition: background 0.3s;
         
         &:hover {
-          background: #1e3d6f;
+          background: $color-rose;
         }
       }
     }
@@ -63,7 +66,7 @@
   
   .presentation-section {
     padding: 80px 0;
-    background: #f8f9fa;
+    background: $light-bg;
     
     .container {
       max-width: 800px;
@@ -74,7 +77,7 @@
       h2 {
         font-size: 2.5rem;
         margin-bottom: 2rem;
-        color: #2c5aa0;
+        color: $primary-color;
       }
       
       p {
@@ -97,7 +100,7 @@
         text-align: center;
         font-size: 2.5rem;
         margin-bottom: 3rem;
-        color: #2c5aa0;
+        color: $primary-color;
       }
     }
     
@@ -121,15 +124,15 @@
       }
       
       &.bilan-block {
-        background: linear-gradient(135deg, #ff8c42, #ff6b1a);
+        background: $gradient-primary;
       }
       
       &.atelier-block {
-        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        background: $gradient-secondary;
       }
       
       &.reiki-block {
-        background: linear-gradient(135deg, #9b59b6, #8e44ad);
+        background: $gradient-accent;
       }
       
       .service-image {
@@ -147,7 +150,7 @@
         .reiki-placeholder {
           width: 100%;
           height: 100%;
-          background: linear-gradient(135deg, rgba(155, 89, 182, 0.9), rgba(142, 68, 173, 0.9));
+          background: $gradient-accent;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -270,7 +273,7 @@
   
   .cta-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, #2c5aa0, #1e3d6f);
+    background: $gradient-secondary;
     color: white;
     text-align: center;
     
@@ -305,10 +308,10 @@
           
           &.primary {
             background: white;
-            color: #2c5aa0;
+            color: $secondary-color;
             
             &:hover {
-              background: #f8f9fa;
+              background: $light-bg;
             }
           }
           
@@ -319,7 +322,7 @@
             
             &:hover {
               background: white;
-              color: #2c5aa0;
+              color: $secondary-color;
             }
           }
         }

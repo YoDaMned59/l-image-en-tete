@@ -32,7 +32,7 @@ const About = () => {
               <div className="engagement-cards">
                 {about.engagement.items.map((item, index) => (
                   <div key={index} className="engagement-card">
-                    <span className="engagement-icon">✅</span>
+                    <div className="engagement-check">✓</div>
                     <p>{item}</p>
                   </div>
                 ))}
