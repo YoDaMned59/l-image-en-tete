@@ -27,13 +27,13 @@ const ServicePage = ({ serviceId }) => {
     <div className="service-page">
       <div className="container">
         {/* Section Hero */}
-        <section className="service-hero">
+        <section className={`service-hero service-hero-${serviceId}`}>
           <h1>{service.titre}</h1>
           <p className="service-subtitle">{service.pourQui}</p>
         </section>
 
         {/* Section Objectifs */}
-        <section className="objectives-section">
+        <section className={`objectives-section objectives-section-${serviceId}`}>
           <div className="objectives-container">
             <h2>Objectifs</h2>
             {serviceId === 'reiki' ? (
@@ -74,7 +74,7 @@ const ServicePage = ({ serviceId }) => {
         </section>
 
         {/* Section Format et Tarifs */}
-        <section className="details-section">
+        <section className={`details-section details-section-${serviceId}`}>
           <div className="details-container">
             <div className="details-grid">
             <div className="detail-card">
@@ -95,7 +95,7 @@ const ServicePage = ({ serviceId }) => {
 
         {/* Section spécifique selon le service */}
         {serviceId === 'bilan' && (
-          <section className="specific-content">
+          <section className={`specific-content specific-content-${serviceId}`}>
             <div className="specific-container">
               <h2>{details.hero.titre}</h2>
               <div className="hero-description">
@@ -157,7 +157,7 @@ const ServicePage = ({ serviceId }) => {
         )}
 
         {serviceId === 'atelier' && (
-          <section className="specific-content">
+          <section className={`specific-content specific-content-${serviceId}`}>
             <div className="specific-container">
               <h2>{details.hero.titre}</h2>
               <div className="hero-description">
@@ -216,7 +216,7 @@ const ServicePage = ({ serviceId }) => {
         )}
 
         {serviceId === 'reiki' && (
-          <section className="specific-content">
+          <section className={`specific-content specific-content-${serviceId}`}>
             <div className="specific-container">
               <h2>{details.hero.titre}</h2>
               

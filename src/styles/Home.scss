@@ -128,11 +128,11 @@
       }
       
       &.atelier-block {
-        background: $gradient-secondary;
+        background: $gradient-secondary; // Bleu pour les ateliers
       }
       
       &.reiki-block {
-        background: $gradient-accent;
+        background: $gradient-accent; // Vert pour reiki
       }
       
       .service-image {
