@@ -1,0 +1,84 @@
+// Styles spécifiques pour la page Atelier (bleu)
+@use 'variables' as *;
+@use 'service-base' as *;
+
+.service-page-bleu {
+  .service-hero h1 {
+    color: $secondary-color;
+  }
+
+  .objectives-section {
+    background: rgba(117, 145, 178, 0.15);
+
+    h2 {
+      color: $secondary-color;
+    }
+
+    .objective-card {
+      border-left-color: $secondary-color;
+
+      .objective-check {
+        background: $secondary-color;
+      }
+    }
+  }
+
+  .info-section .info-card h3 {
+    color: $secondary-color;
+  }
+
+  .content-section {
+    background: rgba(117, 145, 178, 0.15);
+
+    .content-hero h2 {
+      color: $secondary-color;
+    }
+
+    .benefits-section h3,
+    .reasons-section h3,
+    .themes-section h3,
+    .planning-section h3 {
+      color: $secondary-color;
+    }
+
+    .benefit-card h4,
+    .reason-card h4,
+    .theme-card h4 {
+      color: $secondary-color;
+    }
+
+    .planning-box {
+      background: $secondary-color;
+      box-shadow: 0 10px 30px rgba(117, 145, 178, 0.3);
+    }
+  }
+
+  .cta-section h2 {
+    color: $secondary-color;
+  }
+
+  .cta-button {
+    &.cta-primary {
+      color: $secondary-color;
+      border-color: $secondary-color;
+
+      &:hover {
+        background: $secondary-color;
+        color: $white;
+        box-shadow: 0 5px 15px rgba(117, 145, 178, 0.3);
+      }
+    }
+
+    &.cta-secondary {
+      color: $secondary-color;
+      border-color: $secondary-color;
+
+      &:hover {
+        background: $secondary-color;
+        color: $white;
+        box-shadow: 0 5px 15px rgba(117, 145, 178, 0.3);
+      }
+    }
+  }
+}
+

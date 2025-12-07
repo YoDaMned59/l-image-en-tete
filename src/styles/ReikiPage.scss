@@ -1,0 +1,213 @@
+// Styles spécifiques pour la page Reiki (vert)
+@use 'variables' as *;
+@use 'service-base' as *;
+
+.service-page-vert {
+  .service-hero h1 {
+    color: $accent-color;
+  }
+
+  .objectives-section {
+    background: rgba(193, 200, 167, 0.15);
+
+    h2 {
+      color: $accent-color;
+    }
+
+    .objective-card {
+      border-left-color: $accent-color;
+
+      .objective-check {
+        background: $accent-color;
+      }
+    }
+  }
+
+  .info-section .info-card h3 {
+    color: $accent-color;
+  }
+
+  .content-section {
+    background: rgba(193, 200, 167, 0.15);
+
+    // Section Introduction Reiki
+    .reiki-intro-section {
+      margin-bottom: 4rem;
+
+      h2 {
+        font-family: $font-title;
+        font-size: 2.5rem;
+        color: $accent-color;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .reiki-intro-content {
+        max-width: 900px;
+        margin: 0 auto;
+        background: $white;
+        padding: 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px $shadow-soft;
+
+        p {
+          font-size: 1.1rem;
+          color: $text-color;
+          line-height: 1.8;
+          margin-bottom: 1.5rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    // Séparateur
+    .section-divider {
+      width: 100px;
+      height: 2px;
+      background: $accent-color;
+      margin: 3rem auto;
+      opacity: 0.5;
+    }
+
+    // Section Coaching
+    .coaching-section {
+      margin-bottom: 4rem;
+
+      h3 {
+        font-family: $font-subtitle;
+        font-size: 2rem;
+        color: $accent-color;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .coaching-intro {
+        background: $white;
+        border-radius: 15px;
+        padding: 2rem;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        box-shadow: 0 5px 15px $shadow-soft;
+        border-left: 4px solid $accent-color;
+
+        p {
+          margin: 0;
+          font-size: 1.1rem;
+          color: $text-color;
+          line-height: 1.7;
+        }
+      }
+
+      .coaching-points {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .coaching-point {
+        background: $white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px $shadow-soft;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        border-top: 3px solid $accent-color;
+
+        .point-icon {
+          font-size: 2rem;
+          flex-shrink: 0;
+        }
+
+        p {
+          margin: 0;
+          font-size: 1rem;
+          color: $text-color;
+          line-height: 1.6;
+        }
+      }
+    }
+
+    // Section Approche
+    .approche-section {
+      margin-bottom: 4rem;
+
+      h3 {
+        font-family: $font-subtitle;
+        font-size: 2rem;
+        color: $accent-color;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .approche-card {
+        background: $white;
+        border-radius: 20px;
+        padding: 3rem;
+        max-width: 800px;
+        margin: 0 auto;
+        box-shadow: 0 10px 30px $shadow;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 5px;
+          background: $accent-color;
+        }
+
+        .approche-icon {
+          font-size: 3.5rem;
+          margin-bottom: 1.5rem;
+        }
+
+        p {
+          margin: 0;
+          font-size: 1.2rem;
+          color: $text-color;
+          line-height: 1.8;
+          font-style: italic;
+        }
+      }
+    }
+  }
+
+  .cta-section h2 {
+    color: $accent-color;
+  }
+
+  .cta-button {
+    &.cta-primary {
+      color: $accent-color;
+      border-color: $accent-color;
+
+      &:hover {
+        background: $accent-color;
+        color: $white;
+        box-shadow: 0 5px 15px rgba(193, 200, 167, 0.3);
+      }
+    }
+
+    &.cta-secondary {
+      color: $accent-color;
+      border-color: $accent-color;
+
+      &:hover {
+        background: $accent-color;
+        color: $white;
+        box-shadow: 0 5px 15px rgba(193, 200, 167, 0.3);
+      }
+    }
+  }
+}
+

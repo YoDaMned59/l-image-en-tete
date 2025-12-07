@@ -4,7 +4,9 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import ServicePage from './pages/ServicePage'
+import BilanPage from './pages/BilanPage'
+import AtelierPage from './pages/AtelierPage'
+import ReikiPage from './pages/ReikiPage'
 import CGV from './pages/CGV'
 import MentionsLegales from './pages/MentionsLegales'
 import { normalizePath } from './utils/pathUtils'
@@ -51,9 +53,14 @@ function App() {
     }
     
     // Pages de services
-    if (path.startsWith('/services/')) {
-      const serviceId = path.split('/services/')[1]?.replace(/\/$/, '');
-      return <ServicePage serviceId={serviceId} />;
+    if (path === '/services/bilan' || path === '/services/bilan/') {
+      return <BilanPage />;
+    }
+    if (path === '/services/atelier' || path === '/services/atelier/') {
+      return <AtelierPage />;
+    }
+    if (path === '/services/reiki' || path === '/services/reiki/') {
+      return <ReikiPage />;
     }
     
     // Page d'accueil par défaut
