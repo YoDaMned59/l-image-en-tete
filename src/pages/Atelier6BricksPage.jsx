@@ -1,11 +1,11 @@
 import React from 'react';
 import { siteData } from '../data/data';
 import { navigate } from '../utils/pathUtils';
-import '../styles/AtelierPage.scss';
+import '../styles/Atelier6BricksPage.scss';
 
-const AtelierPage = () => {
-  const service = siteData.services.find(s => s.id === 'atelier');
-  const details = siteData.servicesDetails.atelier;
+const Atelier6BricksPage = () => {
+  const service = siteData.services.find(s => s.id === 'atelier-6-bricks');
+  const details = siteData.servicesDetails['atelier-6-bricks'];
 
   const handleLinkClick = (e, path) => {
     e.preventDefault();
@@ -13,7 +13,7 @@ const AtelierPage = () => {
   };
 
   return (
-    <div className="service-page service-page-bleu">
+    <div className="service-page service-page-vert">
       {/* Hero Section */}
       <section className="service-hero">
         <div className="service-container">
@@ -65,61 +65,28 @@ const AtelierPage = () => {
             <p className="hero-description">{details.hero.description}</p>
           </div>
 
-          {/* Raisons */}
-          {details.raisons && (
-            <div className="reasons-section">
-              <h3>{details.raisons.titre}</h3>
-              <div className="reasons-grid">
-                {details.raisons.items.map((raison, index) => (
-                  <div key={index} className="reason-card">
-                    <div className="reason-icon">{raison.icone}</div>
-                    <h4>{raison.titre}</h4>
-                    <p>{raison.description}</p>
+          {/* Compétences */}
+          {details.competences && (
+            <div className="competences-section">
+              <h3>{details.competences.titre}</h3>
+              <p className="competences-intro">{details.competences.description}</p>
+              <div className="competences-grid">
+                {details.competences.items.map((competence, index) => (
+                  <div key={index} className="competence-card">
+                    <div className="competence-icon">{competence.icone}</div>
+                    <h4>{competence.titre}</h4>
+                    <p>{competence.description}</p>
                   </div>
                 ))}
               </div>
             </div>
           )}
 
-          {/* Thématiques */}
-          {details.themes && (
-            <div className="themes-section">
-              <h3>{details.themes.titre}</h3>
-              <div className="themes-grid">
-                {details.themes.items.map((theme, index) => (
-                  <div key={index} className="theme-card">
-                    <div className="theme-icon">{theme.icone}</div>
-                    <h4>{theme.titre}</h4>
-                    <p>{theme.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Planning */}
-          {details.planning && (
-            <div className="planning-section">
-              <h3>{details.planning.titre}</h3>
-              <div className="planning-box">
-                {details.planning.informations.map((info, index) => {
-                  const parts = info.split(' : ');
-                  return (
-                    <p key={index}>
-                      {parts.length > 1 ? (
-                        <>
-                          <strong>{parts[0]} :</strong> {parts.slice(1).join(' : ')}
-                        </>
-                      ) : (
-                        info
-                      )}
-                    </p>
-                  );
-                })}
-                <div className="planning-cta">
-                  <p><strong>{details.planning.cta}</strong></p>
-                </div>
-              </div>
+          {/* Approche */}
+          {details.approche && (
+            <div className="approche-section">
+              <h3>{details.approche.titre}</h3>
+              <p className="approche-description">{details.approche.description}</p>
             </div>
           )}
         </div>
@@ -152,6 +119,5 @@ const AtelierPage = () => {
   );
 };
 
-export default AtelierPage;
-
+export default Atelier6BricksPage;
 

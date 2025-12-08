@@ -303,6 +303,22 @@ export const siteData = {
       format: "Séance devant le corps, dos ou à distance",
       tarif: "60 €",
       ton: "apaisant et bienveillant"
+    },
+    {
+      id: "atelier-6-bricks",
+      titre: "Atelier 6 Bricks",
+      pourQui: "Enfants, adolescents, adultes et personnes âgées",
+      objectifs: [
+        "Développer les compétences mathématiques et de calcul",
+        "Renforcer les habiletés sociales et émotionnelles",
+        "Améliorer la perception et l'attention",
+        "Enrichir le langage et le vocabulaire",
+        "Favoriser le jeu coopératif et les compétences de groupe",
+        "Développer la motricité fine"
+      ],
+      format: "Ateliers ludiques basés sur la manipulation de briques LEGO",
+      tarif: "Sur demande",
+      ton: "ludique et stimulant"
     }
   ],
 
@@ -435,6 +451,53 @@ export const siteData = {
       approche: {
         titre: "Mon approche",
         description: "Je suis praticienne Reiki, initiée au second degré, et j'accompagne les élèves (et leurs parents) à retrouver équilibre, confiance et bien-être pour avancer plus sereinement dans leur parcours scolaire et personnel."
+      }
+    },
+    
+    "atelier-6-bricks": {
+      hero: {
+        titre: "Atelier 6 Bricks",
+        description: "Ouvert aux enfants, adolescents, adultes et personnes âgées, l'Atelier 6 Bricks offre une approche ludique et stimulante pour développer des compétences essentielles à l'apprentissage."
+      },
+      competences: {
+        titre: "Compétences développées",
+        description: "Grâce à des activités basées sur la manipulation de briques LEGO, les participants renforcent :",
+        items: [
+          {
+            icone: "🔢",
+            titre: "Compétences mathématiques et de calcul",
+            description: "Développement des compétences numériques et logiques par la manipulation concrète"
+          },
+          {
+            icone: "🤝",
+            titre: "Habiletés sociales et émotionnelles",
+            description: "Renforcement de la communication, de l'empathie et de la gestion des émotions"
+          },
+          {
+            icone: "👁️",
+            titre: "Perception et attention",
+            description: "Amélioration de la concentration, de l'observation et de la perception spatiale"
+          },
+          {
+            icone: "💬",
+            titre: "Langage et vocabulaire",
+            description: "Enrichissement du vocabulaire et développement des compétences langagières"
+          },
+          {
+            icone: "👥",
+            titre: "Jeu coopératif et compétences de groupe",
+            description: "Apprentissage du travail en équipe, de la collaboration et de la résolution de problèmes ensemble"
+          },
+          {
+            icone: "✋",
+            titre: "Motricité fine",
+            description: "Développement de la précision et de la coordination des gestes"
+          }
+        ]
+      },
+      approche: {
+        titre: "Notre approche",
+        description: "Ces ateliers permettent à chacun de progresser à son rythme, tout en s'amusant. L'apprentissage par le jeu favorise l'engagement, la motivation et la mémorisation des compétences acquises."
       }
     }
   },

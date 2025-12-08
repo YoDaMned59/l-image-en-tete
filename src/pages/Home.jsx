@@ -9,6 +9,13 @@ import '../styles/Home.scss';
 const Home = () => {
   const { home, services } = siteData;
   const activitiesSectionRef = useRef(null);
+  
+  // Trouver les services par ID pour plus de robustesse
+  const bilanService = services.find(s => s.id === 'bilan');
+  const atelierService = services.find(s => s.id === 'atelier');
+  // Reiki masqué pour l'instant - à réactiver plus tard
+  // const reikiService = services.find(s => s.id === 'reiki');
+  const atelier6BricksService = services.find(s => s.id === 'atelier-6-bricks');
 
   const handleLinkClick = (e, path) => {
     e.preventDefault();
@@ -54,12 +61,12 @@ const Home = () => {
                 <img src={expliquerImage} alt="Explication de la métacognition et des méthodes d'apprentissage" />
               </div>
               <div className="service-content">
-                <h3>{services[0].titre.toUpperCase()}</h3>
+                <h3>{bilanService.titre.toUpperCase()}</h3>
                 <p className="service-description">
-                  {services[0].pourQui}
+                  {bilanService.pourQui}
                 </p>
                 <div className="objectives">
-                  <p>{services[0].objectifs.join(', ')}</p>
+                  <p>{bilanService.objectifs.join(', ')}</p>
                 </div>
                 <div className="modalities">
                   <h4>Modalités :</h4>
@@ -73,11 +80,11 @@ const Home = () => {
                   </div>
                   <div className="modality-item">
                     <span className="icon">⏰</span>
-                    <span>{services[0].format}</span>
+                    <span>{bilanService.format}</span>
                   </div>
                   <div className="modality-item">
                     <span className="icon">€</span>
-                    <span>{services[0].tarif}</span>
+                    <span>{bilanService.tarif}</span>
                   </div>
                 </div>
                 <div className="service-buttons">
@@ -93,12 +100,12 @@ const Home = () => {
                 <img src={atelierImage} alt="Ateliers de remédiation cognitive" />
               </div>
               <div className="service-content">
-                <h3>{services[1].titre.toUpperCase()}</h3>
+                <h3>{atelierService.titre.toUpperCase()}</h3>
                 <p className="service-description">
-                  {services[1].pourQui}
+                  {atelierService.pourQui}
                 </p>
                 <div className="objectives">
-                  <p>{services[1].objectifs.join(', ')}</p>
+                  <p>{atelierService.objectifs.join(', ')}</p>
                 </div>
                 <div className="modalities">
                   <h4>Modalités :</h4>
@@ -112,11 +119,11 @@ const Home = () => {
                   </div>
                   <div className="modality-item">
                     <span className="icon">⏰</span>
-                    <span>{services[1].format}</span>
+                    <span>{atelierService.format}</span>
                   </div>
                   <div className="modality-item">
                     <span className="icon">€</span>
-                    <span>{services[1].tarif}</span>
+                    <span>{atelierService.tarif}</span>
                   </div>
                 </div>
                 <div className="service-buttons">
@@ -126,20 +133,20 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Reiki */}
-            <div className="service-block reiki-block">
+            {/* Reiki - masqué pour l'instant - à réactiver plus tard */}
+            {/* <div className="service-block reiki-block">
               <div className="service-image">
                 <div className="reiki-placeholder">
                   <div className="reiki-icon">🧘</div>
                 </div>
               </div>
               <div className="service-content">
-                <h3>{services[2].titre.toUpperCase()}</h3>
+                <h3>{reikiService.titre.toUpperCase()}</h3>
                 <p className="service-description">
-                  {services[2].pourQui}
+                  {reikiService.pourQui}
                 </p>
                 <div className="objectives">
-                  <p>{services[2].objectifs.join(', ')}</p>
+                  <p>{reikiService.objectifs.join(', ')}</p>
                 </div>
                 <div className="modalities">
                   <h4>Modalités :</h4>
@@ -153,16 +160,57 @@ const Home = () => {
                   </div>
                   <div className="modality-item">
                     <span className="icon">⏰</span>
-                    <span>{services[2].format}</span>
+                    <span>{reikiService.format}</span>
                   </div>
                   <div className="modality-item">
                     <span className="icon">€</span>
-                    <span>{services[2].tarif}</span>
+                    <span>{reikiService.tarif}</span>
                   </div>
                 </div>
                 <div className="service-buttons">
                   <a href="#" onClick={(e) => handleLinkClick(e, '/contact')} className="cta-button primary">Prendre rendez-vous</a>
                   <a href="#" onClick={(e) => handleLinkClick(e, '/services/reiki')} className="cta-button secondary">En savoir plus</a>
+                </div>
+              </div>
+            </div> */}
+
+            {/* Atelier 6 Bricks */}
+            <div className="service-block atelier-6-bricks-block">
+              <div className="service-image">
+                <div className="bricks-placeholder">
+                  <div className="bricks-icon">🧱</div>
+                </div>
+              </div>
+              <div className="service-content">
+                <h3>{atelier6BricksService.titre.toUpperCase()}</h3>
+                <p className="service-description">
+                  {atelier6BricksService.pourQui}
+                </p>
+                <div className="objectives">
+                  <p>{atelier6BricksService.objectifs.join(', ')}</p>
+                </div>
+                <div className="modalities">
+                  <h4>Modalités :</h4>
+                  <div className="modality-item">
+                    <span className="icon">🧱</span>
+                    <span>Ludique</span>
+                  </div>
+                  <div className="modality-item">
+                    <span className="icon">👥</span>
+                    <span>Tous publics</span>
+                  </div>
+                  <div className="modality-item">
+                    <span className="icon">⏰</span>
+                    <span>{atelier6BricksService.format}</span>
+                  </div>
+                  <div className="modality-item">
+                    <span className="icon">€</span>
+                    <span>{atelier6BricksService.tarif}</span>
+                  </div>
+                </div>
+                <div className="service-buttons">
+                  <a href="#" onClick={(e) => handleLinkClick(e, '/contact')} className="cta-button primary">Prendre rendez-vous</a>
+                  <a href="#" onClick={(e) => handleLinkClick(e, '/services/atelier-6-bricks')} className="cta-button secondary">En savoir plus</a>
                 </div>
               </div>
             </div>
