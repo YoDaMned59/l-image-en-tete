@@ -13,6 +13,11 @@ body {
   line-height: 1.6;
   color: $text-color;
   background-color: $light-bg;
+  background-image: url('../assets/MOTIF (1).png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #root {
@@ -21,7 +26,6 @@ body {
 
 .app {
   min-height: 100vh;
-  background: $light-bg; // Fond crème de la charte graphique
   display: flex;
   flex-direction: column;
   

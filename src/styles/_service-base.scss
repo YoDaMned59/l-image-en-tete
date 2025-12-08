@@ -16,7 +16,7 @@
   // ============================================
   .service-hero {
     padding: 80px 20px 60px;
-    background: $light-bg;
+    background: rgba(247, 239, 227, 0.85);
     text-align: center;
 
     h1 {
@@ -36,6 +36,7 @@
   // ============================================
   .objectives-section {
     padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.85);
 
     h2 {
       font-family: $font-subtitle;
@@ -95,7 +96,7 @@
   // ============================================
   .info-section {
     padding: 60px 20px;
-    background: $light-bg;
+    background: rgba(247, 239, 227, 0.85);
 
     .info-grid {
       display: grid;
@@ -134,6 +135,7 @@
   // ============================================
   .content-section {
     padding: 80px 20px;
+    background: rgba(255, 255, 255, 0.85);
 
     .content-hero {
       text-align: center;
@@ -432,7 +434,7 @@
   // ============================================
   .cta-section {
     padding: 80px 20px;
-    background: $light-bg;
+    background: rgba(247, 239, 227, 0.85);
     text-align: center;
 
     h2 {

@@ -11,7 +11,7 @@
   .about-hero {
     text-align: center;
     padding: 80px 0 60px;
-    background: $light-bg;
+    background: rgba(247, 239, 227, 0.85);
     
     h1 {
       font-size: 3rem;
@@ -27,6 +27,7 @@
   
   .presentation {
     padding: 80px 20px;
+    background: rgba(255, 255, 255, 0.85);
     
     .presentation-content {
       max-width: 1200px;
@@ -130,7 +131,7 @@
   
   .methods {
     padding: 80px 20px;
-    background: $light-bg;
+    background: rgba(247, 239, 227, 0.85);
     
     .methods-container {
       max-width: 1200px;
@@ -183,7 +184,7 @@
   // Section Pack cadeau
   .pack-section {
     padding: 60px 20px;
-    background: $light-bg;
+    background: rgba(247, 239, 227, 0.85);
     
     .pack-container {
       max-width: 600px;
@@ -222,7 +223,7 @@
   // Section Ateliers collectifs
   .ateliers-section {
     padding: 80px 20px;
-    background: white;
+    background: rgba(255, 255, 255, 0.85);
     
     .ateliers-container {
       max-width: 1200px;
@@ -250,7 +251,7 @@
       }
       
       .reason-card {
-        background: $light-bg;
+        background: rgba(255, 255, 255, 0.95);
         padding: 2rem;
         border-radius: 10px;
         text-align: center;
@@ -289,7 +290,7 @@
           align-items: flex-start;
           gap: 1rem;
           padding: 1.5rem;
-          background: $light-bg;
+          background: rgba(255, 255, 255, 0.95);
           border-radius: 10px;
           border-left: 4px solid $primary-color;
           
@@ -310,7 +311,7 @@
   // Section Bilan et suivis
   .bilan-section {
     padding: 80px 20px;
-    background: $light-bg;
+    background: rgba(247, 239, 227, 0.85);
     
     .bilan-container {
       max-width: 1200px;
@@ -451,7 +452,7 @@
   // Section Approche en 3 étapes
   .approach-section {
     padding: 80px 20px;
-    background: $light-bg;
+    background: rgba(247, 239, 227, 0.85);
     
     .approach-container {
       max-width: 1200px;
