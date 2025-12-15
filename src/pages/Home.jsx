@@ -3,7 +3,7 @@ import { siteData } from '../data/data';
 import { navigate } from '../utils/pathUtils';
 import expliquerImage from '../assets/expliquer comment faire.webp';
 import atelierImage from '../assets/Atelier remediation cognitive.webp';
-import heroBackgroundImage from '../assets/soutien-scolaire.jpg';
+import heroBackgroundImage from '../assets/soutien-scolaire.webp';
 import '../styles/Home.scss';
 
 const Home = () => {

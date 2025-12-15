@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { siteData } from '../data/data';
 import { normalizePath, navigate } from '../utils/pathUtils';
-import logoImage from '../assets/Sans titre - 1 (3).png';
+import logoImage from '../assets/Logo.webp';
 import '../styles/Header.scss';
 
 const Header = () => {
