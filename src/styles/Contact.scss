@@ -1,5 +1,6 @@
 // Import des variables de la charte graphique
 @use 'variables' as *;
+@use 'sass:color';
 
 .contact {
   min-height: 100vh;
@@ -112,7 +113,7 @@
         transition: all 0.3s;
         
         &:hover {
-          background: darken($primary-color, 10%);
+          background: color.adjust($primary-color, $lightness: -10%);
           transform: translateY(-2px);
           box-shadow: 0 5px 15px rgba(241, 183, 183, 0.3);
         }
