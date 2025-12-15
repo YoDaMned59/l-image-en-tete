@@ -90,27 +90,22 @@ const AtelierPage = () => {
               <div className="themes-grid">
                 {details.themes.items.map((theme, index) => (
                   <div key={index} className="theme-card">
-                    <div className="theme-icon">{theme.icone}</div>
+                    {theme.description.toLowerCase().includes('sketchnote') ? (
+                      <div 
+                        className="theme-icon sketchnote-icon"
+                        onClick={() => setIsSketchnoteExpanded(true)}
+                      >
+                        <img 
+                          src={sketchnoteImage} 
+                          alt="Exemple de sketchnote - Facilitation graphique" 
+                          className="sketchnote-icon-image"
+                        />
+                      </div>
+                    ) : (
+                      <div className="theme-icon">{theme.icone}</div>
+                    )}
                     <h4>{theme.titre}</h4>
                     <p>{theme.description}</p>
-                    {/* Afficher l'exemple de sketchnote pour la stratégie de prise de note */}
-                    {theme.description.toLowerCase().includes('sketchnote') && (
-                      <div className="sketchnote-example">
-                        <div 
-                          className="sketchnote-container"
-                          onClick={() => setIsSketchnoteExpanded(true)}
-                        >
-                          <img 
-                            src={sketchnoteImage} 
-                            alt="Exemple de sketchnote - Facilitation graphique" 
-                            className="sketchnote-image"
-                          />
-                          <div className="sketchnote-overlay">
-                            <span className="sketchnote-hint">Voir un exemple</span>
-                          </div>
-                        </div>
-                      </div>
-                    )}
                   </div>
                 ))}
               </div>

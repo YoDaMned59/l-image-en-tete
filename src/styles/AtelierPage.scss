@@ -8,7 +8,8 @@
   }
 
   .objectives-section {
-    background: rgba(117, 145, 178, 0.15);
+    background: rgba(117, 145, 178, 0.08);
+    padding: 40px 20px;
 
     h2 {
       color: $secondary-color;
@@ -23,12 +24,17 @@
     }
   }
 
-  .info-section .info-card h3 {
-    color: $secondary-color;
+  .info-section {
+    padding: 40px 20px;
+    
+    .info-card h3 {
+      color: $secondary-color;
+    }
   }
 
   .content-section {
-    background: rgba(117, 145, 178, 0.15);
+    background: rgba(117, 145, 178, 0.08);
+    padding: 40px 20px;
 
     .content-hero h2 {
       color: $secondary-color;
@@ -81,58 +87,36 @@
     }
   }
   
-  // Styles pour l'exemple de sketchnote
+  // Styles pour l'icône sketchnote qui remplace l'icône
   .theme-card {
-    .sketchnote-example {
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(117, 145, 178, 0.2);
+    .sketchnote-icon {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: auto;
       
-      .sketchnote-container {
-        position: relative;
+      &:hover {
+        transform: scale(1.02);
+      }
+      
+      .sketchnote-icon-image {
         width: 100%;
-        border-radius: 10px;
-        overflow: hidden;
-        cursor: pointer;
-        transition: transform 0.3s, box-shadow 0.3s;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        
-        &:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-        }
-        
-        .sketchnote-image {
-          width: 100%;
-          height: auto;
-          display: block;
-        }
-        
-        .sketchnote-overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: rgba(0, 0, 0, 0.3);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          opacity: 0;
-          transition: opacity 0.3s;
-          
-          .sketchnote-hint {
-            color: white;
-            font-size: 0.875rem; // Minimum 14px pour l'accessibilité
-            background: rgba(0, 0, 0, 0.6);
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-          }
-        }
-        
-        &:hover .sketchnote-overlay {
-          opacity: 1;
-        }
+        max-width: 100%;
+        height: auto;
+        min-height: 300px;
+        max-height: 450px;
+        object-fit: contain;
+        border-radius: 0;
+        box-shadow: none;
+        transition: transform 0.3s ease;
+      }
+      
+      &:hover .sketchnote-icon-image {
+        transform: scale(1.05);
       }
     }
   }
@@ -195,6 +179,7 @@
       }
     }
   }
+
 }
 
 

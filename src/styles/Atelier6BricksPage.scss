@@ -8,13 +8,14 @@
   }
 
   .objectives-section {
-    background: rgba(193, 200, 167, 0.15);
+    background: rgba(247, 239, 227, 0.85);
 
     h2 {
       color: $accent-color;
     }
 
     .objective-card {
+      background: rgba(255, 255, 255, 0.95);
       border-left-color: $accent-color;
 
       .objective-check {
@@ -23,12 +24,20 @@
     }
   }
 
-  .info-section .info-card h3 {
-    color: $accent-color;
+  .info-section {
+    background: rgba(247, 239, 227, 0.85);
+    
+    .info-card {
+      background: rgba(255, 255, 255, 0.95);
+      
+      h3 {
+        color: $accent-color;
+      }
+    }
   }
 
   .content-section {
-    background: rgba(193, 200, 167, 0.15);
+    background: rgba(247, 239, 227, 0.85);
 
     .content-hero h2 {
       color: $accent-color;
@@ -66,7 +75,7 @@
       }
 
       .competence-card {
-        background: $white;
+        background: rgba(255, 255, 255, 0.95);
         border-radius: 15px;
         padding: 2rem;
         box-shadow: 0 5px 15px $shadow-soft;
@@ -116,7 +125,7 @@
       }
 
       .approche-description {
-        background: $white;
+        background: rgba(255, 255, 255, 0.95);
         border-radius: 15px;
         padding: 2.5rem;
         box-shadow: 0 5px 15px $shadow-soft;
@@ -130,8 +139,12 @@
     }
   }
 
-  .cta-section h2 {
-    color: $accent-color;
+  .cta-section {
+    background: rgba(247, 239, 227, 0.85);
+    
+    h2 {
+      color: $accent-color;
+    }
   }
 
   .cta-button {
@@ -158,9 +171,4 @@
     }
   }
 }
-
-
-
-
-
 
