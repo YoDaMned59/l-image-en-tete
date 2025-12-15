@@ -1,24 +1,29 @@
-// Configuration de la base URL pour GitHub Pages
+// Base path pour GitHub Pages
 const BASE_PATH = '/l-image-en-tete';
 
 /**
  * Normalise un chemin en retirant la base URL si présente
- * @param {string} pathname - Le pathname complet (ex: '/l-image-en-tete/about')
- * @returns {string} - Le chemin normalisé (ex: '/about')
+ * @param {string} pathname - Le pathname complet
+ * @returns {string} - Le chemin normalisé
  */
 export const normalizePath = (pathname) => {
-  if (pathname.startsWith(BASE_PATH)) {
-    return pathname.slice(BASE_PATH.length) || '/';
+  // Si BASE_PATH est défini et que le pathname commence par BASE_PATH
+  if (BASE_PATH && pathname.startsWith(BASE_PATH)) {
+    const normalized = pathname.slice(BASE_PATH.length) || '/';
+    return normalized;
   }
   return pathname;
 };
 
 /**
- * Ajoute la base URL à un chemin
+ * Ajoute la base URL à un chemin (si nécessaire)
  * @param {string} path - Le chemin relatif (ex: '/about')
- * @returns {string} - Le chemin complet (ex: '/l-image-en-tete/about')
+ * @returns {string} - Le chemin complet
  */
 export const addBasePath = (path) => {
+  if (!BASE_PATH) {
+    return path;
+  }
   if (path === '/') {
     return BASE_PATH + '/';
   }
