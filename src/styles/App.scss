@@ -10,6 +10,7 @@
 
 body {
   font-family: $font-body;
+  font-size: 1.125rem; // 18px - taille optimale pour l'accessibilité (WCAG)
   line-height: 1.6;
   color: $text-color;
   background-color: $light-bg;

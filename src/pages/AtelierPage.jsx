@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { siteData } from '../data/data';
 import { navigate } from '../utils/pathUtils';
+import sketchnoteImage from '../assets/Sketchnote.webp';
 import '../styles/AtelierPage.scss';
 
 const AtelierPage = () => {
   const service = siteData.services.find(s => s.id === 'atelier');
   const details = siteData.servicesDetails.atelier;
+  const [isSketchnoteExpanded, setIsSketchnoteExpanded] = useState(false);
 
   const handleLinkClick = (e, path) => {
     e.preventDefault();
@@ -91,6 +93,24 @@ const AtelierPage = () => {
                     <div className="theme-icon">{theme.icone}</div>
                     <h4>{theme.titre}</h4>
                     <p>{theme.description}</p>
+                    {/* Afficher l'exemple de sketchnote pour la stratégie de prise de note */}
+                    {theme.description.toLowerCase().includes('sketchnote') && (
+                      <div className="sketchnote-example">
+                        <div 
+                          className="sketchnote-container"
+                          onClick={() => setIsSketchnoteExpanded(true)}
+                        >
+                          <img 
+                            src={sketchnoteImage} 
+                            alt="Exemple de sketchnote - Facilitation graphique" 
+                            className="sketchnote-image"
+                          />
+                          <div className="sketchnote-overlay">
+                            <span className="sketchnote-hint">Voir un exemple</span>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -124,6 +144,32 @@ const AtelierPage = () => {
           )}
         </div>
       </section>
+
+      {/* Modal sketchnote */}
+      {isSketchnoteExpanded && (
+        <div 
+          className="sketchnote-backdrop"
+          onClick={() => setIsSketchnoteExpanded(false)}
+        >
+          <div 
+            className="sketchnote-modal"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              className="sketchnote-close"
+              onClick={() => setIsSketchnoteExpanded(false)}
+              aria-label="Fermer"
+            >
+              ×
+            </button>
+            <img 
+              src={sketchnoteImage} 
+              alt="Exemple de sketchnote - Facilitation graphique" 
+              className="sketchnote-image-expanded"
+            />
+          </div>
+        </div>
+      )}
 
       {/* CTA Section */}
       <section className="cta-section">
