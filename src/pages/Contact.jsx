@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { siteData } from '../data/data';
 import SEO from '../components/SEO';
+import { EMAILJS_CONFIG } from '../config/emailjs.config';
 import '../styles/Contact.scss';
 
 const Contact = () => {
@@ -10,19 +12,65 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  
+  // États pour gérer l'envoi du formulaire
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' ou 'error'
+  const [statusMessage, setStatusMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+    // Réinitialise le message d'erreur quand l'utilisateur tape
+    if (submitStatus) {
+      setSubmitStatus(null);
+      setStatusMessage('');
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Formulaire soumis:', formData);
-    alert(contactPage.formulaire.messageConfirmation);
-    setFormData({ nom: '', email: '', message: '' });
+    
+    // Vérifie que EmailJS est configuré
+    if (EMAILJS_CONFIG.PUBLIC_KEY === 'VOTRE_PUBLIC_KEY_ICI') {
+      setSubmitStatus('error');
+      setStatusMessage('⚠️ EmailJS n\'est pas encore configuré. Voir EMAILJS-GUIDE.md pour les instructions.');
+      return;
+    }
+
+    setIsLoading(true);
+    setSubmitStatus(null);
+    setStatusMessage('');
+
+    try {
+      // Envoie l'email via EmailJS
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        {
+          from_name: formData.nom,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: contact.email, // Votre email de réception
+        },
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
+      // Succès !
+      setSubmitStatus('success');
+      setStatusMessage(contactPage.formulaire.messageConfirmation || 'Message envoyé avec succès !');
+      setFormData({ nom: '', email: '', message: '' });
+      
+    } catch (error) {
+      // Erreur lors de l'envoi
+      console.error('Erreur EmailJS:', error);
+      setSubmitStatus('error');
+      setStatusMessage('❌ Erreur lors de l\'envoi. Veuillez réessayer ou me contacter directement par email.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -83,8 +131,19 @@ const Contact = () => {
                   ></textarea>
                 </div>
                 
-                <button type="submit" className="submit-button">
-                  {contactPage.formulaire.bouton}
+                {/* Message de statut (succès ou erreur) */}
+                {submitStatus && (
+                  <div className={`form-status ${submitStatus === 'success' ? 'success' : 'error'}`}>
+                    {statusMessage}
+                  </div>
+                )}
+                
+                <button 
+                  type="submit" 
+                  className="submit-button"
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Envoi en cours...' : contactPage.formulaire.bouton}
                 </button>
               </form>
             </section>

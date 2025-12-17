@@ -127,3 +127,4 @@ const Atelier6BricksPage = () => {
 export default Atelier6BricksPage;
 
 
+
