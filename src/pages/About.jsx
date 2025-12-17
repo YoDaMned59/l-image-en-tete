@@ -1,5 +1,6 @@
 import React from 'react';
 import { siteData } from '../data/data';
+import SEO from '../components/SEO';
 import '../styles/About.scss';
 
 const About = () => {
@@ -7,6 +8,10 @@ const About = () => {
 
   return (
     <div className="about">
+      <SEO 
+        title="À propos"
+        description="Découvrez le parcours de Mathilde, coach scolaire spécialisée en métacognition et facilitation graphique. Accompagnement bienveillant pour enfants et adolescents à Richebourg."
+      />
       <div className="container">
         {/* Section Hero */}
         <section className="about-hero">

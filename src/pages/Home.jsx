@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { siteData } from '../data/data';
 import { navigate } from '../utils/pathUtils';
+import SEO from '../components/SEO';
 import expliquerImage from '../assets/expliquer comment faire.webp';
 import atelierImage from '../assets/Atelier remediation cognitive.webp';
 import heroBackgroundImage from '../assets/soutien-scolaire.webp';
@@ -30,6 +31,12 @@ const Home = () => {
 
   return (
     <div className="home">
+      {/* Composant SEO : définit le titre et la description pour Google */}
+      <SEO 
+        title="Accueil"
+        description="Coaching scolaire et accompagnement dans les apprentissages à Richebourg. Bilan, suivi individuel et ateliers de remédiation cognitive. Première rencontre gratuite."
+      />
+      
       {/* Section Hero */}
       <section className="hero-section" style={{ backgroundImage: `url(${heroBackgroundImage})` }}>
         <div className="hero-content">
@@ -58,7 +65,11 @@ const Home = () => {
             {/* Bilan & Suivi */}
             <div className="service-block bilan-block">
               <div className="service-image">
-                <img src={expliquerImage} alt="Explication de la métacognition et des méthodes d'apprentissage" />
+                <img 
+                  src={expliquerImage} 
+                  alt="Explication de la métacognition et des méthodes d'apprentissage" 
+                  loading="lazy"
+                />
               </div>
               <div className="service-content">
                 <h3>{bilanService.titre.toUpperCase()}</h3>
@@ -97,7 +108,11 @@ const Home = () => {
             {/* Ateliers */}
             <div className="service-block atelier-block">
               <div className="service-image">
-                <img src={atelierImage} alt="Ateliers de remédiation cognitive" />
+                <img 
+                  src={atelierImage} 
+                  alt="Ateliers de remédiation cognitive" 
+                  loading="lazy"
+                />
               </div>
               <div className="service-content">
                 <h3>{atelierService.titre.toUpperCase()}</h3>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { siteData } from '../data/data';
+import SEO from '../components/SEO';
 import '../styles/CGV.scss';
 
 const CGV = () => {
@@ -7,6 +8,10 @@ const CGV = () => {
 
   return (
     <div className="cgv-page">
+      <SEO 
+        title="Conditions Générales de Vente"
+        description="Conditions générales de vente - L'image en tête - Coaching scolaire"
+      />
       <div className="container">
         <h1>{cgv.titre}</h1>
         

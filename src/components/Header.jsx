@@ -81,6 +81,7 @@ const Header = () => {
               src={logoImage} 
               alt="L'image en tête - Logo" 
               className="logo-image"
+              loading="eager"
             />
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { siteData } from '../data/data';
+import SEO from '../components/SEO';
 import '../styles/MentionsLegales.scss';
 
 const MentionsLegales = () => {
@@ -7,6 +8,10 @@ const MentionsLegales = () => {
 
   return (
     <div className="mentions-legales-page">
+      <SEO 
+        title="Mentions légales"
+        description="Mentions légales - L'image en tête - Coaching scolaire"
+      />
       <div className="container">
         <h1>{mentionsLegales.titre}</h1>
         

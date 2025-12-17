@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { siteData } from '../data/data';
+import SEO from '../components/SEO';
 import '../styles/Contact.scss';
 
 const Contact = () => {
@@ -26,6 +27,10 @@ const Contact = () => {
 
   return (
     <div className="contact">
+      <SEO 
+        title="Contact"
+        description="Contactez L'image en tête pour prendre rendez-vous. Coaching scolaire à Richebourg. Première rencontre gratuite. Téléphone : 07.81.17.23.25"
+      />
       {/* Section Hero */}
       <section className="contact-hero">
         <div className="contact-container">

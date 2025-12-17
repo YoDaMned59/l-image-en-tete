@@ -1,6 +1,7 @@
 import React from 'react';
 import { siteData } from '../data/data';
 import { navigate } from '../utils/pathUtils';
+import SEO from '../components/SEO';
 import '../styles/BilanPage.scss';
 
 const BilanPage = () => {
@@ -13,6 +14,10 @@ const BilanPage = () => {
 
   return (
     <div className="service-page service-page-rose">
+      <SEO 
+        title={`${service.titre} - Bilan et suivi individuel`}
+        description={`${service.pourQui}. Bilan métacognitif et suivi individuel pour enfants et adolescents. Format : ${service.format}. Tarif : ${service.tarif}.`}
+      />
       {/* Hero Section */}
       <section className="service-hero">
         <div className="service-container">

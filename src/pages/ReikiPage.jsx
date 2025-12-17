@@ -1,6 +1,7 @@
 import React from 'react';
 import { siteData } from '../data/data';
 import { navigate } from '../utils/pathUtils';
+import SEO from '../components/SEO';
 import '../styles/ReikiPage.scss';
 
 const ReikiPage = () => {
@@ -13,6 +14,10 @@ const ReikiPage = () => {
 
   return (
     <div className="service-page service-page-vert">
+      <SEO 
+        title={`${service.titre} - Soin Reiki`}
+        description={`${service.pourQui}. Soin énergétique Reiki associé au coaching scolaire pour l'équilibre intérieur. Format : ${service.format}. Tarif : ${service.tarif}.`}
+      />
       {/* Hero Section */}
       <section className="service-hero">
         <div className="service-container">

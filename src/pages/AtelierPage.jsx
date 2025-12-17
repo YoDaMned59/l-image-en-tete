@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { siteData } from '../data/data';
 import { navigate } from '../utils/pathUtils';
+import SEO from '../components/SEO';
 import sketchnoteImage from '../assets/Sketchnote.webp';
 import '../styles/AtelierPage.scss';
 
@@ -16,6 +17,10 @@ const AtelierPage = () => {
 
   return (
     <div className="service-page service-page-bleu">
+      <SEO 
+        title={`${service.titre} - Ateliers de remédiation cognitive`}
+        description={`${service.pourQui}. Ateliers collectifs de remédiation cognitive avec facilitation graphique et sketchnote. Format : ${service.format}. Tarif : ${service.tarif}.`}
+      />
       {/* Hero Section */}
       <section className="service-hero">
         <div className="service-container">
@@ -99,6 +104,7 @@ const AtelierPage = () => {
                           src={sketchnoteImage} 
                           alt="Exemple de sketchnote - Facilitation graphique" 
                           className="sketchnote-icon-image"
+                          loading="lazy"
                         />
                       </div>
                     ) : (
@@ -161,6 +167,7 @@ const AtelierPage = () => {
               src={sketchnoteImage} 
               alt="Exemple de sketchnote - Facilitation graphique" 
               className="sketchnote-image-expanded"
+              loading="lazy"
             />
           </div>
         </div>

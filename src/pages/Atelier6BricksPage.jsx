@@ -1,6 +1,7 @@
 import React from 'react';
 import { siteData } from '../data/data';
 import { navigate } from '../utils/pathUtils';
+import SEO from '../components/SEO';
 import '../styles/Atelier6BricksPage.scss';
 
 const Atelier6BricksPage = () => {
@@ -14,6 +15,10 @@ const Atelier6BricksPage = () => {
 
   return (
     <div className="service-page service-page-vert">
+      <SEO 
+        title={`${service.titre} - Atelier ludique 6 Bricks`}
+        description={`${service.pourQui}. Atelier ludique 6 Bricks pour développer les compétences cognitives. Format : ${service.format}. Tarif : ${service.tarif}.`}
+      />
       {/* Hero Section */}
       <section className="service-hero">
         <div className="service-container">
