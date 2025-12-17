@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Sitemap.xml - Plan du site pour Google
+  Ce fichier liste toutes les pages importantes de votre site
+  Google l'utilise pour découvrir et indexer vos pages plus rapidement
+  
+  Pour ajouter une nouvelle page, copiez un bloc <url> et modifiez le <loc>
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Page d'accueil (la plus importante) -->
+  <url>
+    <loc>https://yodamned59.github.io/l-image-en-tete/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Page À propos -->
+  <url>
+    <loc>https://yodamned59.github.io/l-image-en-tete/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Page Contact -->
+  <url>
+    <loc>https://yodamned59.github.io/l-image-en-tete/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Services : Bilan -->
+  <url>
+    <loc>https://yodamned59.github.io/l-image-en-tete/services/bilan</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Services : Ateliers -->
+  <url>
+    <loc>https://yodamned59.github.io/l-image-en-tete/services/atelier</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Services : Atelier 6 Bricks -->
+  <url>
+    <loc>https://yodamned59.github.io/l-image-en-tete/services/atelier-6-bricks</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Pages légales (moins importantes pour le SEO) -->
+  <url>
+    <loc>https://yodamned59.github.io/l-image-en-tete/cgv</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://yodamned59.github.io/l-image-en-tete/mentions-legales</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

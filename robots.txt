@@ -1,0 +1,11 @@
+# Fichier robots.txt - Indique aux moteurs de recherche quelles pages indexer
+# Ce fichier est simple : on autorise tout le monde à indexer toutes les pages
+
+User-agent: *
+Allow: /
+
+# On empêche l'indexation de la page 404 (si elle existe)
+Disallow: /404
+
+# On indique où se trouve le sitemap (plan du site pour Google)
+Sitemap: https://yodamned59.github.io/l-image-en-tete/sitemap.xml
