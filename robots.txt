@@ -10,3 +10,4 @@ Disallow: /404
 # On indique où se trouve le sitemap (plan du site pour Google)
 Sitemap: https://yodamned59.github.io/l-image-en-tete/sitemap.xml
 
+
