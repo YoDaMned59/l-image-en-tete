@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import CookieBanner from './components/CookieBanner'
 import { normalizePath } from './utils/pathUtils'
 import './styles/App.scss'
 
@@ -84,6 +85,7 @@ function App() {
         </Suspense>
       </main>
       <Footer />
+      <CookieBanner />
     </div>
   )
 }
