@@ -103,10 +103,19 @@
       background: rgba(193, 200, 167, 0.2);
       border-color: $accent-color;
 
-      h3,
-      .pack-price,
+      h3 {
+        color: $text-color; // Bleu foncé pour meilleur contraste
+        font-weight: 600;
+      }
+      
+      .pack-price {
+        color: $primary-color; // Rose pour faire ressortir le prix
+        font-weight: bold;
+      }
+      
       .pack-description {
-        color: $accent-color;
+        color: $text-color; // Bleu foncé pour meilleur contraste
+        font-weight: 500;
       }
     }
   }

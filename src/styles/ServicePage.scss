@@ -222,20 +222,22 @@
       h3 {
         font-family: $font-subtitle;
         font-size: 2rem;
-        color: $accent-color;
+        color: $text-color; // Bleu foncé pour meilleur contraste
         margin-bottom: 1rem;
+        font-weight: 600;
       }
 
       .pack-price {
         font-size: 2.5rem;
         font-weight: bold;
-        color: $accent-color;
+        color: $primary-color; // Rose pour faire ressortir le prix
         margin: 1rem 0;
       }
 
       .pack-description {
         font-size: 1.2rem;
-        color: $accent-color;
+        color: $text-color; // Bleu foncé pour meilleur contraste
+        font-weight: 500;
       }
     }
 
