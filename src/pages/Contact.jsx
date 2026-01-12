@@ -67,10 +67,11 @@ const Contact = () => {
         EMAILJS_CONFIG.SERVICE_ID,
         EMAILJS_CONFIG.TEMPLATE_ID,
         {
-          from_name: formData.nom.trim(),
-          from_email: formData.email.trim(),
-          message: formData.message.trim(),
-          to_email: contact.email, // Votre email de réception
+          // Variables utilisées dans le template EmailJS
+          name: formData.nom.trim(), // Pour le sujet
+          from_name: formData.nom.trim(), // Nom du client
+          from_email: formData.email.trim(), // Email du client (pour reply-to)
+          message: formData.message.trim(), // Message du client
         },
         EMAILJS_CONFIG.PUBLIC_KEY
       );
