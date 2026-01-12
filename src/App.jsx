@@ -1,21 +1,18 @@
-import React, { useState, useEffect, Suspense, lazy } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import CookieBanner from './components/CookieBanner'
+import Home from './pages/Home'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import BilanPage from './pages/BilanPage'
+import AtelierPage from './pages/AtelierPage'
+import ReikiPage from './pages/ReikiPage'
+import Atelier6BricksPage from './pages/Atelier6BricksPage'
+import CGV from './pages/CGV'
+import MentionsLegales from './pages/MentionsLegales'
 import { normalizePath } from './utils/pathUtils'
 import './styles/App.scss'
-
-// Code splitting : charge les pages seulement quand on en a besoin
-// Cela améliore la vitesse de chargement initial du site
-const Home = lazy(() => import('./pages/Home'))
-const About = lazy(() => import('./pages/About'))
-const Contact = lazy(() => import('./pages/Contact'))
-const BilanPage = lazy(() => import('./pages/BilanPage'))
-const AtelierPage = lazy(() => import('./pages/AtelierPage'))
-const ReikiPage = lazy(() => import('./pages/ReikiPage'))
-const Atelier6BricksPage = lazy(() => import('./pages/Atelier6BricksPage'))
-const CGV = lazy(() => import('./pages/CGV'))
-const MentionsLegales = lazy(() => import('./pages/MentionsLegales'))
 
 function App() {
   const [currentPath, setCurrentPath] = useState(normalizePath(window.location.pathname));
@@ -79,10 +76,7 @@ function App() {
     <div className="app">
       <Header />
       <main>
-        {/* Suspense affiche un message pendant le chargement des pages */}
-        <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center' }}>Chargement...</div>}>
-          {getCurrentPage()}
-        </Suspense>
+        {getCurrentPage()}
       </main>
       <Footer />
       <CookieBanner />
