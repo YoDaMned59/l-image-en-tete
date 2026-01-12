@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { siteData } from '../data/data';
 import SEO from '../components/SEO';
@@ -18,6 +18,13 @@ const Contact = () => {
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' ou 'error'
   const [statusMessage, setStatusMessage] = useState('');
 
+  // Initialise EmailJS au chargement du composant
+  useEffect(() => {
+    if (EMAILJS_CONFIG.PUBLIC_KEY && EMAILJS_CONFIG.PUBLIC_KEY !== 'VOTRE_PUBLIC_KEY_ICI') {
+      emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+    }
+  }, []);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -34,9 +41,19 @@ const Contact = () => {
     e.preventDefault();
     
     // Vérifie que EmailJS est configuré
-    if (EMAILJS_CONFIG.PUBLIC_KEY === 'VOTRE_PUBLIC_KEY_ICI') {
+    if (!EMAILJS_CONFIG.PUBLIC_KEY || 
+        EMAILJS_CONFIG.PUBLIC_KEY === 'VOTRE_PUBLIC_KEY_ICI' ||
+        !EMAILJS_CONFIG.SERVICE_ID ||
+        !EMAILJS_CONFIG.TEMPLATE_ID) {
       setSubmitStatus('error');
       setStatusMessage('⚠️ EmailJS n\'est pas encore configuré. Voir EMAILJS-GUIDE.md pour les instructions.');
+      return;
+    }
+
+    // Validation des champs
+    if (!formData.nom.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setSubmitStatus('error');
+      setStatusMessage('❌ Veuillez remplir tous les champs du formulaire.');
       return;
     }
 
@@ -46,28 +63,39 @@ const Contact = () => {
 
     try {
       // Envoie l'email via EmailJS
-      await emailjs.send(
+      const response = await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
         EMAILJS_CONFIG.TEMPLATE_ID,
         {
-          from_name: formData.nom,
-          from_email: formData.email,
-          message: formData.message,
+          from_name: formData.nom.trim(),
+          from_email: formData.email.trim(),
+          message: formData.message.trim(),
           to_email: contact.email, // Votre email de réception
         },
         EMAILJS_CONFIG.PUBLIC_KEY
       );
 
-      // Succès !
-      setSubmitStatus('success');
-      setStatusMessage(contactPage.formulaire.messageConfirmation || 'Message envoyé avec succès !');
-      setFormData({ nom: '', email: '', message: '' });
+      // Vérifie que l'envoi a réussi
+      if (response.status === 200) {
+        // Succès !
+        setSubmitStatus('success');
+        setStatusMessage(contactPage.formulaire.messageConfirmation || 'Message envoyé avec succès !');
+        setFormData({ nom: '', email: '', message: '' });
+      } else {
+        throw new Error('Erreur lors de l\'envoi');
+      }
       
     } catch (error) {
       // Erreur lors de l'envoi
       console.error('Erreur EmailJS:', error);
       setSubmitStatus('error');
-      setStatusMessage('❌ Erreur lors de l\'envoi. Veuillez réessayer ou me contacter directement par email.');
+      
+      // Message d'erreur plus détaillé selon le type d'erreur
+      if (error.text) {
+        setStatusMessage(`❌ Erreur : ${error.text}`);
+      } else {
+        setStatusMessage('❌ Erreur lors de l\'envoi. Veuillez réessayer ou me contacter directement par email.');
+      }
     } finally {
       setIsLoading(false);
     }
