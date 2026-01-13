@@ -19,7 +19,6 @@ const MentionsLegales = () => {
           <section key={index} className="mentions-section">
             <h2>{section.titre}</h2>
             {section.contenu.map((paragraphe, pIndex) => {
-              // Si le paragraphe contient " : ", on le divise en titre et contenu
               if (paragraphe.includes(' : ')) {
                 const [label, value] = paragraphe.split(' : ');
                 return (

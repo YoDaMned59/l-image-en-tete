@@ -1,12 +1,3 @@
-/**
- * BANNIÈRE DE CONSENTEMENT AUX COOKIES
- * 
- * Ce composant affiche une bannière pour demander le consentement aux cookies
- * Conforme au RGPD (Règlement Général sur la Protection des Données)
- * 
- * Le consentement est sauvegardé dans le navigateur (localStorage)
- */
-
 import React, { useState, useEffect } from 'react';
 import '../styles/CookieBanner.scss';
 
@@ -14,10 +5,8 @@ const CookieBanner = () => {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    // Vérifie si l'utilisateur a déjà donné son consentement
     const consent = localStorage.getItem('cookieConsent');
     if (!consent) {
-      // Affiche la bannière après 1 seconde pour ne pas être trop intrusif
       setTimeout(() => {
         setShowBanner(true);
       }, 1000);
@@ -25,20 +14,17 @@ const CookieBanner = () => {
   }, []);
 
   const handleAccept = () => {
-    // Sauvegarde le consentement
     localStorage.setItem('cookieConsent', 'accepted');
     localStorage.setItem('cookieConsentDate', new Date().toISOString());
     setShowBanner(false);
   };
 
   const handleDecline = () => {
-    // Sauvegarde le refus
     localStorage.setItem('cookieConsent', 'declined');
     localStorage.setItem('cookieConsentDate', new Date().toISOString());
     setShowBanner(false);
   };
 
-  // Ne rien afficher si la bannière ne doit pas être visible
   if (!showBanner) {
     return null;
   }

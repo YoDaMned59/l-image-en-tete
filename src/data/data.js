@@ -1,12 +1,3 @@
-/**
- * FICHIER DE DONNÉES DU SITE
- * 
- * Ce fichier contient toutes les informations du site web.
- * Vous pouvez modifier facilement les textes, prix, coordonnées, etc. ici.
- * 
- * Les modifications seront automatiquement reflétées sur le site.
- */
-
 export const siteData = {
   
   // ============================================
@@ -20,7 +11,7 @@ export const siteData = {
   // ============================================
   contact: {
     adresse: "Richebourg, France",
-    email: "limageentete@gmail.com",
+    email: "limagentete@gmail.com",
     telephone: "07.81.17.23.25",
     horaires: "Du lundi au samedi, de 9h à 19h"
   },
@@ -251,9 +242,9 @@ export const siteData = {
     reseauxSociaux: {
       titre: "Suivez-moi",
       liens: [
+        { nom: "Instagram", url: "https://www.instagram.com/limage_en_tete/" },
         { nom: "Facebook", url: "#" },
-        { nom: "Instagram", url: "#" },
-        { nom: "LinkedIn", url: "#" }
+        { nom: "Zoom", url: "#" }
       ]
     },
     premiereRencontre: {
@@ -569,7 +560,7 @@ export const siteData = {
           "Activité : Coaching scolaire et accompagnement dans les apprentissages",
           "Adresse : Richebourg, France",
           "Téléphone : 07.81.17.23.25",
-          "Email : limageentete@gmail.com"
+          "Email : limagentete@gmail.com"
         ]
       },
       {
@@ -590,7 +581,7 @@ export const siteData = {
         contenu: [
           "Conformément au Règlement Général sur la Protection des Données (RGPD), nous nous engageons à protéger vos données personnelles.",
           "Les données collectées lors de la prise de contact sont utilisées uniquement pour répondre à vos demandes et ne sont pas transmises à des tiers.",
-          "Vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à : limageentete@gmail.com"
+          "Vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à : limagentete@gmail.com"
         ]
       },
       {

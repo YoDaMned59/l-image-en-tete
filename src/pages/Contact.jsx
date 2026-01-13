@@ -13,12 +13,10 @@ const Contact = () => {
     message: ''
   });
   
-  // États pour gérer l'envoi du formulaire
   const [isLoading, setIsLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // 'success' ou 'error'
+  const [submitStatus, setSubmitStatus] = useState(null);
   const [statusMessage, setStatusMessage] = useState('');
 
-  // Initialise EmailJS au chargement du composant
   useEffect(() => {
     if (EMAILJS_CONFIG.PUBLIC_KEY && EMAILJS_CONFIG.PUBLIC_KEY !== 'VOTRE_PUBLIC_KEY_ICI') {
       emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
@@ -30,7 +28,6 @@ const Contact = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
-    // Réinitialise le message d'erreur quand l'utilisateur tape
     if (submitStatus) {
       setSubmitStatus(null);
       setStatusMessage('');
@@ -40,7 +37,6 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Vérifie que EmailJS est configuré
     if (!EMAILJS_CONFIG.PUBLIC_KEY || 
         EMAILJS_CONFIG.PUBLIC_KEY === 'VOTRE_PUBLIC_KEY_ICI' ||
         !EMAILJS_CONFIG.SERVICE_ID ||
@@ -50,7 +46,6 @@ const Contact = () => {
       return;
     }
 
-    // Validation des champs
     if (!formData.nom.trim() || !formData.email.trim() || !formData.message.trim()) {
       setSubmitStatus('error');
       setStatusMessage('❌ Veuillez remplir tous les champs du formulaire.');
@@ -62,23 +57,19 @@ const Contact = () => {
     setStatusMessage('');
 
     try {
-      // Envoie l'email via EmailJS
       const response = await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
         EMAILJS_CONFIG.TEMPLATE_ID,
         {
-          // Variables utilisées dans le template EmailJS
-          name: formData.nom.trim(), // Pour le sujet
-          from_name: formData.nom.trim(), // Nom du client
-          from_email: formData.email.trim(), // Email du client (pour reply-to)
-          message: formData.message.trim(), // Message du client
+          name: formData.nom.trim(),
+          from_name: formData.nom.trim(),
+          from_email: formData.email.trim(),
+          message: formData.message.trim(),
         },
         EMAILJS_CONFIG.PUBLIC_KEY
       );
 
-      // Vérifie que l'envoi a réussi
       if (response.status === 200) {
-        // Succès !
         setSubmitStatus('success');
         setStatusMessage(contactPage.formulaire.messageConfirmation || 'Message envoyé avec succès !');
         setFormData({ nom: '', email: '', message: '' });
@@ -87,11 +78,9 @@ const Contact = () => {
       }
       
     } catch (error) {
-      // Erreur lors de l'envoi
       console.error('Erreur EmailJS:', error);
       setSubmitStatus('error');
       
-      // Message d'erreur plus détaillé selon le type d'erreur
       if (error.text) {
         setStatusMessage(`❌ Erreur : ${error.text}`);
       } else {
@@ -108,7 +97,6 @@ const Contact = () => {
         title="Contact"
         description="Contactez L'image en tête pour prendre rendez-vous. Coaching scolaire à Richebourg. Première rencontre gratuite. Téléphone : 07.81.17.23.25"
       />
-      {/* Section Hero */}
       <section className="contact-hero">
         <div className="contact-container">
           <h1>{contactPage.titre}</h1>
@@ -116,11 +104,9 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contenu principal */}
       <div className="contact-main">
         <div className="contact-container">
           <div className="contact-grid">
-            {/* Formulaire de contact */}
             <section className="contact-form-section">
               <h2>{contactPage.formulaire.titre}</h2>
               <form className="contact-form" onSubmit={handleSubmit}>
@@ -160,7 +146,6 @@ const Contact = () => {
                   ></textarea>
                 </div>
                 
-                {/* Message de statut (succès ou erreur) */}
                 {submitStatus && (
                   <div className={`form-status ${submitStatus === 'success' ? 'success' : 'error'}`}>
                     {statusMessage}
@@ -177,7 +162,6 @@ const Contact = () => {
               </form>
             </section>
 
-            {/* Informations de contact */}
             <section className="contact-info-section">
               <h2>{contactPage.coordonnees.titre}</h2>
               
@@ -215,7 +199,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Section réseaux sociaux */}
               <div className="social-section">
                 <h3>{contactPage.reseauxSociaux.titre}</h3>
                 <div className="social-links">
@@ -233,7 +216,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Mention première rencontre gratuite */}
               <div className="free-consultation">
                 <div className="highlight-box">
                   <div className="gift-icon">🎁</div>

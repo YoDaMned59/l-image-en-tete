@@ -1,11 +1,14 @@
 import React from 'react';
 import { navigate } from '../utils/pathUtils';
+import { siteData } from '../data/data';
 import '../styles/Footer.scss';
 
 const Footer = () => {
   const navigateTo = (path) => {
     navigate(path);
   };
+  
+  const { contact } = siteData;
 
   return (
     <footer className="footer">
@@ -20,7 +23,6 @@ const Footer = () => {
           <ul>
             <li><a href="#" onClick={(e) => { e.preventDefault(); navigateTo('/'); }}>Accueil</a></li>
             <li><a href="#" onClick={(e) => { e.preventDefault(); navigateTo('/about'); }}>À propos</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); navigateTo('/services'); }}>Services</a></li>
             <li><a href="#" onClick={(e) => { e.preventDefault(); navigateTo('/contact'); }}>Contact</a></li>
           </ul>
         </div>
@@ -35,9 +37,9 @@ const Footer = () => {
         
         <div className="footer-section">
           <h4>Contact</h4>
-          <p>Richebourg, France</p>
-          <p>limageentete@gmail.com</p>
-          <p>06 46 25 50 65</p>
+          <p>{contact.adresse}</p>
+          <p>{contact.email}</p>
+          <p>{contact.telephone}</p>
         </div>
       </div>
       

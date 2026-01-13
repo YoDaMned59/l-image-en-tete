@@ -1,6 +1,7 @@
 import React from 'react';
 import { siteData } from '../data/data';
 import SEO from '../components/SEO';
+import profilImage from '../assets/Profil.webp';
 import '../styles/About.scss';
 
 const About = () => {
@@ -46,9 +47,7 @@ const About = () => {
             
             <div className="image-content">
               <div className="profile-image">
-                <div className="image-placeholder">
-                  <span>Photo de profil</span>
-                </div>
+                <img src={profilImage} alt="Mathilde - Coach scolaire" className="profile-photo" />
               </div>
             </div>
           </div>
