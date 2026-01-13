@@ -13,7 +13,6 @@ const Home = () => {
   
   const bilanService = services.find(s => s.id === 'bilan');
   const atelierService = services.find(s => s.id === 'atelier');
-  const atelier6BricksService = services.find(s => s.id === 'atelier-6-bricks');
 
   const handleLinkClick = (e, path) => {
     e.preventDefault();
@@ -185,47 +184,6 @@ const Home = () => {
                 </div>
               </div>
             </div> */}
-
-            {/* Atelier 6 Bricks */}
-            <div className="service-block atelier-6-bricks-block">
-              <div className="service-image">
-                <div className="bricks-placeholder">
-                  <div className="bricks-icon">🧱</div>
-                </div>
-              </div>
-              <div className="service-content">
-                <h3>{atelier6BricksService.titre.toUpperCase()}</h3>
-                <p className="service-description">
-                  {atelier6BricksService.pourQui}
-                </p>
-                <div className="objectives">
-                  <p>{atelier6BricksService.objectifs.join(', ')}</p>
-                </div>
-                <div className="modalities">
-                  <h4>Modalités :</h4>
-                  <div className="modality-item">
-                    <span className="icon">🧱</span>
-                    <span>Ludique</span>
-                  </div>
-                  <div className="modality-item">
-                    <span className="icon">👥</span>
-                    <span>Tous publics</span>
-                  </div>
-                  <div className="modality-item">
-                    <span className="icon">⏰</span>
-                    <span>{atelier6BricksService.format}</span>
-                  </div>
-                  <div className="modality-item">
-                    <span className="icon">€</span>
-                    <span>{atelier6BricksService.tarif}</span>
-                  </div>
-                </div>
-                <div className="service-buttons">
-                  <a href="#" onClick={(e) => handleLinkClick(e, '/contact')} className="cta-button primary">Prendre rendez-vous</a>
-                  <a href="#" onClick={(e) => handleLinkClick(e, '/services/atelier-6-bricks')} className="cta-button secondary">En savoir plus</a>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

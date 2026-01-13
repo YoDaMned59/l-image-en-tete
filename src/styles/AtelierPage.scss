@@ -59,6 +59,127 @@
     }
   }
 
+  .atelier-6-bricks-section {
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.85);
+    
+    .atelier-6-bricks-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      
+      .bricks-card-image {
+        width: 100%;
+        height: 250px;
+        background: $gradient-accent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .bricks-placeholder {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          
+          .bricks-icon {
+            font-size: 6rem;
+            opacity: 0.8;
+          }
+        }
+      }
+      
+      .bricks-card-content {
+        padding: 2rem;
+        
+        h2 {
+          color: $accent-color;
+          font-size: 2rem;
+          margin-bottom: 1rem;
+        }
+        
+        .bricks-description {
+          font-size: 1.1rem;
+          color: $text-color;
+          margin-bottom: 1.5rem;
+        }
+        
+        .bricks-objectives {
+          margin-bottom: 1.5rem;
+          
+          h3 {
+            color: $secondary-color;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+          }
+          
+          ul {
+            list-style: none;
+            padding: 0;
+            
+            li {
+              padding: 0.5rem 0;
+              padding-left: 1.5rem;
+              position: relative;
+              color: $text-color;
+              
+              &:before {
+                content: "✓";
+                position: absolute;
+                left: 0;
+                color: $accent-color;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+        
+        .bricks-info {
+          margin-bottom: 1.5rem;
+          padding: 1rem;
+          background: rgba(193, 200, 167, 0.1);
+          border-radius: 8px;
+          
+          .bricks-info-item {
+            margin-bottom: 0.5rem;
+            color: $text-color;
+            
+            strong {
+              color: $secondary-color;
+            }
+          }
+        }
+        
+        .bricks-cta {
+          .cta-button {
+            width: 100%;
+            text-align: center;
+            
+            &.cta-primary {
+              background: $accent-color;
+              color: $white;
+              border-color: $accent-color;
+              
+              &:hover {
+                background: $secondary-color;
+                color: $white;
+                border-color: $secondary-color;
+                box-shadow: 0 5px 15px rgba(117, 145, 178, 0.3);
+                transform: translateY(-2px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   .cta-section h2 {
     color: $secondary-color;
   }

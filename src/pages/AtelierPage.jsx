@@ -8,6 +8,7 @@ import '../styles/AtelierPage.scss';
 const AtelierPage = () => {
   const service = siteData.services.find(s => s.id === 'atelier');
   const details = siteData.servicesDetails.atelier;
+  const atelier6BricksService = siteData.services.find(s => s.id === 'atelier-6-bricks');
   const [isSketchnoteExpanded, setIsSketchnoteExpanded] = useState(false);
 
   const handleLinkClick = (e, path) => {
@@ -145,6 +146,50 @@ const AtelierPage = () => {
           )}
         </div>
       </section>
+
+      {/* Section Atelier 6 Bricks */}
+      {atelier6BricksService && (
+        <section className="atelier-6-bricks-section">
+          <div className="service-container">
+            <div className="atelier-6-bricks-card">
+              <div className="bricks-card-image">
+                <div className="bricks-placeholder">
+                  <div className="bricks-icon">🧱</div>
+                </div>
+              </div>
+              <div className="bricks-card-content">
+                <h2>{atelier6BricksService.titre}</h2>
+                <p className="bricks-description">{atelier6BricksService.pourQui}</p>
+                <div className="bricks-objectives">
+                  <h3>Objectifs :</h3>
+                  <ul>
+                    {atelier6BricksService.objectifs.map((objectif, index) => (
+                      <li key={index}>{objectif}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="bricks-info">
+                  <div className="bricks-info-item">
+                    <strong>Format :</strong> {atelier6BricksService.format}
+                  </div>
+                  <div className="bricks-info-item">
+                    <strong>Tarif :</strong> {atelier6BricksService.tarif}
+                  </div>
+                </div>
+                <div className="bricks-cta">
+                  <a 
+                    href="#" 
+                    onClick={(e) => handleLinkClick(e, '/contact')} 
+                    className="cta-button cta-primary"
+                  >
+                    Prendre rendez-vous
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Modal sketchnote */}
       {isSketchnoteExpanded && (

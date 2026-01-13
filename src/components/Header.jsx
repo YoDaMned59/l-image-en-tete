@@ -36,10 +36,6 @@ const Header = () => {
         case '/services/reiki/':
           setActivePage('reiki');
           break;
-        case '/services/atelier-6-bricks':
-        case '/services/atelier-6-bricks/':
-          setActivePage('atelier-6-bricks');
-          break;
         default:
           setActivePage('home');
       }
@@ -111,7 +107,6 @@ const Header = () => {
             <div className="dropdown-content">
               <button className="dropdown-item" onClick={() => navigateToPage('/services/bilan')}>Mon bilan & suivi</button>
               <button className="dropdown-item" onClick={() => navigateToPage('/services/atelier')}>Mes ateliers</button>
-              <button className="dropdown-item" onClick={() => navigateToPage('/services/atelier-6-bricks')}>Atelier 6 Bricks</button>
             </div>
           </button>
           <button 
@@ -136,9 +131,6 @@ const Header = () => {
           </button>
           <button className="mobile-nav-link" onClick={() => navigateToPage('/services/atelier')}>
             Mes ateliers
-          </button>
-          <button className="mobile-nav-link" onClick={() => navigateToPage('/services/atelier-6-bricks')}>
-            Atelier 6 Bricks
           </button>
           <button className="mobile-nav-link" onClick={() => navigateToPage('/contact')}>
             Contact
