@@ -112,17 +112,14 @@
       
       .image-content {
         .profile-image {
-          .image-placeholder {
+          width: 100%;
+          
+          .profile-photo {
             width: 100%;
-            height: 300px;
-            background: $gradient-secondary;
+            height: auto;
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            text-align: center;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
           }
         }
       }
