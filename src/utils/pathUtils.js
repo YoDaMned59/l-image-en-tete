@@ -25,3 +25,8 @@ export const navigate = (path) => {
   window.dispatchEvent(new PopStateEvent('popstate'));
 };
 
+export const handleLinkClick = (e, path) => {
+  e.preventDefault();
+  navigate(path);
+};
+

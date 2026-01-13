@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { siteData } from '../data/data';
-import { navigate } from '../utils/pathUtils';
+import { handleLinkClick } from '../utils/pathUtils';
 import SEO from '../components/SEO';
+import CTASection from '../components/CTASection';
 import sketchnoteImage from '../assets/Sketchnote.webp';
 import '../styles/AtelierPage.scss';
 
@@ -10,10 +11,11 @@ const AtelierPage = () => {
   const details = siteData.servicesDetails.atelier;
   const atelier6BricksService = siteData.services.find(s => s.id === 'atelier-6-bricks');
   const [isSketchnoteExpanded, setIsSketchnoteExpanded] = useState(false);
+  const bricksSectionRef = useRef(null);
 
-  const handleLinkClick = (e, path) => {
+  const scrollToBricksSection = (e) => {
     e.preventDefault();
-    navigate(path);
+    bricksSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
@@ -94,27 +96,38 @@ const AtelierPage = () => {
             <div className="themes-section">
               <h3>{details.themes.titre}</h3>
               <div className="themes-grid">
-                {details.themes.items.map((theme, index) => (
-                  <div key={index} className="theme-card">
-                    {theme.description.toLowerCase().includes('sketchnote') ? (
-                      <div 
-                        className="theme-icon sketchnote-icon"
-                        onClick={() => setIsSketchnoteExpanded(true)}
-                      >
-                        <img 
-                          src={sketchnoteImage} 
-                          alt="Exemple de sketchnote - Facilitation graphique" 
-                          className="sketchnote-icon-image"
-                          loading="lazy"
-                        />
-                      </div>
-                    ) : (
-                      <div className="theme-icon">{theme.icone}</div>
-                    )}
-                    <h4>{theme.titre}</h4>
-                    <p>{theme.description}</p>
-                  </div>
-                ))}
+                {details.themes.items.map((theme, index) => {
+                  const is6BricksTheme = theme.titre.toLowerCase().includes('6 bricks');
+                  return (
+                    <div key={index} className="theme-card">
+                      {theme.description.toLowerCase().includes('sketchnote') ? (
+                        <div 
+                          className="theme-icon sketchnote-icon"
+                          onClick={() => setIsSketchnoteExpanded(true)}
+                        >
+                          <img 
+                            src={sketchnoteImage} 
+                            alt="Exemple de sketchnote - Facilitation graphique" 
+                            className="sketchnote-icon-image"
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : (
+                        <div className="theme-icon">{theme.icone}</div>
+                      )}
+                      <h4>{theme.titre}</h4>
+                      <p>{theme.description}</p>
+                      {is6BricksTheme && (
+                        <button 
+                          className="theme-button"
+                          onClick={scrollToBricksSection}
+                        >
+                          Découvrir les 6 Bricks
+                        </button>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           )}
@@ -149,7 +162,7 @@ const AtelierPage = () => {
 
       {/* Section Atelier 6 Bricks */}
       {atelier6BricksService && (
-        <section className="atelier-6-bricks-section">
+        <section ref={bricksSectionRef} id="atelier-6-bricks" className="atelier-6-bricks-section">
           <div className="service-container">
             <div className="atelier-6-bricks-card">
               <div className="bricks-card-image">
@@ -219,28 +232,7 @@ const AtelierPage = () => {
       )}
 
       {/* CTA Section */}
-      <section className="cta-section">
-        <div className="service-container">
-          <h2>Intéressé(e) par ce service ?</h2>
-          <p>N'hésitez pas à me contacter pour plus d'informations ou pour prendre rendez-vous</p>
-          <div className="cta-buttons">
-            <a 
-              href="#" 
-              onClick={(e) => handleLinkClick(e, '/contact')} 
-              className="cta-button cta-primary"
-            >
-              Prendre rendez-vous
-            </a>
-            <a 
-              href="#" 
-              onClick={(e) => handleLinkClick(e, '/')} 
-              className="cta-button cta-secondary"
-            >
-              Retour à l'accueil
-            </a>
-          </div>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 };

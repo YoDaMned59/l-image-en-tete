@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { siteData } from '../data/data';
-import { navigate } from '../utils/pathUtils';
+import { handleLinkClick } from '../utils/pathUtils';
 import SEO from '../components/SEO';
 import expliquerImage from '../assets/expliquer comment faire.webp';
 import atelierImage from '../assets/Atelier remediation cognitive.webp';
@@ -13,11 +13,6 @@ const Home = () => {
   
   const bilanService = services.find(s => s.id === 'bilan');
   const atelierService = services.find(s => s.id === 'atelier');
-
-  const handleLinkClick = (e, path) => {
-    e.preventDefault();
-    navigate(path);
-  };
 
   const scrollToActivities = () => {
     if (activitiesSectionRef.current) {

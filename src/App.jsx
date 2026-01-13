@@ -8,7 +8,6 @@ import Contact from './pages/Contact'
 import BilanPage from './pages/BilanPage'
 import AtelierPage from './pages/AtelierPage'
 import ReikiPage from './pages/ReikiPage'
-import Atelier6BricksPage from './pages/Atelier6BricksPage'
 import CGV from './pages/CGV'
 import MentionsLegales from './pages/MentionsLegales'
 import { normalizePath } from './utils/pathUtils'
@@ -56,9 +55,6 @@ function App() {
     }
     if (path === '/services/reiki' || path === '/services/reiki/') {
       return <ReikiPage />;
-    }
-    if (path === '/services/atelier-6-bricks' || path === '/services/atelier-6-bricks/') {
-      return <Atelier6BricksPage />;
     }
     
     return <Home />;

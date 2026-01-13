@@ -208,8 +208,30 @@
     }
   }
   
-  // Styles pour l'icône sketchnote qui remplace l'icône
+  // Styles pour les cartes thématiques
   .theme-card {
+    .theme-button {
+      margin-top: 1.5rem;
+      padding: 12px 24px;
+      background: $accent-color;
+      color: $white;
+      border: 2px solid $accent-color;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      
+      &:hover {
+        background: $secondary-color;
+        border-color: $secondary-color;
+        color: $white;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(117, 145, 178, 0.3);
+      }
+    }
+    
     .sketchnote-icon {
       cursor: pointer;
       transition: transform 0.3s ease;

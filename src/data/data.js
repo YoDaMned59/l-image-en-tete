@@ -403,9 +403,9 @@ export const siteData = {
             description: "Planning efficace, priorités, procrastination... Apprenez à gérer votre temps pour être plus productif et moins stressé."
           },
           {
-            icone: "🎓",
-            titre: "Préparation aux examens",
-            description: "Stratégies de révision, gestion du trac, techniques de mémorisation... Préparez-vous sereinement aux évaluations."
+            icone: "🧱",
+            titre: "Atelier 6 Bricks",
+            description: "Développez vos compétences à travers des activités ludiques basées sur la manipulation de briques LEGO. Une approche stimulante pour renforcer les compétences mathématiques, sociales, attentionnelles et bien plus encore."
           }
         ]
       },
@@ -456,33 +456,33 @@ export const siteData = {
         items: [
           {
             icone: "🔢",
-            titre: "Compétences mathématiques et de calcul",
-            description: "Développement des compétences numériques et logiques par la manipulation concrète"
+            titre: "Mathématiques avec les 6 Bricks",
+            description: "Comptage, calcul et résolution de problèmes grâce à la manipulation de briques LEGO"
           },
           {
             icone: "🤝",
-            titre: "Habiletés sociales et émotionnelles",
-            description: "Renforcement de la communication, de l'empathie et de la gestion des émotions"
+            titre: "Social et émotionnel avec les 6 Bricks",
+            description: "Expression des émotions et communication à travers les constructions et les jeux collaboratifs"
           },
           {
             icone: "👁️",
-            titre: "Perception et attention",
-            description: "Amélioration de la concentration, de l'observation et de la perception spatiale"
+            titre: "Attention et perception avec les 6 Bricks",
+            description: "Développement de la concentration et de l'observation spatiale en manipulant les briques"
           },
           {
             icone: "💬",
-            titre: "Langage et vocabulaire",
-            description: "Enrichissement du vocabulaire et développement des compétences langagières"
+            titre: "Langage avec les 6 Bricks",
+            description: "Enrichissement du vocabulaire en décrivant les constructions et les activités avec les briques"
           },
           {
             icone: "👥",
-            titre: "Jeu coopératif et compétences de groupe",
-            description: "Apprentissage du travail en équipe, de la collaboration et de la résolution de problèmes ensemble"
+            titre: "Coopération avec les 6 Bricks",
+            description: "Travail d'équipe et collaboration pour construire ensemble avec les briques LEGO"
           },
           {
             icone: "✋",
-            titre: "Motricité fine",
-            description: "Développement de la précision et de la coordination des gestes"
+            titre: "Motricité fine avec les 6 Bricks",
+            description: "Précision et coordination en assemblant et manipulant les briques LEGO"
           }
         ]
       },

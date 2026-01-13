@@ -1,16 +1,11 @@
 import React from 'react';
 import { siteData } from '../data/data';
-import { navigate } from '../utils/pathUtils';
 import SEO from '../components/SEO';
+import CTASection from '../components/CTASection';
 import '../styles/ReikiPage.scss';
 
 const ReikiPage = () => {
   const service = siteData.services.find(s => s.id === 'reiki');
-
-  const handleLinkClick = (e, path) => {
-    e.preventDefault();
-    navigate(path);
-  };
 
   return (
     <div className="service-page service-page-vert">
@@ -128,28 +123,7 @@ const ReikiPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section">
-        <div className="service-container">
-          <h2>Intéressé(e) par ce service ?</h2>
-          <p>N'hésitez pas à me contacter pour plus d'informations ou pour prendre rendez-vous</p>
-          <div className="cta-buttons">
-            <a 
-              href="#" 
-              onClick={(e) => handleLinkClick(e, '/contact')} 
-              className="cta-button cta-primary"
-            >
-              Prendre rendez-vous
-            </a>
-            <a 
-              href="#" 
-              onClick={(e) => handleLinkClick(e, '/')} 
-              className="cta-button cta-secondary"
-            >
-              Retour à l'accueil
-            </a>
-          </div>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 };
