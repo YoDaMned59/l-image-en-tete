@@ -1,12 +1,3 @@
-/**
- * FICHIER DE DONNÉES DU SITE
- * 
- * Ce fichier contient toutes les informations du site web.
- * Vous pouvez modifier facilement les textes, prix, coordonnées, etc. ici.
- * 
- * Les modifications seront automatiquement reflétées sur le site.
- */
-
 export const siteData = {
   
   // ============================================

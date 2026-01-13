@@ -12,7 +12,6 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Détecter la page courante
   React.useEffect(() => {
     const updateActivePage = () => {
       const path = normalizePath(window.location.pathname);
@@ -46,10 +45,7 @@ const Header = () => {
       }
     };
 
-    // Mettre à jour au chargement
     updateActivePage();
-
-    // Écouter les changements d'URL
     window.addEventListener('popstate', updateActivePage);
     
     return () => {
@@ -58,11 +54,8 @@ const Header = () => {
   }, []);
 
   const navigateToPage = (path) => {
-    // Mettre à jour l'état actif immédiatement
     const pageName = path === '/' ? 'home' : path.substring(1).split('/')[0];
     setActivePage(pageName);
-    
-    // Naviguer vers la page en utilisant l'API History
     navigate(path);
     setIsMenuOpen(false);
   };
@@ -74,7 +67,6 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-container">
-        {/* Logo Section */}
         <div className="logo-section">
           <div className="logo" onClick={() => navigateToPage('/')} style={{ cursor: 'pointer' }}>
             <img 
@@ -86,12 +78,10 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Tagline Section */}
         <div className="tagline-section">
           <p className="tagline">{siteData.slogan}</p>
         </div>
 
-        {/* Mobile Menu Button */}
         <button className="mobile-menu-btn" onClick={toggleMenu}>
           <span className="hamburger-line"></span>
           <span className="hamburger-line"></span>
@@ -99,7 +89,6 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Navigation Section - Centered under tagline */}
       <nav className="navigation">
         <div className="nav-links">
           <button 
@@ -123,8 +112,6 @@ const Header = () => {
               <button className="dropdown-item" onClick={() => navigateToPage('/services/bilan')}>Mon bilan & suivi</button>
               <button className="dropdown-item" onClick={() => navigateToPage('/services/atelier')}>Mes ateliers</button>
               <button className="dropdown-item" onClick={() => navigateToPage('/services/atelier-6-bricks')}>Atelier 6 Bricks</button>
-              {/* Reiki masqué pour l'instant - à réactiver plus tard */}
-              {/* <button className="dropdown-item" onClick={() => navigateToPage('/services/reiki')}>Mon soin Reiki</button> */}
             </div>
           </button>
           <button 
@@ -136,7 +123,6 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="mobile-menu">
           <button className="mobile-nav-link" onClick={() => navigateToPage('/')}>
@@ -154,10 +140,6 @@ const Header = () => {
           <button className="mobile-nav-link" onClick={() => navigateToPage('/services/atelier-6-bricks')}>
             Atelier 6 Bricks
           </button>
-          {/* Reiki masqué pour l'instant - à réactiver plus tard */}
-          {/* <button className="mobile-nav-link" onClick={() => navigateToPage('/services/reiki')}>
-            Mon soin Reiki
-          </button> */}
           <button className="mobile-nav-link" onClick={() => navigateToPage('/contact')}>
             Contact
           </button>

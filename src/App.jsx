@@ -29,32 +29,25 @@ function App() {
     };
   }, []);
 
-  // Scroll vers le haut à chaque changement de page
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPath]);
 
-  // Routage simple basé sur l'URL
   const getCurrentPage = () => {
     const path = currentPath;
     
-    // Pages principales
     if (path === '/about' || path === '/about/') {
       return <About />;
     }
     if (path === '/contact' || path === '/contact/') {
       return <Contact />;
     }
-    
-    // Pages légales
     if (path === '/cgv' || path === '/cgv/') {
       return <CGV />;
     }
     if (path === '/mentions-legales' || path === '/mentions-legales/') {
       return <MentionsLegales />;
     }
-    
-    // Pages de services
     if (path === '/services/bilan' || path === '/services/bilan/') {
       return <BilanPage />;
     }
@@ -68,7 +61,6 @@ function App() {
       return <Atelier6BricksPage />;
     }
     
-    // Page d'accueil par défaut
     return <Home />;
   };
 

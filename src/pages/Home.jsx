@@ -11,11 +11,8 @@ const Home = () => {
   const { home, services } = siteData;
   const activitiesSectionRef = useRef(null);
   
-  // Trouver les services par ID pour plus de robustesse
   const bilanService = services.find(s => s.id === 'bilan');
   const atelierService = services.find(s => s.id === 'atelier');
-  // Reiki masqué pour l'instant - à réactiver plus tard
-  // const reikiService = services.find(s => s.id === 'reiki');
   const atelier6BricksService = services.find(s => s.id === 'atelier-6-bricks');
 
   const handleLinkClick = (e, path) => {
