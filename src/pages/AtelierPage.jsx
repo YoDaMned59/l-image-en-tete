@@ -4,6 +4,7 @@ import { handleLinkClick } from '../utils/pathUtils';
 import SEO from '../components/SEO';
 import CTASection from '../components/CTASection';
 import sketchnoteImage from '../assets/Sketchnote.webp';
+import atelier6BricksImage from '../assets/Atelier6bricks.webp';
 import '../styles/AtelierPage.scss';
 
 const AtelierPage = () => {
@@ -112,6 +113,15 @@ const AtelierPage = () => {
                             loading="lazy"
                           />
                         </div>
+                      ) : is6BricksTheme ? (
+                        <div className="theme-icon lego-icon">
+                          <img 
+                            src={atelier6BricksImage} 
+                            alt="Atelier 6 Bricks" 
+                            className="lego-icon-image"
+                            loading="lazy"
+                          />
+                        </div>
                       ) : (
                         <div className="theme-icon">{theme.icone}</div>
                       )}
@@ -166,9 +176,12 @@ const AtelierPage = () => {
           <div className="service-container">
             <div className="atelier-6-bricks-card">
               <div className="bricks-card-image">
-                <div className="bricks-placeholder">
-                  <div className="bricks-icon">🧱</div>
-                </div>
+                <img 
+                  src={atelier6BricksImage} 
+                  alt="Atelier 6 Bricks" 
+                  className="bricks-image"
+                  loading="lazy"
+                />
               </div>
               <div className="bricks-card-content">
                 <h2>{atelier6BricksService.titre}</h2>

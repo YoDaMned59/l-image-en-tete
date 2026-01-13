@@ -243,8 +243,8 @@ export const siteData = {
       titre: "Suivez-moi",
       liens: [
         { nom: "Instagram", url: "https://www.instagram.com/limage_en_tete/" },
-        { nom: "Facebook", url: "#" },
-        { nom: "Zoom", url: "#" }
+        { nom: "Facebook", url: "https://www.facebook.com/profile.php?id=61585450187058&locale=fr_FR" },
+        { nom: "Zoom", url: "https://zoom.us/j/6920619729" }
       ]
     },
     premiereRencontre: {
