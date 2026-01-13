@@ -1,0 +1,190 @@
+// Styles spécifiques pour la page Atelier (bleu)
+@use 'variables' as *;
+@use 'service-base' as *;
+
+.service-page-bleu {
+  .service-hero h1 {
+    color: $secondary-color;
+  }
+
+  .objectives-section {
+    background: rgba(117, 145, 178, 0.08);
+    padding: 40px 20px;
+
+    h2 {
+      color: $secondary-color;
+    }
+
+    .objective-card {
+      border-left-color: $secondary-color;
+
+      .objective-check {
+        background: $secondary-color;
+      }
+    }
+  }
+
+  .info-section {
+    padding: 40px 20px;
+    
+    .info-card h3 {
+      color: $secondary-color;
+    }
+  }
+
+  .content-section {
+    background: rgba(117, 145, 178, 0.08);
+    padding: 40px 20px;
+
+    .content-hero h2 {
+      color: $secondary-color;
+    }
+
+    .benefits-section h3,
+    .reasons-section h3,
+    .themes-section h3,
+    .planning-section h3 {
+      color: $secondary-color;
+    }
+
+    .benefit-card h4,
+    .reason-card h4,
+    .theme-card h4 {
+      color: $secondary-color;
+    }
+
+    .planning-box {
+      background: $secondary-color;
+      box-shadow: 0 10px 30px rgba(117, 145, 178, 0.3);
+    }
+  }
+
+  .cta-section h2 {
+    color: $secondary-color;
+  }
+
+  .cta-button {
+    &.cta-primary {
+      color: $secondary-color;
+      border-color: $secondary-color;
+
+      &:hover {
+        background: $secondary-color;
+        color: $white;
+        box-shadow: 0 5px 15px rgba(117, 145, 178, 0.3);
+      }
+    }
+
+    &.cta-secondary {
+      color: $secondary-color;
+      border-color: $secondary-color;
+
+      &:hover {
+        background: $secondary-color;
+        color: $white;
+        box-shadow: 0 5px 15px rgba(117, 145, 178, 0.3);
+      }
+    }
+  }
+  
+  // Styles pour l'icône sketchnote qui remplace l'icône
+  .theme-card {
+    .sketchnote-icon {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      
+      &:hover {
+        transform: scale(1.02);
+      }
+      
+      .sketchnote-icon-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 300px;
+        max-height: 450px;
+        object-fit: contain;
+        border-radius: 0;
+        box-shadow: none;
+        transition: transform 0.3s ease;
+      }
+      
+      &:hover .sketchnote-icon-image {
+        transform: scale(1.05);
+      }
+    }
+  }
+  
+  .sketchnote-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .sketchnote-modal {
+    position: relative;
+    width: 90vw;
+    max-width: 800px;
+    max-height: 90vh;
+    background: white;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    cursor: default;
+    
+    .sketchnote-image-expanded {
+      width: 100%;
+      height: auto;
+      max-height: calc(90vh - 3rem);
+      object-fit: contain;
+      border-radius: 10px;
+      display: block;
+    }
+    
+    .sketchnote-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      border: none;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1002;
+      transition: background 0.3s;
+      
+      &:hover {
+        background: rgba(0, 0, 0, 0.9);
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+

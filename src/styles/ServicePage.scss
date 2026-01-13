@@ -1,0 +1,787 @@
+// Import des variables de couleurs
+@use 'variables' as *;
+
+.service-page {
+  width: 100%;
+  min-height: 100vh;
+
+  .service-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  // ============================================
+  // HERO SECTION
+  // ============================================
+  .service-hero {
+    padding: 80px 20px 60px;
+    background: $light-bg;
+    text-align: center;
+
+    h1 {
+      font-family: $font-title;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: $primary-color; // Par défaut rose (bilan)
+    }
+
+    .service-subtitle {
+      font-size: 1.3rem;
+      color: $text-color;
+    }
+
+  }
+
+  // ============================================
+  // OBJECTIVES SECTION
+  // ============================================
+  .objectives-section {
+    padding: 60px 20px;
+    background: rgba(241, 183, 183, 0.15); // Par défaut rose (bilan)
+
+    h2 {
+      font-family: $font-subtitle;
+      font-size: 2.2rem;
+      color: $primary-color; // Par défaut rose (bilan)
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .objectives-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .objective-card {
+      background: $white;
+      border-radius: 15px;
+      padding: 2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      box-shadow: 0 5px 15px $shadow-soft;
+      border-left: 4px solid $primary-color; // Par défaut rose (bilan)
+      transition: transform 0.3s, box-shadow 0.3s;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px $shadow;
+      }
+
+      .objective-check {
+        background: $primary-color; // Par défaut rose (bilan)
+        color: $white;
+        width: 45px;
+        height: 45px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        flex-shrink: 0;
+      }
+
+      p {
+        margin: 0;
+        font-size: 1.1rem;
+        color: $text-color;
+        line-height: 1.6;
+      }
+    }
+
+  }
+
+  // ============================================
+  // INFO SECTION
+  // ============================================
+  .info-section {
+    padding: 60px 20px;
+    background: $light-bg;
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .info-card {
+      background: $white;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px $shadow-soft;
+
+      h3 {
+        font-family: $font-subtitle;
+        font-size: 1.3rem;
+        color: $primary-color; // Par défaut rose (bilan)
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: $text-color;
+        font-size: 1rem;
+
+        &.price {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: $accent-color;
+        }
+      }
+    }
+  }
+
+  // Ateliers : bleu
+  &.service-page-bleu {
+    .objectives-section {
+      background: rgba(117, 145, 178, 0.15);
+
+      h2 {
+        color: $secondary-color;
+      }
+
+      .objective-card {
+        border-left-color: $secondary-color;
+
+        .objective-check {
+          background: $secondary-color;
+        }
+      }
+    }
+
+    .info-section .info-card h3 {
+      color: $secondary-color;
+    }
+  }
+
+  // Reiki : vert
+  &.service-page-vert {
+    .objectives-section {
+      background: rgba(193, 200, 167, 0.15);
+
+      h2 {
+        color: $accent-color;
+      }
+
+      .objective-card {
+        border-left-color: $accent-color;
+
+        .objective-check {
+          background: $accent-color;
+        }
+      }
+    }
+
+    .info-section .info-card h3 {
+      color: $accent-color;
+    }
+  }
+
+  // ============================================
+  // CONTENT SECTION
+  // ============================================
+  .content-section {
+    padding: 80px 20px;
+    background: rgba(241, 183, 183, 0.15); // Par défaut rose (bilan)
+
+    .content-hero {
+      text-align: center;
+      margin-bottom: 4rem;
+
+      h2 {
+        font-family: $font-title;
+        font-size: 2.5rem;
+        color: $primary-color; // Par défaut rose (bilan)
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-description {
+        font-size: 1.3rem;
+        color: $text-color;
+        line-height: 1.7;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+    }
+
+    // Pack Box (Bilan)
+    .pack-box {
+      background: rgba(193, 200, 167, 0.2);
+      border: 3px solid $accent-color;
+      border-radius: 15px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-bottom: 4rem;
+      box-shadow: 0 5px 20px rgba(193, 200, 167, 0.2);
+
+      h3 {
+        font-family: $font-subtitle;
+        font-size: 2rem;
+        color: $text-color; // Bleu foncé pour meilleur contraste
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .pack-price {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: $primary-color; // Rose pour faire ressortir le prix
+        margin: 1rem 0;
+      }
+
+      .pack-description {
+        font-size: 1.2rem;
+        color: $text-color; // Bleu foncé pour meilleur contraste
+        font-weight: 500;
+      }
+    }
+
+    // Benefits Section
+    .benefits-section,
+    .reasons-section,
+    .themes-section,
+    .planning-section,
+    .coaching-section,
+    .approche-section,
+    .process-section {
+      margin-bottom: 4rem;
+
+      h3 {
+        font-family: $font-subtitle;
+        font-size: 2rem;
+        color: $primary-color; // Par défaut rose (bilan)
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+    }
+
+    // Benefits Grid
+    .benefits-grid,
+    .reasons-grid,
+    .themes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .benefit-card,
+    .reason-card,
+    .theme-card {
+      background: $white;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px $shadow-soft;
+      transition: transform 0.3s, box-shadow 0.3s;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px $shadow;
+      }
+
+      .benefit-icon,
+      .reason-icon,
+      .theme-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      h4 {
+        font-family: $font-subtitle;
+        font-size: 1.3rem;
+        color: $primary-color; // Par défaut rose (bilan)
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: $text-color;
+        line-height: 1.6;
+      }
+    }
+
+    // Process Steps
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .step-card {
+      background: $white;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px $shadow-soft;
+
+      .step-number {
+        width: 60px;
+        height: 60px;
+        background: $primary-color; // Par défaut rose (bilan)
+        color: $white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0 auto 1.5rem;
+      }
+
+      h4 {
+        font-family: $font-subtitle;
+        font-size: 1.3rem;
+        color: $primary-color; // Par défaut rose (bilan)
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: $text-color;
+        line-height: 1.6;
+      }
+    }
+
+    // Planning Box
+    .planning-box {
+      background: $primary-color; // Par défaut rose (bilan)
+      color: $white;
+      padding: 2.5rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(241, 183, 183, 0.3);
+
+      p {
+        font-size: 1.15rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.8;
+        color: $white;
+
+        strong {
+          color: $white;
+          font-weight: 600;
+        }
+      }
+
+      .planning-cta {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 2px solid rgba(255, 255, 255, 0.4);
+
+        p {
+          font-size: 1.3rem;
+          font-weight: 600;
+        }
+      }
+    }
+
+    // Reiki Main Card
+    .reiki-main-card {
+      background: $accent-color;
+      border-radius: 20px;
+      padding: 3rem;
+      margin: 3rem auto;
+      max-width: 900px;
+      box-shadow: 0 10px 40px rgba(193, 200, 167, 0.3);
+      color: $white;
+      text-align: center;
+
+      .reiki-intro {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        color: $white;
+      }
+
+      .reiki-paragraph {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+        color: rgba(255, 255, 255, 0.95);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    // Coaching Section
+    .coaching-section {
+      .coaching-intro {
+        background: $white;
+        border-radius: 15px;
+        padding: 2rem;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        box-shadow: 0 5px 15px $shadow-soft;
+        border-left: 4px solid $primary-color;
+
+        p {
+          margin: 0;
+          font-size: 1.1rem;
+          color: $text-color;
+          line-height: 1.7;
+        }
+      }
+
+      .coaching-points {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .coaching-point {
+        background: $white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px $shadow-soft;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        border-top: 3px solid $accent-color;
+
+        .point-icon {
+          font-size: 2rem;
+          flex-shrink: 0;
+        }
+
+        p {
+          margin: 0;
+          font-size: 1rem;
+          color: $text-color;
+          line-height: 1.6;
+        }
+      }
+    }
+
+    // Approche Card
+    .approche-card {
+      background: $white;
+      border-radius: 20px;
+      padding: 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px $shadow;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: $accent-color;
+      }
+
+      .approche-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        margin: 0;
+        font-size: 1.2rem;
+        color: $text-color;
+        line-height: 1.8;
+        font-style: italic;
+      }
+    }
+
+  }
+
+  // Ateliers : bleu
+  &.service-page-bleu {
+    .content-section {
+      background: rgba(117, 145, 178, 0.15);
+
+      .content-hero h2 {
+        color: $secondary-color;
+      }
+
+      .benefits-section h3,
+      .reasons-section h3,
+      .themes-section h3,
+      .planning-section h3,
+      .coaching-section h3,
+      .approche-section h3,
+      .process-section h3 {
+        color: $secondary-color;
+      }
+
+      .benefit-card h4,
+      .reason-card h4,
+      .theme-card h4,
+      .step-card h4 {
+        color: $secondary-color;
+      }
+
+      .step-card .step-number {
+        background: $secondary-color;
+      }
+
+      .planning-box {
+        background: $secondary-color;
+        box-shadow: 0 10px 30px rgba(117, 145, 178, 0.3);
+      }
+
+      .coaching-section .coaching-intro {
+        border-left-color: $secondary-color;
+      }
+    }
+  }
+
+  // Reiki : vert
+  &.service-page-vert {
+    .content-section {
+      background: rgba(193, 200, 167, 0.15);
+
+      .content-hero h2 {
+        color: $accent-color;
+      }
+
+      .benefits-section h3,
+      .reasons-section h3,
+      .themes-section h3,
+      .planning-section h3,
+      .coaching-section h3,
+      .approche-section h3,
+      .process-section h3 {
+        color: $accent-color;
+      }
+
+      .benefit-card h4,
+      .reason-card h4,
+      .theme-card h4,
+      .step-card h4 {
+        color: $accent-color;
+      }
+
+      .step-card .step-number {
+        background: $accent-color;
+      }
+
+      .planning-box {
+        background: $accent-color;
+        box-shadow: 0 10px 30px rgba(193, 200, 167, 0.3);
+      }
+
+      .coaching-section .coaching-intro {
+        border-left-color: $accent-color;
+      }
+    }
+  }
+
+  // ============================================
+  // CTA SECTION
+  // ============================================
+  .cta-section {
+    padding: 80px 20px;
+    background: $light-bg;
+    text-align: center;
+
+    h2 {
+      font-family: $font-subtitle;
+      font-size: 2.5rem;
+      color: $primary-color; // Par défaut rose (bilan)
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: $text-color;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+  }
+
+  // Ateliers : bleu
+  &.service-page-bleu {
+    .cta-section h2 {
+      color: $secondary-color;
+    }
+  }
+
+  // Reiki : vert
+  &.service-page-vert {
+    .cta-section h2 {
+      color: $accent-color;
+    }
+  }
+
+  // ============================================
+  // BOUTONS CTA
+  // ============================================
+  .cta-button {
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid;
+    outline: none;
+
+    // État par défaut : supprimer le style de lien
+    &:link,
+    &:visited,
+    &:active {
+      text-decoration: none;
+    }
+
+    // Bouton primary
+    &.cta-primary {
+      background: $white;
+      color: $primary-color; // Par défaut rose (bilan)
+      border-color: $primary-color;
+
+      &:hover {
+        background: $primary-color;
+        color: $white;
+        text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(241, 183, 183, 0.3);
+      }
+    }
+
+    // Bouton secondary
+    &.cta-secondary {
+      background: transparent;
+      color: $primary-color; // Par défaut rose (bilan)
+      border-color: $primary-color;
+
+      &:hover {
+        background: $primary-color;
+        color: $white;
+        text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(241, 183, 183, 0.3);
+      }
+    }
+
+  }
+
+  // Ateliers : bleu
+  &.service-page-bleu {
+    .cta-button {
+      &.cta-primary {
+        color: $secondary-color;
+        border-color: $secondary-color;
+
+        &:hover {
+          background: $secondary-color;
+          color: $white;
+          box-shadow: 0 5px 15px rgba(117, 145, 178, 0.3);
+        }
+      }
+
+      &.cta-secondary {
+        color: $secondary-color;
+        border-color: $secondary-color;
+
+        &:hover {
+          background: $secondary-color;
+          color: $white;
+          box-shadow: 0 5px 15px rgba(117, 145, 178, 0.3);
+        }
+      }
+    }
+  }
+
+  // Reiki : vert
+  &.service-page-vert {
+    .cta-button {
+      &.cta-primary {
+        color: $accent-color;
+        border-color: $accent-color;
+
+        &:hover {
+          background: $accent-color;
+          color: $white;
+          box-shadow: 0 5px 15px rgba(193, 200, 167, 0.3);
+        }
+      }
+
+      &.cta-secondary {
+        color: $accent-color;
+        border-color: $accent-color;
+
+        &:hover {
+          background: $accent-color;
+          color: $white;
+          box-shadow: 0 5px 15px rgba(193, 200, 167, 0.3);
+        }
+      }
+    }
+  }
+}
+
+// ============================================
+// RESPONSIVE
+// ============================================
+@media (max-width: 768px) {
+  .service-page {
+    .service-hero h1 {
+      font-size: 2rem;
+    }
+
+    .objectives-section .objectives-grid,
+    .info-section .info-grid,
+    .content-section .benefits-grid,
+    .content-section .reasons-grid,
+    .content-section .themes-grid,
+    .content-section .process-steps,
+    .content-section .coaching-points {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-section .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+
+      .cta-button {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    .content-section {
+      .pack-box {
+        padding: 1.5rem;
+
+        h3 {
+          font-size: 1.5rem;
+        }
+
+        .pack-price {
+          font-size: 2rem;
+        }
+      }
+
+      .reiki-main-card {
+        padding: 2rem;
+      }
+
+      .approche-card {
+        padding: 2rem;
+      }
+    }
+  }
+}

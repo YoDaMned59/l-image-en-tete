@@ -1,0 +1,36 @@
+// Import des variables et fonts de la charte graphique
+@use 'variables' as *;
+@use 'fonts' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-body;
+  font-size: 1.125rem; // 18px - taille optimale pour l'accessibilité (WCAG)
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $light-bg;
+  background-image: url('../assets/Motifs-fond.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+  main {
+    flex: 1;
+  }
+}

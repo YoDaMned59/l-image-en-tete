@@ -1,0 +1,80 @@
+@use 'variables' as *;
+
+// Définition des polices personnalisées
+// Si vous avez les fichiers de polices Picky Retro et Gotham Black,
+// placez-les dans src/assets/fonts/ et décommentez les @font-face ci-dessous
+
+/*
+@font-face {
+  font-family: 'Picky Retro';
+  src: url('../assets/fonts/PickyRetro-Regular.woff2') format('woff2'),
+       url('../assets/fonts/PickyRetro-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham Black';
+  src: url('../assets/fonts/Gotham-Black.woff2') format('woff2'),
+       url('../assets/fonts/Gotham-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+// Styles de base pour les titres et sous-titres
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-title;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.875rem;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.625rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+h6 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+// Classe pour les sous-titres avec Gotham Black
+.subtitle,
+.hero-subtitle,
+.service-subtitle {
+  font-family: $font-subtitle;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+// Classe pour les titres avec Picky Retro
+.title,
+.page-title {
+  font-family: $font-title;
+  font-weight: 400;
+}
+
+

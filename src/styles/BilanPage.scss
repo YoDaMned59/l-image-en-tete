@@ -1,0 +1,151 @@
+// Styles spécifiques pour la page Bilan (rose)
+@use 'variables' as *;
+@use 'service-base' as *;
+
+.service-page-rose {
+  .service-hero h1 {
+    color: $primary-color;
+  }
+
+  .objectives-section {
+    background: rgba(241, 183, 183, 0.15);
+
+    h2 {
+      color: $primary-color;
+    }
+
+    .objective-card {
+      border-left-color: $primary-color;
+
+      .objective-check {
+        background: $primary-color;
+      }
+    }
+  }
+
+  .info-section .info-card h3 {
+    color: $primary-color;
+  }
+
+  .content-section {
+    background: rgba(241, 183, 183, 0.15);
+
+    // Section Bilan
+    .bilan-section,
+    .suivi-section {
+      margin-bottom: 4rem;
+
+      h2 {
+        font-family: $font-title;
+        font-size: 2.5rem;
+        color: $primary-color;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .bilan-content,
+      .suivi-content {
+        max-width: 900px;
+        margin: 0 auto;
+        background: $white;
+        padding: 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px $shadow-soft;
+
+        p {
+          font-size: 1.1rem;
+          color: $text-color;
+          line-height: 1.8;
+          margin-bottom: 1.5rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          strong {
+            color: $primary-color;
+            font-weight: 600;
+          }
+        }
+
+        .bilan-intro {
+          font-size: 1.2rem;
+          font-weight: 500;
+          color: $primary-color;
+        }
+
+        .formulaire-info {
+          background: rgba(241, 183, 183, 0.1);
+          padding: 1.5rem;
+          border-radius: 10px;
+          border-left: 4px solid $primary-color;
+          margin-top: 2rem;
+
+          p {
+            margin: 0;
+            font-size: 1.05rem;
+          }
+        }
+
+        .suivi-objectif {
+          background: rgba(241, 183, 183, 0.1);
+          padding: 1.5rem;
+          border-radius: 10px;
+          border-left: 4px solid $primary-color;
+          margin-top: 2rem;
+          font-size: 1.15rem;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .pack-box {
+      background: rgba(193, 200, 167, 0.2);
+      border-color: $accent-color;
+
+      h3 {
+        color: $text-color; // Bleu foncé pour meilleur contraste
+        font-weight: 600;
+      }
+      
+      .pack-price {
+        color: $primary-color; // Rose pour faire ressortir le prix
+        font-weight: bold;
+      }
+      
+      .pack-description {
+        color: $text-color; // Bleu foncé pour meilleur contraste
+        font-weight: 500;
+      }
+    }
+  }
+
+  .cta-section h2 {
+    color: $primary-color;
+  }
+
+  .cta-button {
+    &.cta-primary {
+      color: $primary-color;
+      border-color: $primary-color;
+
+      &:hover {
+        background: $primary-color;
+        color: $white;
+        box-shadow: 0 5px 15px rgba(241, 183, 183, 0.3);
+      }
+    }
+
+    &.cta-secondary {
+      color: $primary-color;
+      border-color: $primary-color;
+
+      &:hover {
+        background: $primary-color;
+        color: $white;
+        box-shadow: 0 5px 15px rgba(241, 183, 183, 0.3);
+      }
+    }
+  }
+}
+
