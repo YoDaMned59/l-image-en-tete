@@ -47,7 +47,13 @@ const About = () => {
             
             <div className="image-content">
               <div className="profile-image">
-                <img src={profilImage} alt="Mathilde - Coach scolaire" className="profile-photo" />
+                <img 
+                  src={profilImage} 
+                  alt="Mathilde - Coach scolaire" 
+                  className="profile-photo"
+                  width="400"
+                  height="400"
+                />
               </div>
             </div>
           </div>

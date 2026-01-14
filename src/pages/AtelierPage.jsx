@@ -111,6 +111,8 @@ const AtelierPage = () => {
                             alt="Exemple de sketchnote - Facilitation graphique" 
                             className="sketchnote-icon-image"
                             loading="lazy"
+                            width="564"
+                            height="376"
                           />
                         </div>
                       ) : is6BricksTheme ? (
@@ -120,6 +122,8 @@ const AtelierPage = () => {
                             alt="Atelier 6 Bricks" 
                             className="lego-icon-image"
                             loading="lazy"
+                            width="564"
+                            height="376"
                           />
                         </div>
                       ) : (
@@ -181,6 +185,8 @@ const AtelierPage = () => {
                   alt="Atelier 6 Bricks" 
                   className="bricks-image"
                   loading="lazy"
+                  width="564"
+                  height="376"
                 />
               </div>
               <div className="bricks-card-content">
@@ -239,6 +245,8 @@ const AtelierPage = () => {
               alt="Exemple de sketchnote - Facilitation graphique" 
               className="sketchnote-image-expanded"
               loading="lazy"
+              width="1200"
+              height="800"
             />
           </div>
         </div>

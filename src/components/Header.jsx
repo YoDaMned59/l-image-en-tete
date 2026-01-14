@@ -70,6 +70,8 @@ const Header = () => {
               alt="L'Image en Tête - Logo" 
               className="logo-image"
               loading="eager"
+              width="256"
+              height="100"
             />
           </div>
         </div>

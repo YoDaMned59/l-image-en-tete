@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { siteData } from '../data/data';
 import { handleLinkClick } from '../utils/pathUtils';
 import SEO from '../components/SEO';
@@ -13,6 +13,20 @@ const Home = () => {
   
   const bilanService = services.find(s => s.id === 'bilan');
   const atelierService = services.find(s => s.id === 'atelier');
+
+  // Préchargement de l'image LCP (hero) pour optimiser le LCP
+  useEffect(() => {
+    let preloadLink = document.querySelector('link[rel="preload"][as="image"][data-hero-lcp]');
+    if (!preloadLink) {
+      preloadLink = document.createElement('link');
+      preloadLink.setAttribute('rel', 'preload');
+      preloadLink.setAttribute('as', 'image');
+      preloadLink.setAttribute('href', heroBackgroundImage);
+      preloadLink.setAttribute('fetchpriority', 'high');
+      preloadLink.setAttribute('data-hero-lcp', 'true');
+      document.head.appendChild(preloadLink);
+    }
+  }, []);
 
   const scrollToActivities = () => {
     if (activitiesSectionRef.current) {
@@ -60,6 +74,8 @@ const Home = () => {
                   src={expliquerImage} 
                   alt="Explication de la métacognition et des méthodes d'apprentissage" 
                   loading="lazy"
+                  width="564"
+                  height="376"
                 />
               </div>
               <div className="service-content">
@@ -103,6 +119,8 @@ const Home = () => {
                   src={atelierImage} 
                   alt="Ateliers de remédiation cognitive" 
                   loading="lazy"
+                  width="564"
+                  height="376"
                 />
               </div>
               <div className="service-content">
