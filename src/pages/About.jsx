@@ -10,8 +10,8 @@ const About = () => {
   return (
     <div className="about">
       <SEO 
-        title="À propos"
-        description="Découvrez le parcours de Mathilde, coach scolaire spécialisée en métacognition et facilitation graphique. Accompagnement bienveillant pour enfants et adolescents à Richebourg."
+        title="À propos - L'Image en Tête"
+        description="Découvrez le parcours de Mathilde, coach scolaire spécialisée en métacognition et facilitation graphique. L'Image en Tête : accompagnement bienveillant pour enfants et adolescents à Richebourg."
       />
       <div className="container">
         {/* Section Hero */}

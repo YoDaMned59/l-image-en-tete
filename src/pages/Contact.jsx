@@ -94,8 +94,8 @@ const Contact = () => {
   return (
     <div className="contact">
       <SEO 
-        title="Contact"
-        description="Contactez L'image en tête pour prendre rendez-vous. Coaching scolaire à Richebourg. Première rencontre gratuite. Téléphone : 07.81.17.23.25"
+        title="Contact - L'Image en Tête"
+        description="Contactez L'Image en Tête pour prendre rendez-vous. Coaching scolaire à Richebourg. Première rencontre gratuite. Téléphone : 07.81.17.23.25"
       />
       <section className="contact-hero">
         <div className="contact-container">

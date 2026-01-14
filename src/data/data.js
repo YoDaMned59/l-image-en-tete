@@ -3,7 +3,7 @@ export const siteData = {
   // ============================================
   // INFORMATIONS GÉNÉRALES DU SITE
   // ============================================
-  siteName: "L'image en tête",
+  siteName: "L'Image en Tête",
   slogan: "Coaching scolaire et accompagnement dans les apprentissages",
 
   // ============================================

@@ -24,8 +24,8 @@ const Home = () => {
     <div className="home">
       {/* Composant SEO : définit le titre et la description pour Google */}
       <SEO 
-        title="Accueil"
-        description="Coaching scolaire et accompagnement dans les apprentissages à Richebourg. Bilan, suivi individuel et ateliers de remédiation cognitive. Première rencontre gratuite."
+        title="L'Image en Tête - Coaching scolaire et accompagnement dans les apprentissages"
+        description="L'Image en Tête : coaching scolaire et accompagnement dans les apprentissages à Richebourg. Bilan, suivi individuel et ateliers de remédiation cognitive. Première rencontre gratuite."
       />
       
       {/* Section Hero */}

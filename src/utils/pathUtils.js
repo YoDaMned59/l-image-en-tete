@@ -29,4 +29,3 @@ export const handleLinkClick = (e, path) => {
   e.preventDefault();
   navigate(path);
 };
-

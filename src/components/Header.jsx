@@ -67,7 +67,7 @@ const Header = () => {
           <div className="logo" onClick={() => navigateToPage('/')} style={{ cursor: 'pointer' }}>
             <img 
               src={logoImage} 
-              alt="L'image en tête - Logo" 
+              alt="L'Image en Tête - Logo" 
               className="logo-image"
               loading="eager"
             />
