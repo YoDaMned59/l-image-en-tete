@@ -8,6 +8,6 @@ Allow: /
 Disallow: /404
 
 # On indique où se trouve le sitemap (plan du site pour Google)
-Sitemap: https://imagentete.fr/sitemap.xml
+Sitemap: https://limagentete.fr/sitemap.xml
 
 

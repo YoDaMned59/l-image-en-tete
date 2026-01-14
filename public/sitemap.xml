@@ -9,55 +9,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Page d'accueil (la plus importante) -->
   <url>
-    <loc>https://imagentete.fr/</loc>
+    <loc>https://limagentete.fr/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Page À propos -->
   <url>
-    <loc>https://imagentete.fr/about</loc>
+    <loc>https://limagentete.fr/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Page Contact -->
   <url>
-    <loc>https://imagentete.fr/contact</loc>
+    <loc>https://limagentete.fr/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Services : Bilan -->
   <url>
-    <loc>https://imagentete.fr/services/bilan</loc>
+    <loc>https://limagentete.fr/services/bilan</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Services : Ateliers -->
   <url>
-    <loc>https://imagentete.fr/services/atelier</loc>
+    <loc>https://limagentete.fr/services/atelier</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Services : Atelier 6 Bricks -->
   <url>
-    <loc>https://imagentete.fr/services/atelier-6-bricks</loc>
+    <loc>https://limagentete.fr/services/atelier-6-bricks</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Pages légales (moins importantes pour le SEO) -->
   <url>
-    <loc>https://imagentete.fr/cgv</loc>
+    <loc>https://limagentete.fr/cgv</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
-    <loc>https://imagentete.fr/mentions-legales</loc>
+    <loc>https://limagentete.fr/mentions-legales</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

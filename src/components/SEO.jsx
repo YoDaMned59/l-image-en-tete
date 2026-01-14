@@ -5,7 +5,7 @@ const SEO = ({
   description = "Coaching scolaire et accompagnement dans les apprentissages à Richebourg. Bilan, suivi individuel et ateliers de remédiation cognitive.",
   canonical = null 
 }) => {
-  const baseUrl = "https://imagentete.fr";
+  const baseUrl = "https://limagentete.fr";
   const currentPath = window.location.pathname;
   const fullUrl = canonical || `${baseUrl}${currentPath}`;
 
@@ -66,7 +66,7 @@ const SEO = ({
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "L'Image en Tête",
-      "url": "https://imagentete.fr",
+      "url": "https://limagentete.fr",
       "description": "Coaching scolaire et accompagnement dans les apprentissages à Richebourg. Bilan, suivi individuel et ateliers de remédiation cognitive.",
       "address": {
         "@type": "PostalAddress",
