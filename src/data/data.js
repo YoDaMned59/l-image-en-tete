@@ -566,7 +566,10 @@ export const siteData = {
       {
         titre: "2. Hébergement",
         contenu: [
-          "Ce site est hébergé par un prestataire professionnel. Les données sont stockées de manière sécurisée conformément aux standards de l'industrie."
+          "Ce site est hébergé par :",
+          "OVH SAS, 2 rue Kellermann, 59100 Roubaix, France",
+          "Déploiement via Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis",
+          "Les données sont stockées de manière sécurisée conformément aux standards de l'industrie."
         ]
       },
       {
@@ -580,7 +583,8 @@ export const siteData = {
         titre: "4. Protection des données personnelles",
         contenu: [
           "Conformément au Règlement Général sur la Protection des Données (RGPD), nous nous engageons à protéger vos données personnelles.",
-          "Les données collectées lors de la prise de contact sont utilisées uniquement pour répondre à vos demandes et ne sont pas transmises à des tiers.",
+          "Les données collectées lors de la prise de contact (nom, email, message) sont utilisées uniquement pour répondre à vos demandes.",
+          "Sous-traitants : Les données du formulaire de contact sont transmises via EmailJS (EmailJS Inc., États-Unis) pour l'envoi des messages. EmailJS est conforme au RGPD et ne conserve pas vos données après l'envoi.",
           "Vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à : limagentete@gmail.com"
         ]
       },
