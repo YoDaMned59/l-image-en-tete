@@ -1,27 +1,21 @@
-import React from 'react';
-import { handleLinkClick } from '../utils/pathUtils';
+import { Link } from 'react-router-dom';
+import { siteData } from '../data/data';
 
 const CTASection = ({ containerClass = 'service-container' }) => {
+  const { ctaService } = siteData;
+
   return (
     <section className="cta-section">
       <div className={containerClass}>
-        <h2>Intéressé(e) par ce service ?</h2>
-        <p>N'hésitez pas à me contacter pour plus d'informations ou pour prendre rendez-vous</p>
+        <h2>{ctaService.titre}</h2>
+        <p>{ctaService.description}</p>
         <div className="cta-buttons">
-          <a 
-            href="#" 
-            onClick={(e) => handleLinkClick(e, '/contact')} 
-            className="cta-button cta-primary"
-          >
-            Prendre rendez-vous
-          </a>
-          <a 
-            href="#" 
-            onClick={(e) => handleLinkClick(e, '/')} 
-            className="cta-button cta-secondary"
-          >
-            Retour à l'accueil
-          </a>
+          <Link to="/contact" className="cta-button cta-primary">
+            {ctaService.boutonRdv}
+          </Link>
+          <Link to="/" className="cta-button cta-secondary">
+            {ctaService.boutonAccueil}
+          </Link>
         </div>
       </div>
     </section>

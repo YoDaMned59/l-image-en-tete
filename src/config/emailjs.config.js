@@ -1,3 +1,4 @@
+// Restreindre les domaines autorisés dans le tableau EmailJS.
 export const EMAILJS_CONFIG = {
   PUBLIC_KEY: '3g-_DgFfLCbxvJWF3',
   SERVICE_ID: 'service_sat89di',

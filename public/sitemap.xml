@@ -1,66 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-  Sitemap.xml - Plan du site pour Google
-  Ce fichier liste toutes les pages importantes de votre site
-  Google l'utilise pour découvrir et indexer vos pages plus rapidement
-  
-  Pour ajouter une nouvelle page, copiez un bloc <url> et modifiez le <loc>
--->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Page d'accueil (la plus importante) -->
   <url>
-    <loc>https://limagentete.fr/l-image-en-tete/</loc>
+    <loc>https://limagentete.fr/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Page À propos -->
   <url>
-    <loc>https://limagentete.fr/l-image-en-tete/about</loc>
+    <loc>https://limagentete.fr/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Page Contact -->
   <url>
-    <loc>https://limagentete.fr/l-image-en-tete/contact</loc>
+    <loc>https://limagentete.fr/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- Services : Bilan -->
   <url>
-    <loc>https://limagentete.fr/l-image-en-tete/services/bilan</loc>
+    <loc>https://limagentete.fr/services/bilan</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- Services : Ateliers -->
   <url>
-    <loc>https://limagentete.fr/l-image-en-tete/services/atelier</loc>
+    <loc>https://limagentete.fr/services/atelier</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- Services : Reiki -->
   <url>
-    <loc>https://limagentete.fr/l-image-en-tete/services/reiki</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Pages légales (moins importantes pour le SEO) -->
-  <url>
-    <loc>https://limagentete.fr/l-image-en-tete/cgv</loc>
+    <loc>https://limagentete.fr/cgv</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  
   <url>
-    <loc>https://limagentete.fr/l-image-en-tete/mentions-legales</loc>
+    <loc>https://limagentete.fr/mentions-legales</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://limagentete.fr/politique-de-confidentialite</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 </urlset>
-
-

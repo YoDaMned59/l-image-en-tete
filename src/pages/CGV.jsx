@@ -1,6 +1,7 @@
-import React from 'react';
 import { siteData } from '../data/data';
 import SEO from '../components/SEO';
+import { LEGAL_UPDATED_AT } from '../config/site';
+import { PAGE_SEO } from '../config/seoPages';
 import '../styles/CGV.scss';
 
 const CGV = () => {
@@ -9,8 +10,8 @@ const CGV = () => {
   return (
     <div className="cgv-page">
       <SEO 
-        title="Conditions Générales de Vente"
-        description="Conditions générales de vente - L'image en tête - Coaching scolaire"
+        title={PAGE_SEO['/cgv'].title}
+        description={PAGE_SEO['/cgv'].description}
       />
       <div className="container">
         <h1>{cgv.titre}</h1>
@@ -34,7 +35,7 @@ const CGV = () => {
         ))}
 
         <div className="cgv-footer">
-          <p><strong>Dernière mise à jour :</strong> {new Date().toLocaleDateString('fr-FR')}</p>
+          <p><strong>Dernière mise à jour :</strong> {LEGAL_UPDATED_AT}</p>
         </div>
       </div>
     </div>

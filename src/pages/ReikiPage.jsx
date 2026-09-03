@@ -1,19 +1,20 @@
-import React from 'react';
 import { siteData } from '../data/data';
 import SEO from '../components/SEO';
 import CTASection from '../components/CTASection';
 import '../styles/ReikiPage.scss';
 
 const ReikiPage = () => {
-  const service = siteData.services.find(s => s.id === 'reiki');
+  const service = siteData.services.find((s) => s.id === 'reiki');
+  const details = siteData.servicesDetails.reiki;
+  const { labelsServices } = siteData;
 
   return (
     <div className="service-page service-page-vert">
-      <SEO 
+      <SEO
         title={`${service.titre} - Soin Reiki`}
-        description={`${service.pourQui}. Soin énergétique Reiki associé au coaching scolaire pour l'équilibre intérieur. Format : ${service.format}. Tarif : ${service.tarif}.`}
+        description={`${service.pourQui}. Pratique Reiki proposée en complément du coaching scolaire, comme temps de calme et de recentrage. Format : ${service.format}. Tarif : ${service.tarif}.`}
+        noIndex
       />
-      {/* Hero Section */}
       <section className="service-hero">
         <div className="service-container">
           <h1>{service.titre}</h1>
@@ -21,13 +22,12 @@ const ReikiPage = () => {
         </div>
       </section>
 
-      {/* Objectifs Section */}
       <section className="objectives-section">
         <div className="service-container">
-          <h2>Objectifs</h2>
+          <h2>{labelsServices.objectifs}</h2>
           <div className="objectives-grid">
-            {service.objectifs.map((objectif, index) => (
-              <div key={index} className="objective-card">
+            {service.objectifs.map((objectif) => (
+              <div key={objectif} className="objective-card">
                 <div className="objective-check">✓</div>
                 <p>{objectif}</p>
               </div>
@@ -36,93 +36,65 @@ const ReikiPage = () => {
         </div>
       </section>
 
-      {/* Informations Section */}
       <section className="info-section">
         <div className="service-container">
           <div className="info-grid">
             <div className="info-card">
-              <h3>Format</h3>
+              <h3>{labelsServices.format}</h3>
               <p>{service.format}</p>
             </div>
             <div className="info-card">
-              <h3>Tarif</h3>
+              <h3>{labelsServices.tarif}</h3>
               <p className="price">{service.tarif}</p>
             </div>
             <div className="info-card">
-              <h3>Approche</h3>
+              <h3>{labelsServices.approche}</h3>
               <p>{service.ton}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contenu spécifique */}
       <section className="content-section">
         <div className="service-container">
-          {/* Section Le Reiki */}
           <div className="reiki-intro-section">
-            <h2>Le Reiki, une approche douce et globale</h2>
+            <h2>{details.intro.titre}</h2>
             <div className="reiki-intro-content">
-              <p>
-                Le Reiki est un soin énergétique d'origine japonaise où l'énergie universelle est transmise par apposition des mains sur différentes régions du corps. Elle agit sur plusieurs plans : mental, émotionnel et physique.
-              </p>
-              <p>
-                Il stimule le potentiel actif d'auto-guérison que l'on a tous en nous. Ce processus d'autorégulation nous permet de maintenir une stabilité face aux variations.
-              </p>
-              <p>
-                Offrez-vous un moment de détente, dans l'instant présent et retrouvez votre calme et une clarté intérieure.
-              </p>
+              {details.intro.paragraphes.map((paragraphe) => (
+                <p key={paragraphe}>{paragraphe}</p>
+              ))}
             </div>
           </div>
 
-          {/* Séparateur */}
           <div className="section-divider"></div>
 
-          {/* Section Reiki et coaching scolaire */}
           <div className="coaching-section">
-            <h3>Reiki et coaching scolaire</h3>
+            <h3>{details.coaching.titre}</h3>
             <div className="coaching-intro">
-              <p>
-                Associé au coaching scolaire, le Reiki devient un véritable soutien pour l'équilibre intérieur.
-              </p>
+              <p>{details.coaching.intro}</p>
             </div>
             <div className="coaching-points">
-              <div className="coaching-point">
-                <div className="point-icon">✨</div>
-                <p>Cette combinaison permet à l'élève de mettre en œuvre plus facilement les stratégies travaillées ensemble.</p>
-              </div>
-              <div className="coaching-point">
-                <div className="point-icon">✨</div>
-                <p>Il soutient l'élève de façon subtile, en l'aidant à se recentrer et à se reconnecter à ses propres ressources.</p>
-              </div>
-              <div className="coaching-point">
-                <div className="point-icon">✨</div>
-                <p>Grâce à cette approche, l'élève peut être plus présent dans ses études.</p>
-              </div>
-              <div className="coaching-point">
-                <div className="point-icon">✨</div>
-                <p>Il aborde les défis scolaires avec plus de recul et de sérénité.</p>
-              </div>
+              {details.coaching.points.map((point) => (
+                <div key={point} className="coaching-point">
+                  <div className="point-icon">✨</div>
+                  <p>{point}</p>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Séparateur */}
           <div className="section-divider"></div>
 
-          {/* Section Mon approche */}
           <div className="approche-section">
-            <h3>Mon approche</h3>
+            <h3>{details.approche.titre}</h3>
             <div className="approche-card">
               <div className="approche-icon">🧘</div>
-              <p>
-                Je suis praticienne Reiki, initiée au second degré, et j'accompagne les élèves (et leurs parents) à retrouver équilibre, confiance et bien-être pour avancer plus sereinement dans leur parcours scolaire et personnel.
-              </p>
+              <p>{details.approche.texte}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
       <CTASection />
     </div>
   );

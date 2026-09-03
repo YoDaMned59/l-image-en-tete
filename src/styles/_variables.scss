@@ -1,38 +1,32 @@
-// Palette de couleurs - UNIQUEMENT les 4 couleurs de la charte graphique
-$color-rose: #f1b7b7;      // Rose pâle
-$color-bleu: #7591b2;      // Bleu-gris
-$color-vert: #c1c8a7;      // Vert sauge
-$color-creme: #f7efe3;     // Crème/beige
+// Palette de couleurs - 4 couleurs de la charte graphique
+$color-rose: #f1b7b7;
+$color-bleu: #7591b2;
+$color-vert: #c1c8a7;
+$color-creme: #f7efe3;
+$color-bleu-fonce: #3d5673;
 
-// Couleurs sémantiques - Utilisation directe des couleurs de la charte
-$primary-color: $color-rose;      // Couleur principale (rose)
-$secondary-color: $color-bleu;     // Couleur secondaire (bleu)
-$accent-color: $color-vert;        // Couleur d'accent (vert)
-$light-bg: $color-creme;          // Fond clair principal (crème)
+$primary-color: $color-rose;
+$secondary-color: $color-bleu;
+$accent-color: $color-vert;
+$light-bg: $color-creme;
 
-// Couleurs de texte - Utilisation uniquement des couleurs de la charte
-$text-color: $color-bleu;          // Texte principal (bleu de la charte)
-$text-dark: $color-bleu;           // Texte foncé (bleu de la charte)
-$text-light: $color-bleu;          // Texte clair (bleu de la charte)
-$text-muted: $color-bleu;           // Texte atténué (bleu de la charte)
+$text-color: $color-bleu-fonce;
+$text-dark: $color-bleu-fonce;
+$text-light: $color-bleu;
+$text-muted: #5a6f86;
 
-// Couleurs utilitaires
 $white: #ffffff;
-$shadow: rgba(117, 145, 178, 0.2);      // Ombre avec teinte bleue de la charte
-$shadow-soft: rgba(117, 145, 178, 0.1); // Ombre très douce avec teinte bleue
-$dark-bg: $color-bleu;                  // Pour les fonds sombres (bleu de la charte)
+$shadow: rgba(61, 86, 115, 0.2);
+$shadow-soft: rgba(61, 86, 115, 0.1);
+$dark-bg: $color-bleu-fonce;
 
-// Dégradés - Utilisation uniquement des couleurs de la charte
-$gradient-primary: linear-gradient(135deg, $color-rose 0%, $color-rose 100%);
-$gradient-secondary: linear-gradient(135deg, $color-bleu 0%, $color-bleu 100%);
-$gradient-accent: linear-gradient(135deg, $color-vert 0%, $color-vert 100%);
+$btn-bg: $color-bleu-fonce;
+$btn-text: $white;
 
-// Variables pour compatibilité avec les anciens styles
-$primary-teal: $primary-color;
-$accent-orange: $secondary-color;
+$gradient-primary: #a45c5c;
+$gradient-secondary: $color-bleu-fonce;
+$gradient-accent: #5f6a45;
 
-// Variables de polices
-$font-title: 'Picky Retro', 'Bungee', 'Fredoka One', sans-serif;      // Police pour les titres
-$font-subtitle: 'Gotham Black', 'Montserrat', 'Inter', sans-serif;    // Police pour les sous-titres
-$font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;        // Police pour le corps de texte
-
+$font-title: 'Picky Retro', 'Bungee', sans-serif;
+$font-subtitle: 'Gotham Black', 'Montserrat', sans-serif;
+$font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

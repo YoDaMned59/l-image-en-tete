@@ -1,5 +1,8 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "installCommand": "npm install"
+  "installCommand": "npm install",
+  "rewrites": [
+    { "source": "/((?!sitemap\\.xml$|robots\\.txt$|og-image\\.webp$|favicon\\.webp$|images/).*)", "destination": "/index.html" }
+  ]
 }

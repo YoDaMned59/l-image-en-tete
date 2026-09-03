@@ -1,13 +1,87 @@
+/**
+ * CONTENU DU SITE — L'Image en Tête
+ *
+ * Fichier à modifier pour changer les textes (tarifs, phrases, horaires…).
+ *
+ * Règles simples :
+ * 1. Ne touchez qu’au texte entre guillemets "comme ceci".
+ * 2. Ne supprimez pas les virgules à la fin des lignes.
+ * 3. Pour mettre un mot en gras : **mot**.
+ * 4. Les images se changent dans le dossier public/images/ (même nom de fichier).
+ *
+ * Guide complet : GUIDE-CLIENT.md
+ */
+
 export const siteData = {
-  
+
   // ============================================
-  // INFORMATIONS GÉNÉRALES DU SITE
+  // INFORMATIONS GÉNÉRALES
   // ============================================
   siteName: "L'Image en Tête",
   slogan: "Coaching scolaire et accompagnement dans les apprentissages",
 
   // ============================================
-  // COORDONNÉES / CONTACT
+  // IMAGES (ne changez pas les chemins : remplacez le fichier du même nom)
+  // ============================================
+  images: {
+    logo: {
+      src: "/images/logo.webp",
+      alt: "L'Image en Tête - Accueil"
+    },
+    photoMathilde: {
+      src: "/images/photo-mathilde.webp",
+      alt: "Mathilde - Coach scolaire"
+    },
+    accueilHero: {
+      src: "/images/accueil-hero.webp"
+    },
+    accueilBilan: {
+      src: "/images/accueil-bilan.webp",
+      alt: "Explication de la métacognition et des méthodes d'apprentissage"
+    },
+    accueilAtelier: {
+      src: "/images/accueil-atelier.webp",
+      alt: "Ateliers de remédiation cognitive"
+    },
+    sketchnote: {
+      src: "/images/atelier-sketchnote.webp",
+      alt: "Exemple de sketchnote - Facilitation graphique"
+    },
+    atelier6Bricks: {
+      src: "/images/atelier-6-bricks.webp",
+      alt: "Atelier 6 Bricks"
+    }
+  },
+
+  // ============================================
+  // MENU ET PIED DE PAGE
+  // ============================================
+  navigation: {
+    accueil: "Accueil",
+    aPropos: "À propos",
+    services: "Services",
+    bilan: "Mon bilan & suivi",
+    ateliers: "Mes ateliers",
+    contact: "Contact",
+    ouvrirMenu: "Ouvrir le menu",
+    fermerMenu: "Fermer le menu"
+  },
+
+  footer: {
+    navigationTitre: "Navigation",
+    legalesTitre: "Informations légales",
+    contactTitre: "Contact",
+    lienCgv: "Conditions Générales de Vente",
+    lienMentions: "Mentions légales",
+    lienConfidentialite: "Politique de confidentialité",
+    copyright: "Tous droits réservés.",
+    creditAvant: "Site réalisé par",
+    creditNom: "SDuvivierTech",
+    creditUrl: "https://sduviviertech.fr/"
+  },
+
+  // ============================================
+  // COORDONNÉES
   // ============================================
   contact: {
     adresse: "Richebourg, France",
@@ -17,9 +91,14 @@ export const siteData = {
   },
 
   // ============================================
-  // PAGE ACCUEIL (Home)
+  // PAGE ACCUEIL
   // ============================================
   home: {
+    seo: {
+      title: "L'Image en Tête - Coaching scolaire et accompagnement dans les apprentissages",
+      description:
+        "L'Image en Tête : coaching scolaire et accompagnement dans les apprentissages à Richebourg. Bilan, suivi individuel et ateliers de remédiation cognitive. Première rencontre gratuite."
+    },
     hero: {
       description: "Je vous accompagne avec bienveillance pour révéler votre potentiel d'apprentissage",
       bouton: "Découvrir mes services"
@@ -27,6 +106,12 @@ export const siteData = {
     presentation: {
       titre: "Mon approche",
       texte: "Je crois que chaque personne a un potentiel unique. Ma mission est de vous accompagner dans la découverte de votre façon d'apprendre pour retrouver plaisir et autonomie dans vos études."
+    },
+    activites: {
+      titre: "Mes activités",
+      titreModalites: "Modalités",
+      boutonRdv: "Prendre rendez-vous",
+      boutonPlus: "En savoir plus"
     },
     cta: {
       titre: "Prêt(e) à commencer votre parcours ?",
@@ -37,13 +122,17 @@ export const siteData = {
   },
 
   // ============================================
-  // PAGE À PROPOS (About)
+  // PAGE À PROPOS
   // ============================================
   about: {
+    seo: {
+      title: "À propos - L'Image en Tête",
+      description:
+        "Découvrez le parcours de Mathilde, coach scolaire spécialisée en métacognition et facilitation graphique. L'Image en Tête : accompagnement bienveillant pour enfants et adolescents à Richebourg."
+    },
     titre: "À propos",
     heroSubtitle: "Découvrez mon parcours et ma philosophie",
-    
-    // Section Parcours
+
     parcours: {
       titre: "Mon parcours",
       paragraphes: [
@@ -54,8 +143,7 @@ export const siteData = {
         "Formée en métacognition et en facilitation graphique, j'allie réflexion sur les processus d'apprentissage et créativité visuelle pour rendre les savoirs plus accessibles et concrets."
       ]
     },
-    
-    // Section Philosophie
+
     philosophie: {
       titre: "Ma philosophie",
       paragraphes: [
@@ -64,155 +152,66 @@ export const siteData = {
         "Mon approche s'adresse à des enfants et adolescents présentant des troubles des apprentissages ou à des étudiants souhaitant optimiser leurs études."
       ]
     },
-    
-    // Section Engagement
+
     engagement: {
       titre: "Mon engagement",
       items: [
-        "j'adapte mon approche à chaque profil",
+        "J'adapte mon approche à chaque profil",
         "Prendre du plaisir à apprendre",
         "Aider à mieux se connaitre",
         "Retrouver confiance en ses capacités",
         "Gagner en autonomie"
       ]
     },
-    
-    // Pack 5 séances (encadré vert)
-    pack: {
-      titre: "🎁 Pack 5 séances",
-      prix: "270 euros",
-      description: "Bilan + 4 séances de suivi"
-    },
-    
-    // Ateliers collectifs
-    ateliers: {
-      titre: "Pourquoi choisir les ateliers collectifs ?",
-      raisons: [
-        {
-          icone: "🤝",
-          titre: "Développer des stratégies ensemble",
-          description: "Développer des stratégies d'apprentissage et les appliquer ensemble"
-        },
-        {
-          icone: "💰",
-          titre: "Prix accessible",
-          description: "Prix accessible"
-        },
-        {
-          icone: "📝",
-          titre: "Prise de note visuelle",
-          description: "Pour prendre du plaisir à réviser, organiser ses idées, communiquer,…."
-        },
-        {
-          icone: "👨‍👩‍👧‍👦",
-          titre: "Créer du lien",
-          description: "Créer du lien : parents-enfants, enfants, parents"
-        }
-      ],
-      themesTitre: "Thématiques des ateliers",
-      themes: [
-        {
-          icone: "📝",
-          titre: "Stratégie de prise de note :",
-          description: "sketchnote, mindmap, cornell,…"
-        },
-        {
-          icone: "🧠",
-          titre: "Booster sa mémoire :",
-          description: "pour travailler stratégie d'apprentissage par le jeu, attention, mémorisation, inhibition"
-        },
-        {
-          icone: "📚",
-          titre: "Optimiser les devoirs à la maison :",
-          description: "à destination des parents pour aider leurs enfants"
-        }
-      ]
-    },
-    
-    // Bilan et suivis individuels
-    bilan: {
-      titre: "Bilan et suivis individuels",
-      objectifs: {
-        titre: "Objectifs",
-        items: [
-          "Connaître sa façon d'apprendre, ses forces et faiblesses et développer ses stratégies d'apprentissage",
-          "Autonomie",
-          "Organisation, planification : améliorer sa mémoire à long terme",
-          "Mise en place d'outils pour compenser/adapter si besoin les apprentissages"
-        ]
-      },
-      tarifs: {
-        titre: "Tarifs",
-        bilan: "70 €",
-        suivi: "55 €",
-        cesu: "-50% déductible des impôts par CESU"
-      }
-    },
-    
-    // Méthodes utilisées
+
     methodes: {
       titre: "Les méthodes que j'utilise",
       items: [
         {
-          icone: "🧠",
           titre: "Métacognition",
-          description: "Métacognition"
+          description: "Comprendre comment on apprend pour choisir des stratégies adaptées"
         },
         {
-          icone: "🎯",
           titre: "Fonctions exécutives",
           description: "Développement des fonctions exécutives : inhibition, flexibilité, initiation"
         },
         {
-          icone: "🎨",
           titre: "Facilitation graphique",
           description: "Facilitation graphique : comprendre et apprendre par les visuels"
         }
       ]
     },
-    
-    // Bénéfices
+
     benefices: {
       titre: "Ce que vous allez obtenir",
       items: [
-        {
-          icone: "🎓",
-          titre: "Méthode d'apprentissage sur mesure"
-        },
-        {
-          icone: "💪",
-          titre: "Autonomie et confiance en soi"
-        },
-        {
-          icone: "😊",
-          titre: "Plaisir d'apprendre"
-        }
+        { titre: "Méthode d'apprentissage sur mesure" },
+        { titre: "Autonomie et confiance en soi" },
+        { titre: "Plaisir d'apprendre" }
       ]
     },
-    
-    // Approche en 3 étapes
+
     approche: {
       titre: "Mon approche en 3 étapes",
       etapes: [
         {
           numero: 1,
           titre: "Bilan personnalisé",
-          description: "Bilan personnalisé"
+          description: "Un temps d'échange pour identifier le fonctionnement, les besoins et des objectifs concrets."
         },
         {
           numero: 2,
           titre: "Apprendre par le jeu",
-          description: "Apprendre par le jeu"
+          description: "Des exercices ludiques pour entraîner l'attention, la mémoire et les stratégies."
         },
         {
           numero: 3,
           titre: "Transfert des techniques apprises",
-          description: "Transfert des techniques apprises sur les cours scolaires"
+          description: "Application des techniques travaillées directement sur les cours scolaires."
         }
       ]
     },
-    
-    // Call to action
+
     cta: {
       titre: "Prêt(e) à commencer votre parcours ?",
       description: "Je serais ravie de vous accompagner dans votre démarche",
@@ -224,6 +223,11 @@ export const siteData = {
   // PAGE CONTACT
   // ============================================
   contactPage: {
+    seo: {
+      title: "Contact - L'Image en Tête",
+      description:
+        "Contactez L'Image en Tête pour prendre rendez-vous. Coaching scolaire à Richebourg. Première rencontre gratuite. Téléphone : 07.81.17.23.25"
+    },
     titre: "Contact",
     heroSubtitle: "N'hésitez pas à me contacter pour toute question",
     formulaire: {
@@ -233,28 +237,57 @@ export const siteData = {
         email: "Email *",
         message: "Message *"
       },
+      consentementAvant: "J'accepte que mes informations soient utilisées pour me recontacter. Détails dans la",
+      consentementLien: "politique de confidentialité",
       bouton: "Envoyer le message",
-      messageConfirmation: "Message envoyé ! Je vous répondrai dans les plus brefs délais."
+      boutonChargement: "Envoi en cours...",
+      messageConfirmation: "Message envoyé ! Je vous répondrai dans les plus brefs délais.",
+      erreurChamps: "Veuillez remplir tous les champs du formulaire.",
+      erreurRgpd: "Merci d’accepter le traitement de vos données pour envoyer le message.",
+      erreurEnvoi: "Erreur lors de l'envoi. Vous pouvez aussi m'écrire directement par email."
     },
     coordonnees: {
-      titre: "Coordonnées"
+      titre: "Coordonnées",
+      adresse: "Adresse",
+      email: "Email",
+      telephone: "Téléphone",
+      horaires: "Horaires"
     },
     reseauxSociaux: {
       titre: "Suivez-moi",
       liens: [
         { nom: "Instagram", url: "https://www.instagram.com/limage_en_tete/" },
-        { nom: "Facebook", url: "https://www.facebook.com/profile.php?id=61585450187058&locale=fr_FR" },
-        { nom: "Zoom", url: "https://zoom.us/j/6920619729" }
+        { nom: "Facebook", url: "https://www.facebook.com/profile.php?id=61585450187058&locale=fr_FR" }
       ]
     },
     premiereRencontre: {
-      titre: "🎁 Première rencontre gratuite",
+      titre: "Première rencontre gratuite",
       description: "Sur demande, je propose une première rencontre gratuite pour faire connaissance et évaluer vos besoins."
     }
   },
 
   // ============================================
-  // LISTE DES SERVICES (pour la page d'accueil et les liens)
+  // BOUTON EN BAS DES PAGES SERVICES
+  // ============================================
+  ctaService: {
+    titre: "Intéressé(e) par ce service ?",
+    description: "N'hésitez pas à me contacter pour plus d'informations ou pour prendre rendez-vous",
+    boutonRdv: "Prendre rendez-vous",
+    boutonAccueil: "Retour à l'accueil"
+  },
+
+  // ============================================
+  // LIBELLÉS COMMUNS DES PAGES SERVICES
+  // ============================================
+  labelsServices: {
+    objectifs: "Objectifs",
+    format: "Format",
+    tarif: "Tarif",
+    approche: "Approche"
+  },
+
+  // ============================================
+  // LISTE DES SERVICES
   // ============================================
   services: [
     {
@@ -268,7 +301,8 @@ export const siteData = {
       ],
       format: "Séances de 1h à 1h30 - pack de 5 séances",
       tarif: "70 € / 55 € à domicile (CESU possible)",
-      ton: "rassurant et motivant"
+      ton: "rassurant et motivant",
+      modalites: ["Individuel", "À domicile"]
     },
     {
       id: "atelier",
@@ -280,7 +314,8 @@ export const siteData = {
       ],
       format: "Séance de 1h, groupes de 8 personnes maximum",
       tarif: "10 € à 20 €",
-      ton: "ludique et collaboratif"
+      ton: "ludique et collaboratif",
+      modalites: ["Collectif", "À domicile"]
     },
     {
       id: "reiki",
@@ -289,7 +324,7 @@ export const siteData = {
       objectifs: [
         "Apaiser le stress et l'anxiété",
         "Retrouver clarté et équilibre intérieur",
-        "Stimuler le potentiel d'autoguérison"
+        "Proposer un temps de calme et de recentrage"
       ],
       format: "Séance devant le corps, dos ou à distance",
       tarif: "60 €",
@@ -314,58 +349,51 @@ export const siteData = {
   ],
 
   // ============================================
-  // DÉTAILS DES SERVICES (contenu spécifique pour chaque service)
+  // DÉTAILS DES SERVICES
   // ============================================
   servicesDetails: {
     bilan: {
-      hero: {
-        titre: "Transformez les difficultés en réussites",
-        description: "Votre enfant a du potentiel, mais les méthodes traditionnelles ne lui conviennent pas ? Je vous accompagne pour révéler ses talents cachés et lui redonner confiance en ses capacités."
+      seo: {
+        title: "Bilan & suivi individuel - Bilan et suivi individuel",
+        description:
+          "Enfants à partir de 7 ans, étudiants. Bilan métacognitif et suivi individuel pour enfants et adolescents. Format : Séances de 1h à 1h30 - pack de 5 séances. Tarif : 70 € / 55 € à domicile (CESU possible)."
       },
-      benefices: {
-        titre: "🎯 Ce que vous allez obtenir",
-        items: [
-          {
-            icone: "🧠",
-            titre: "Méthodes d'apprentissage sur mesure",
-            description: "Chaque enfant apprend différemment. Je découvre SA façon d'apprendre et lui enseigne des techniques adaptées à son profil."
-          },
-          {
-            icone: "🎓",
-            titre: "Autonomie et confiance en soi",
-            description: "Il devient capable de s'organiser seul, de gérer son temps et de prendre confiance en ses capacités."
-          }
-        ]
+      leBilan: {
+        titre: "Le bilan",
+        paragraphes: [
+          "Le bilan commence par un entretien approfondi avec le(s) parent(s) et l'adolescent ou enfant.",
+          "Celui-ci dure **1h30**. Cet échange permet d'identifier les besoins et définir ensemble des objectifs concrets pour un suivi adapté.",
+          "Mon rôle n'est pas de poser un diagnostic. Je peux en revanche vous aider à comprendre le fonctionnement du cerveau et ses mécanismes d'apprentissage, apporter des pistes de réflexion et accompagner à la mise en place d'outils ou d'aménagements pour faciliter le quotidien."
+        ],
+        formulaire: "**Un formulaire sera à remplir** par les parents ou l'apprenant (selon son âge), ainsi que par l'enseignant / professeur principal, afin de vous aider au mieux."
       },
-      approche: {
-        titre: "🔄 Mon approche en 3 étapes",
-        etapes: [
-          {
-            numero: 1,
-            titre: "Bilan personnalisé",
-            description: "Bilan personnalisé"
-          },
-          {
-            numero: 2,
-            titre: "Apprendre par le jeu",
-            description: "Apprendre par le jeu"
-          },
-          {
-            numero: 3,
-            titre: "Transfert des techniques apprises",
-            description: "Transfert des techniques apprises sur les cours scolaires"
-          }
-        ]
+      suivi: {
+        titre: "Suivi individuel",
+        paragraphes: [
+          "Grâce à la **métacognition**, nous élaborons ensemble des stratégies qui seront ensuite appliquées directement dans ses différents cours (français, mathématiques, etc.). L'objectif est de rendre l'élève autonome dans l'utilisation de méthodes efficaces, quel que soit le domaine.",
+          "Le suivi comprend également un travail autour de la **gestion des erreurs**, afin de transformer les difficultés en opportunités d'apprentissage.",
+          "Enfin, nous travaillons la **méthodologie de travail**, l'**organisation**, et des outils pratiques comme la **prise de notes visuelle**, pour donner à l'élève des méthodes concrètes, adaptées à son profil et faciles à réutiliser au quotidien."
+        ],
+        objectif: "Ce suivi vise à renforcer la **confiance**, l'**autonomie** et l'**efficacité** de votre enfant tout au long de son parcours scolaire."
+      },
+      pack: {
+        titre: "Pack 5 séances",
+        prix: "270 euros",
+        description: "Bilan + 4 séances de suivi"
       }
     },
-    
     atelier: {
+      seo: {
+        title: "Ateliers collectifs - Ateliers de remédiation cognitive",
+        description:
+          "Enfants dès 7 ans, parents, étudiants. Ateliers collectifs de remédiation cognitive avec facilitation graphique et sketchnote. Format : Séance de 1h, groupes de 8 personnes maximum. Tarif : 10 € à 20 €."
+      },
       hero: {
         titre: "Apprenez ensemble, progressez plus vite",
         description: "Découvrez la puissance de l'apprentissage en groupe ! Dans une ambiance conviviale et bienveillante, vous développerez des compétences essentielles tout en créant des liens avec d'autres apprenants."
       },
       raisons: {
-        titre: "🌟 Pourquoi choisir les ateliers collectifs ?",
+        titre: "Pourquoi choisir les ateliers collectifs ?",
         items: [
           {
             icone: "🤝",
@@ -390,9 +418,10 @@ export const siteData = {
         ]
       },
       themes: {
-        titre: "📚 Thématiques des ateliers",
+        titre: "Thématiques des ateliers",
         items: [
           {
+            visuel: "sketchnote",
             icone: "📝",
             titre: "Méthodes de prise de notes",
             description: "Mind mapping, sketchnote, Cornell... Découvrez la méthode qui vous convient le mieux pour retenir efficacement."
@@ -403,35 +432,40 @@ export const siteData = {
             description: "Planning efficace, priorités, procrastination... Apprenez à gérer votre temps pour être plus productif et moins stressé."
           },
           {
+            visuel: "6bricks",
             icone: "🧱",
             titre: "Atelier 6 Bricks",
-            description: "Développez vos compétences à travers des activités ludiques basées sur la manipulation de briques LEGO. Une approche stimulante pour renforcer les compétences mathématiques, sociales, attentionnelles et bien plus encore."
+            description: "Développez vos compétences à travers des activités ludiques basées sur la manipulation de briques LEGO. Une approche stimulante pour renforcer les compétences mathématiques, sociales, attentionnelles et bien plus encore.",
+            bouton: "Découvrir les 6 Bricks"
           }
         ]
       },
       planning: {
-        titre: "📅 Prochaines sessions",
+        titre: "Prochaines sessions",
         informations: [
           "Ateliers réguliers : Tous les samedis matin de 10h à 11h",
           "Stages vacances : Pendant les vacances scolaires, sessions intensives de 2h",
           "Thématiques variables : Chaque mois, un nouveau thème pour diversifier les apprentissages"
         ],
         cta: "Contactez-moi pour connaître les prochaines dates et réserver votre place !"
+      },
+      bricks: {
+        titreObjectifs: "Objectifs :",
+        boutonRdv: "Prendre rendez-vous"
       }
     },
-    
     reiki: {
-      hero: {
+      intro: {
         titre: "Le Reiki, une approche douce et globale",
-        description: "Le Reiki est un soin énergétique d'origine japonaise où l'énergie universelle est transmise par apposition des mains sur différentes régions du corps. Elle agit sur plusieurs plans : mental, émotionnel et physique.",
-        suite: [
-          "Il stimule le potentiel actif d'auto-guérison que l'on a tous en nous. Ce processus d'autorégulation nous permet de maintenir une stabilité face aux variations",
-          "Offrez vous un moment de détente, dans l'instant présent et retrouvez votre calme et une clarté intérieure"
+        paragraphes: [
+          "Le Reiki est une pratique d'origine japonaise basée sur l'apposition des mains. Elle est proposée ici comme un temps de calme, de recentrage et de détente, en complément du coaching scolaire.",
+          "Ce n'est ni un diagnostic ni un soin médical. Elle ne se substitue pas à un suivi de santé.",
+          "Offrez-vous un moment dans l'instant présent, pour retrouver du calme et une clarté intérieure."
         ]
       },
-      coachingScolaire: {
+      coaching: {
         titre: "Reiki et coaching scolaire",
-        description: "Associé au coaching scolaire, le Reiki devient un véritable soutien pour l'équilibre intérieur.",
+        intro: "Associé au coaching scolaire, le Reiki devient un véritable soutien pour l'équilibre intérieur.",
         points: [
           "Cette combinaison permet à l'élève de mettre en œuvre plus facilement les stratégies travaillées ensemble.",
           "Il soutient l'élève de façon subtile, en l'aidant à se recentrer et à se reconnecter à ses propres ressources.",
@@ -441,62 +475,37 @@ export const siteData = {
       },
       approche: {
         titre: "Mon approche",
-        description: "Je suis praticienne Reiki, initiée au second degré, et j'accompagne les élèves (et leurs parents) à retrouver équilibre, confiance et bien-être pour avancer plus sereinement dans leur parcours scolaire et personnel."
-      }
-    },
-    
-    "atelier-6-bricks": {
-      hero: {
-        titre: "Atelier 6 Bricks",
-        description: "Ouvert aux enfants, adolescents, adultes et personnes âgées, l'Atelier 6 Bricks offre une approche ludique et stimulante pour développer des compétences essentielles à l'apprentissage."
-      },
-      competences: {
-        titre: "Compétences développées",
-        description: "Grâce à des activités basées sur la manipulation de briques LEGO, les participants renforcent :",
-        items: [
-          {
-            icone: "🔢",
-            titre: "Mathématiques avec les 6 Bricks",
-            description: "Comptage, calcul et résolution de problèmes grâce à la manipulation de briques LEGO"
-          },
-          {
-            icone: "🤝",
-            titre: "Social et émotionnel avec les 6 Bricks",
-            description: "Expression des émotions et communication à travers les constructions et les jeux collaboratifs"
-          },
-          {
-            icone: "👁️",
-            titre: "Attention et perception avec les 6 Bricks",
-            description: "Développement de la concentration et de l'observation spatiale en manipulant les briques"
-          },
-          {
-            icone: "💬",
-            titre: "Langage avec les 6 Bricks",
-            description: "Enrichissement du vocabulaire en décrivant les constructions et les activités avec les briques"
-          },
-          {
-            icone: "👥",
-            titre: "Coopération avec les 6 Bricks",
-            description: "Travail d'équipe et collaboration pour construire ensemble avec les briques LEGO"
-          },
-          {
-            icone: "✋",
-            titre: "Motricité fine avec les 6 Bricks",
-            description: "Précision et coordination en assemblant et manipulant les briques LEGO"
-          }
-        ]
-      },
-      approche: {
-        titre: "Notre approche",
-        description: "Ces ateliers permettent à chacun de progresser à son rythme, tout en s'amusant. L'apprentissage par le jeu favorise l'engagement, la motivation et la mémorisation des compétences acquises."
+        texte: "Je suis praticienne Reiki, initiée au second degré, et j'accompagne les élèves (et leurs parents) à retrouver équilibre, confiance et bien-être pour avancer plus sereinement dans leur parcours scolaire et personnel."
       }
     }
+  },
+
+  // ============================================
+  // BANDEAU CONFIDENTIALITÉ ET PAGE 404
+  // ============================================
+  bandeauConfidentialite: {
+    titre: "Confidentialité",
+    texte: "Ce site n'utilise pas de cookies de mesure d'audience. Un stockage local sert uniquement à mémoriser ce choix. Le formulaire de contact transmet vos données via EmailJS, décrit dans la",
+    lien: "politique de confidentialité",
+    bouton: "J'ai compris"
+  },
+
+  pageIntrouvable: {
+    titre: "Page introuvable",
+    description: "Cette adresse ne correspond à aucune page du site.",
+    bouton: "Retour à l'accueil",
+    seoTitle: "Page introuvable - L'Image en Tête",
+    seoDescription: "Cette page n'existe pas. Retournez à l'accueil de L'Image en Tête."
   },
 
   // ============================================
   // PAGE CONDITIONS GÉNÉRALES DE VENTE (CGV)
   // ============================================
   cgv: {
+    seo: {
+      title: "Conditions Générales de Vente",
+      description: "Conditions générales de vente - L'Image en Tête - Coaching scolaire"
+    },
     titre: "Conditions Générales de Vente",
     sections: [
       {
@@ -551,16 +560,24 @@ export const siteData = {
   // PAGE MENTIONS LÉGALES
   // ============================================
   mentionsLegales: {
+    seo: {
+      title: "Mentions légales",
+      description: "Mentions légales - L'Image en Tête - Coaching scolaire"
+    },
     titre: "Mentions légales",
     sections: [
       {
         titre: "1. Éditeur du site",
         contenu: [
-          "Raison sociale : L'image en tête",
+          "Raison sociale : L'Image en Tête",
           "Activité : Coaching scolaire et accompagnement dans les apprentissages",
           "Adresse : Richebourg, France",
           "Téléphone : 07.81.17.23.25",
-          "Email : limagentete@gmail.com"
+          "Email : limagentete@gmail.com",
+          "Directeur de la publication : Mathilde, responsable de la publication",
+          "SIRET : communiqué sur demande",
+          "TVA : non applicable / communiquée sur demande",
+          "Conception et réalisation du site : SDuvivierTech (https://sduviviertech.fr/)"
         ]
       },
       {
@@ -585,13 +602,15 @@ export const siteData = {
           "Conformément au Règlement Général sur la Protection des Données (RGPD), nous nous engageons à protéger vos données personnelles.",
           "Les données collectées lors de la prise de contact (nom, email, message) sont utilisées uniquement pour répondre à vos demandes.",
           "Sous-traitants : Les données du formulaire de contact sont transmises via EmailJS (EmailJS Inc., États-Unis) pour l'envoi des messages. EmailJS est conforme au RGPD et ne conserve pas vos données après l'envoi.",
-          "Vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à : limagentete@gmail.com"
+          "Vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à : limagentete@gmail.com",
+          "La politique de confidentialité complète est disponible sur ce site."
         ]
       },
       {
         titre: "5. Cookies",
         contenu: [
-          "Ce site utilise des cookies techniques nécessaires au bon fonctionnement du site. Aucun cookie de tracking n'est utilisé."
+          "Ce site n'utilise pas de cookies de mesure d'audience ni de publicité.",
+          "Un stockage local (localStorage) mémorise uniquement le fait que le bandeau d'information a été lu."
         ]
       },
       {
@@ -604,6 +623,59 @@ export const siteData = {
         titre: "7. Droit applicable",
         contenu: [
           "Le présent site est soumis au droit français. En cas de litige, les tribunaux français seront seuls compétents."
+        ]
+      }
+    ]
+  },
+
+  politiqueConfidentialite: {
+    seo: {
+      title: "Politique de confidentialité",
+      description:
+        "Politique de confidentialité de L'Image en Tête : données collectées, EmailJS et vos droits RGPD."
+    },
+    titre: "Politique de confidentialité",
+    sections: [
+      {
+        titre: "1. Responsable du traitement",
+        contenu: [
+          "Le responsable du traitement des données est L'Image en Tête, joignable à limagentete@gmail.com."
+        ]
+      },
+      {
+        titre: "2. Données collectées",
+        contenu: [
+          "Le formulaire de contact collecte le nom, l'adresse e-mail et le contenu du message. Aucune donnée n'est utilisée à des fins publicitaires ou de profilage."
+        ]
+      },
+      {
+        titre: "3. Finalité",
+        contenu: [
+          "Ces informations servent uniquement à répondre à votre demande et, le cas échéant, à organiser un rendez-vous."
+        ]
+      },
+      {
+        titre: "4. Destinataires et sous-traitant",
+        contenu: [
+          "Les messages sont transmis via EmailJS (EmailJS Inc., États-Unis) afin d'être envoyés par e-mail. EmailJS agit comme sous-traitant technique pour l'acheminement du message."
+        ]
+      },
+      {
+        titre: "5. Durée de conservation",
+        contenu: [
+          "Les messages sont conservés le temps nécessaire au traitement de la demande, puis archivés ou supprimés selon les échanges ultérieurs."
+        ]
+      },
+      {
+        titre: "6. Vos droits",
+        contenu: [
+          "Vous pouvez demander l'accès, la rectification ou la suppression de vos données, ainsi que la limitation du traitement, en écrivant à limagentete@gmail.com."
+        ]
+      },
+      {
+        titre: "7. Cookies et stockage local",
+        contenu: [
+          "Ce site n'utilise pas de cookies de mesure d'audience. Un stockage local mémorise uniquement la lecture du bandeau d'information."
         ]
       }
     ]

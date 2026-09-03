@@ -17,9 +17,9 @@ Ouvrez le fichier `src/pages/Home.jsx` et cherchez cette partie :
 
 ```jsx
 <SEO 
-  title="Accueil"
-  description="Coaching scolaire et accompagnement dans les apprentissages à Richebourg. Bilan, suivi individuel et ateliers de remédiation cognitive. Première rencontre gratuite."
-/>
+        title="L'Image en Tête - Coaching scolaire et accompagnement dans les apprentissages"
+        description="L'Image en Tête : coaching scolaire et accompagnement dans les apprentissages à Richebourg. Bilan, suivi individuel et ateliers de remédiation cognitive. Première rencontre gratuite."
+      />
 ```
 
 **Pour modifier :**

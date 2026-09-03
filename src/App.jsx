@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import CookieBanner from './components/CookieBanner'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -10,61 +11,31 @@ import AtelierPage from './pages/AtelierPage'
 import ReikiPage from './pages/ReikiPage'
 import CGV from './pages/CGV'
 import MentionsLegales from './pages/MentionsLegales'
-import { normalizePath } from './utils/pathUtils'
+import PolitiqueConfidentialite from './pages/PolitiqueConfidentialite'
+import NotFound from './pages/NotFound'
 import './styles/App.scss'
 
 function App() {
-  const [currentPath, setCurrentPath] = useState(normalizePath(window.location.pathname));
-
-  useEffect(() => {
-    const handlePopState = () => {
-      setCurrentPath(normalizePath(window.location.pathname));
-    };
-
-    window.addEventListener('popstate', handlePopState);
-    
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-    };
-  }, []);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [currentPath]);
-
-  const getCurrentPage = () => {
-    const path = currentPath;
-    
-    if (path === '/about' || path === '/about/') {
-      return <About />;
-    }
-    if (path === '/contact' || path === '/contact/') {
-      return <Contact />;
-    }
-    if (path === '/cgv' || path === '/cgv/') {
-      return <CGV />;
-    }
-    if (path === '/mentions-legales' || path === '/mentions-legales/') {
-      return <MentionsLegales />;
-    }
-    if (path === '/services/bilan' || path === '/services/bilan/') {
-      return <BilanPage />;
-    }
-    if (path === '/services/atelier' || path === '/services/atelier/') {
-      return <AtelierPage />;
-    }
-    if (path === '/services/reiki' || path === '/services/reiki/') {
-      return <ReikiPage />;
-    }
-    
-    return <Home />;
-  };
-
   return (
     <div className="app">
+      <a className="skip-link" href="#contenu-principal">
+        Aller au contenu
+      </a>
+      <ScrollToTop />
       <Header />
-      <main>
-        {getCurrentPage()}
+      <main id="contenu-principal">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/cgv" element={<CGV />} />
+          <Route path="/mentions-legales" element={<MentionsLegales />} />
+          <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
+          <Route path="/services/bilan" element={<BilanPage />} />
+          <Route path="/services/atelier" element={<AtelierPage />} />
+          <Route path="/services/reiki" element={<ReikiPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </main>
       <Footer />
       <CookieBanner />

@@ -1,30 +1,5 @@
 @use 'variables' as *;
 
-// Définition des polices personnalisées
-// Si vous avez les fichiers de polices Picky Retro et Gotham Black,
-// placez-les dans src/assets/fonts/ et décommentez les @font-face ci-dessous
-
-/*
-@font-face {
-  font-family: 'Picky Retro';
-  src: url('../assets/fonts/PickyRetro-Regular.woff2') format('woff2'),
-       url('../assets/fonts/PickyRetro-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Gotham Black';
-  src: url('../assets/fonts/Gotham-Black.woff2') format('woff2'),
-       url('../assets/fonts/Gotham-Black.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-*/
-
-// Styles de base pour les titres et sous-titres
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-title;
   font-weight: 400;

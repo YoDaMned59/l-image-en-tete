@@ -10,19 +10,67 @@
 
 body {
   font-family: $font-body;
-  font-size: 1.125rem; // 18px - taille optimale pour l'accessibilité (WCAG)
+  font-size: 1.125rem;
   line-height: 1.6;
   color: $text-color;
   background-color: $light-bg;
-  background-image: url('../assets/Motifs-fond.webp');
+  background-image: url('/images/fond-motif.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+}
+
+@media (min-width: 769px) {
+  body {
+    background-attachment: fixed;
+  }
 }
 
 #root {
   min-height: 100vh;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 10000;
+  padding: 0.75rem 1rem;
+  background: $btn-bg;
+  color: $btn-text;
+  text-decoration: none;
+  font-weight: 600;
+
+  &:focus {
+    left: 1rem;
+    top: 1rem;
+  }
+}
+
+.not-found {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+  text-align: center;
+
+  h1 {
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 2rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: $btn-bg;
+    color: $btn-text;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
 }
 
 .app {

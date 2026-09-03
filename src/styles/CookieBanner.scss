@@ -1,6 +1,5 @@
 // Import des variables de la charte graphique
 @use 'variables' as *;
-@use 'sass:color';
 
 .cookie-banner {
   position: fixed;
@@ -48,6 +47,10 @@
         color: $text-color;
         line-height: 1.6;
         margin: 0;
+
+        a {
+          color: $btn-bg;
+        }
       }
     }
 
@@ -67,13 +70,12 @@
         font-family: $font-body;
 
         &.accept {
-          background: $primary-color;
-          color: white;
+          background: $btn-bg;
+          color: $btn-text;
 
-          &:hover {
-            background: color.adjust($primary-color, $lightness: -10%);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(241, 183, 183, 0.3);
+          &:hover,
+          &:focus-visible {
+            background: $color-bleu;
           }
         }
 

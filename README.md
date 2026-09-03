@@ -1,66 +1,42 @@
-# L'Image en Tête - Projet React + SCSS
+# L'Image en Tête
 
-Ce projet utilise la stack moderne suivante :
+Site de coaching scolaire et d'accompagnement dans les apprentissages.
 
-## 🚀 Technologies utilisées
+**Pour modifier les textes et les images (sans coder)** : voir [GUIDE-CLIENT.md](GUIDE-CLIENT.md).
 
-- **React 19.1.1** - La dernière version de React
-- **Vite 7.1.7** - Build tool ultra-rapide
-- **SCSS** - Préprocesseur CSS avec variables, mixins et nesting
-- **JavaScript ES6+** - Langage de programmation moderne
+Stack : **React**, **JavaScript**, **SCSS**, **Vite**, **React Router**.
 
-## 📦 Installation
+## Lancer en local
 
 ```bash
 npm install
+npm run dev
 ```
 
-## 🛠️ Scripts disponibles
+Puis ouvrir l'URL affichée dans le terminal (souvent `http://localhost:5173`).
 
-- `npm run dev` - Démarre le serveur de développement
-- `npm run build` - Construit l'application pour la production
-- `npm run preview` - Prévisualise la version de production
-- `npm run lint` - Vérifie le code avec ESLint
+## Où modifier quoi
 
-## 🎨 Fonctionnalités SCSS
+| Tu veux… | Fichier |
+|---|---|
+| Changer un texte, un email, un tarif | `src/data/data.js` (voir [GUIDE-CLIENT.md](GUIDE-CLIENT.md)) |
+| Changer une image / le logo | remplacer le fichier dans `public/images/` **sans changer le nom** |
+| Image de partage (Facebook, etc.) | `public/og-image.webp` |
+| Ajouter une page | créer `src/pages/Nom.jsx`, l'ajouter dans `src/App.jsx` |
+| Changer les couleurs / polices | `src/styles/_variables.scss` |
+| Changer le header / pied de page | `src/components/Header.jsx`, `src/components/Footer.jsx` |
+| SEO (titre, description) | blocs `seo` dans `src/data/data.js` |
 
-Le projet inclut :
-- Variables SCSS pour une gestion cohérente des couleurs
-- Mixins pour la réutilisabilité du code
-- Nesting pour une structure CSS plus lisible
-- Composants stylés avec différentes variantes
-
-## 📁 Structure du projet
+## Dossiers
 
 ```
 src/
-├── components/
-│   ├── Button.jsx      # Composant bouton réutilisable
-│   └── Button.scss     # Styles SCSS du bouton
-├── App.jsx             # Composant principal
-├── App.scss            # Styles SCSS principaux
-└── main.jsx            # Point d'entrée de l'application
+  main.jsx              Point d'entrée
+  App.jsx               Routes
+  data/data.js          Tous les textes du site
+  pages/                Une page = un fichier
+  components/           Header, footer, SEO, bandeau
+  styles/               Charte graphique
+public/
+  images/               Photos et logo (à remplacer par la cliente)
 ```
-
-## 🚀 Démarrage rapide
-
-1. Installez les dépendances : `npm install`
-2. Démarrez le serveur de développement : `npm run dev`
-3. Ouvrez votre navigateur sur `http://localhost:5173`
-
-## 🎯 Exemple de composant avec SCSS
-
-Le projet inclut un composant `Button` qui démontre l'utilisation de SCSS avec :
-- Variables pour les couleurs et tailles
-- Mixins pour les styles de base
-- Nesting pour l'organisation du code
-- Différentes variantes (primary, secondary, success, danger, warning)
-- Différentes tailles (small, medium, large)
-
-## 🔧 Configuration
-
-Le projet est configuré avec :
-- **Vite** pour le build et le développement
-- **ESLint** pour la qualité du code
-- **SCSS** pour le préprocessing CSS
-- **Hot Module Replacement (HMR)** pour le développement rapide

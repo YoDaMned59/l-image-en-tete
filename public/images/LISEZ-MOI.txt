@@ -1,0 +1,15 @@
+Pour changer une image : remplacez le fichier en GARDANT exactement le même nom.
+
+logo.webp                 → logo en haut du site
+photo-mathilde.webp       → photo page À propos
+accueil-hero.webp         → grande image de l'accueil
+accueil-bilan.webp        → photo du bilan (accueil)
+accueil-atelier.webp      → photo des ateliers (accueil)
+atelier-sketchnote.webp   → exemple de sketchnote
+atelier-6-bricks.webp     → photo atelier 6 Bricks
+fond-motif.webp           → motif de fond
+
+Le fichier doit rester en .webp.
+Si votre photo est un .jpg, envoyez-la à Seb.
+
+Guide complet : GUIDE-CLIENT.md (à la racine du projet)

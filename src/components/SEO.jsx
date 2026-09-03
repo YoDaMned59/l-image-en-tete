@@ -1,59 +1,80 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { OG_IMAGE, SITE_URL } from '../config/site';
 
-const SEO = ({ 
-  title = "L'Image en Tête", 
+const SEO = ({
+  title = "L'Image en Tête",
   description = "Coaching scolaire et accompagnement dans les apprentissages à Richebourg. Bilan, suivi individuel et ateliers de remédiation cognitive.",
-  canonical = null 
+  canonical = null,
+  noIndex = false,
 }) => {
-  const baseUrl = "https://limagentete.fr";
-  const currentPath = window.location.pathname;
-  const fullUrl = canonical || `${baseUrl}${currentPath}`;
+  const { pathname } = useLocation();
+  const fullUrl = canonical || `${SITE_URL}${pathname}`;
 
   useEffect(() => {
     document.title = title;
 
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute('content', description);
+    const setMeta = (selector, attributes) => {
+      let element = document.querySelector(selector);
+      if (!element) {
+        element = document.createElement(attributes.tag || 'meta');
+        if (attributes.name) element.setAttribute('name', attributes.name);
+        if (attributes.property) element.setAttribute('property', attributes.property);
+        if (attributes.rel) element.setAttribute('rel', attributes.rel);
+        document.head.appendChild(element);
+      }
+      element.setAttribute(attributes.valueAttr, attributes.value);
+      return element;
+    };
 
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.setAttribute('rel', 'canonical');
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute('href', fullUrl);
+    setMeta('meta[name="description"]', {
+      tag: 'meta',
+      name: 'description',
+      valueAttr: 'content',
+      value: description,
+    });
 
-    let metaRobots = document.querySelector('meta[name="robots"]');
-    if (!metaRobots) {
-      metaRobots = document.createElement('meta');
-      metaRobots.setAttribute('name', 'robots');
-      document.head.appendChild(metaRobots);
-    }
-    metaRobots.setAttribute('content', 'index, follow');
+    setMeta('link[rel="canonical"]', {
+      tag: 'link',
+      rel: 'canonical',
+      valueAttr: 'href',
+      value: fullUrl,
+    });
 
-    const ogTags = {
+    setMeta('meta[name="robots"]', {
+      tag: 'meta',
+      name: 'robots',
+      valueAttr: 'content',
+      value: noIndex ? 'noindex, follow' : 'index, follow',
+    });
+
+    const extraTags = {
       'og:title': title,
       'og:description': description,
       'og:url': fullUrl,
-      'og:type': 'website'
+      'og:type': 'website',
+      'og:image': OG_IMAGE,
+      'og:locale': 'fr_FR',
+      'twitter:card': 'summary_large_image',
+      'twitter:title': title,
+      'twitter:description': description,
+      'twitter:image': OG_IMAGE,
     };
 
-    Object.entries(ogTags).forEach(([property, content]) => {
-      let ogTag = document.querySelector(`meta[property="${property}"]`);
-      if (!ogTag) {
-        ogTag = document.createElement('meta');
-        ogTag.setAttribute('property', property);
-        document.head.appendChild(ogTag);
-      }
-      ogTag.setAttribute('content', content);
+    Object.entries(extraTags).forEach(([key, content]) => {
+      const isOg = key.startsWith('og:');
+      const selector = isOg
+        ? `meta[property="${key}"]`
+        : `meta[name="${key}"]`;
+      setMeta(selector, {
+        tag: 'meta',
+        property: isOg ? key : undefined,
+        name: isOg ? undefined : key,
+        valueAttr: 'content',
+        value: content,
+      });
     });
 
-    // Données structurées Schema.org - Organization
     let schemaScript = document.querySelector('script[type="application/ld+json"][data-schema="organization"]');
     if (!schemaScript) {
       schemaScript = document.createElement('script');
@@ -61,33 +82,31 @@ const SEO = ({
       schemaScript.setAttribute('data-schema', 'organization');
       document.head.appendChild(schemaScript);
     }
-    
-    const organizationSchema = {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "L'Image en Tête",
-      "url": "https://limagentete.fr",
-      "description": "Coaching scolaire et accompagnement dans les apprentissages à Richebourg. Bilan, suivi individuel et ateliers de remédiation cognitive.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Richebourg",
-        "addressCountry": "FR"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+33-7-81-17-23-25",
-        "contactType": "customer service",
-        "email": "limagentete@gmail.com"
-      }
-    };
-    
-    schemaScript.textContent = JSON.stringify(organizationSchema);
 
-  }, [title, description, fullUrl]);
+    schemaScript.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: "L'Image en Tête",
+      url: SITE_URL,
+      image: OG_IMAGE,
+      description:
+        "Coaching scolaire et accompagnement dans les apprentissages à Richebourg. Bilan, suivi individuel et ateliers de remédiation cognitive.",
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Richebourg',
+        addressCountry: 'FR',
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+33-7-81-17-23-25',
+        contactType: 'customer service',
+        email: 'limagentete@gmail.com',
+        availableLanguage: 'French',
+      },
+    });
+  }, [title, description, fullUrl, noIndex]);
 
   return null;
 };
 
 export default SEO;
-
-

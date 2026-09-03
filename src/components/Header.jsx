@@ -1,144 +1,145 @@
-import React, { useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { siteData } from '../data/data';
-import { normalizePath, navigate } from '../utils/pathUtils';
-import logoImage from '../assets/Logo.webp';
 import '../styles/Header.scss';
+
+const navClass = ({ isActive }) => (isActive ? 'nav-link active' : 'nav-link');
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activePage, setActivePage] = useState('');
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const location = useLocation();
+  const servicesRef = useRef(null);
+  const menuId = useId();
+  const isServicePage = location.pathname.startsWith('/services/');
+  const { navigation, images } = siteData;
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setIsServicesOpen(false);
+  }, [location.pathname]);
 
-  React.useEffect(() => {
-    const updateActivePage = () => {
-      const path = normalizePath(window.location.pathname);
-      switch (path) {
-        case '/about':
-        case '/about/':
-          setActivePage('about');
-          break;
-        case '/contact':
-        case '/contact/':
-          setActivePage('contact');
-          break;
-        case '/services/bilan':
-        case '/services/bilan/':
-          setActivePage('bilan');
-          break;
-        case '/services/atelier':
-        case '/services/atelier/':
-          setActivePage('atelier');
-          break;
-        case '/services/reiki':
-        case '/services/reiki/':
-          setActivePage('reiki');
-          break;
-        default:
-          setActivePage('home');
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false);
+        setIsServicesOpen(false);
       }
     };
 
-    updateActivePage();
-    window.addEventListener('popstate', updateActivePage);
-    
+    const onPointerDown = (event) => {
+      if (servicesRef.current && !servicesRef.current.contains(event.target)) {
+        setIsServicesOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('mousedown', onPointerDown);
+
     return () => {
-      window.removeEventListener('popstate', updateActivePage);
+      document.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener('mousedown', onPointerDown);
     };
   }, []);
-
-  const navigateToPage = (path) => {
-    const pageName = path === '/' ? 'home' : path.substring(1).split('/')[0];
-    setActivePage(pageName);
-    navigate(path);
-    setIsMenuOpen(false);
-  };
-
-  const getNavLinkClass = (page) => {
-    return activePage === page ? 'nav-link active' : 'nav-link';
-  };
 
   return (
     <header className="header">
       <div className="header-container">
         <div className="logo-section">
-          <div className="logo" onClick={() => navigateToPage('/')} style={{ cursor: 'pointer' }}>
-            <img 
-              src={logoImage} 
-              alt="L'Image en Tête - Logo" 
+          <Link to="/" className="logo" aria-label={images.logo.alt} onClick={() => setIsMenuOpen(false)}>
+            <img
+              src={images.logo.src}
+              alt={images.logo.alt}
               className="logo-image"
-              loading="eager"
               width="256"
               height="100"
             />
-          </div>
+          </Link>
         </div>
 
         <div className="tagline-section">
           <p className="tagline">{siteData.slogan}</p>
         </div>
 
-        <button className="mobile-menu-btn" onClick={toggleMenu}>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
+        <button
+          type="button"
+          className="mobile-menu-btn"
+          onClick={() => setIsMenuOpen((open) => !open)}
+          aria-expanded={isMenuOpen}
+          aria-controls={menuId}
+          aria-label={isMenuOpen ? navigation.fermerMenu : navigation.ouvrirMenu}
+        >
+          <span className="hamburger-line" aria-hidden="true"></span>
+          <span className="hamburger-line" aria-hidden="true"></span>
+          <span className="hamburger-line" aria-hidden="true"></span>
         </button>
       </div>
 
-      <nav className="navigation">
+      <nav className="navigation" aria-label="Navigation principale">
         <div className="nav-links">
-          <button 
-            className={getNavLinkClass('home')}
-            onClick={() => navigateToPage('/')}
+          <NavLink to="/" end className={navClass}>
+            {navigation.accueil}
+          </NavLink>
+          <NavLink to="/about" className={navClass}>
+            {navigation.aPropos}
+          </NavLink>
+          <div
+            className={`dropdown${isServicesOpen ? ' open' : ''}${isServicePage ? ' is-active' : ''}`}
+            ref={servicesRef}
           >
-            Accueil
-          </button>
-          <button 
-            className={getNavLinkClass('about')}
-            onClick={() => navigateToPage('/about')}
-          >
-            À propos
-          </button>
-          <button 
-            className="nav-link dropdown"
-            onMouseEnter={() => setActivePage('services')}
-          >
-            Services
-            <div className="dropdown-content">
-              <button className="dropdown-item" onClick={() => navigateToPage('/services/bilan')}>Mon bilan & suivi</button>
-              <button className="dropdown-item" onClick={() => navigateToPage('/services/atelier')}>Mes ateliers</button>
+            <button
+              type="button"
+              className="dropdown-toggle"
+              aria-expanded={isServicesOpen}
+              aria-haspopup="true"
+              onClick={() => setIsServicesOpen((open) => !open)}
+            >
+              {navigation.services}
+            </button>
+            <div className="dropdown-content" role="menu">
+              <NavLink
+                to="/services/bilan"
+                className="dropdown-item"
+                role="menuitem"
+                onClick={() => setIsServicesOpen(false)}
+              >
+                {navigation.bilan}
+              </NavLink>
+              <NavLink
+                to="/services/atelier"
+                className="dropdown-item"
+                role="menuitem"
+                onClick={() => setIsServicesOpen(false)}
+              >
+                {navigation.ateliers}
+              </NavLink>
             </div>
-          </button>
-          <button 
-            className={getNavLinkClass('contact')}
-            onClick={() => navigateToPage('/contact')}
-          >
-            Contact
-          </button>
+          </div>
+          <NavLink to="/contact" className={navClass}>
+            {navigation.contact}
+          </NavLink>
         </div>
       </nav>
 
-      {isMenuOpen && (
-        <div className="mobile-menu">
-          <button className="mobile-nav-link" onClick={() => navigateToPage('/')}>
-            Accueil
-          </button>
-          <button className="mobile-nav-link" onClick={() => navigateToPage('/about')}>
-            À propos
-          </button>
-          <button className="mobile-nav-link" onClick={() => navigateToPage('/services/bilan')}>
-            Mon bilan & suivi
-          </button>
-          <button className="mobile-nav-link" onClick={() => navigateToPage('/services/atelier')}>
-            Mes ateliers
-          </button>
-          <button className="mobile-nav-link" onClick={() => navigateToPage('/contact')}>
-            Contact
-          </button>
+      {isMenuOpen ? (
+        <div className="mobile-menu" id={menuId}>
+          <NavLink to="/" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            {navigation.accueil}
+          </NavLink>
+          <NavLink to="/about" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            {navigation.aPropos}
+          </NavLink>
+          <NavLink to="/services/bilan" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            {navigation.bilan}
+          </NavLink>
+          <NavLink to="/services/atelier" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            {navigation.ateliers}
+          </NavLink>
+          <NavLink to="/contact" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            {navigation.contact}
+          </NavLink>
         </div>
-      )}
+      ) : null}
     </header>
   );
 };

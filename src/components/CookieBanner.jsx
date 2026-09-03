@@ -1,26 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { siteData } from '../data/data';
 import '../styles/CookieBanner.scss';
 
 const CookieBanner = () => {
   const [showBanner, setShowBanner] = useState(false);
+  const { bandeauConfidentialite } = siteData;
 
   useEffect(() => {
     const consent = localStorage.getItem('cookieConsent');
-    if (!consent) {
-      setTimeout(() => {
-        setShowBanner(true);
-      }, 1000);
+    if (consent) {
+      return undefined;
     }
+
+    const timer = window.setTimeout(() => {
+      setShowBanner(true);
+    }, 1000);
+
+    return () => window.clearTimeout(timer);
   }, []);
 
-  const handleAccept = () => {
-    localStorage.setItem('cookieConsent', 'accepted');
-    localStorage.setItem('cookieConsentDate', new Date().toISOString());
-    setShowBanner(false);
-  };
-
-  const handleDecline = () => {
-    localStorage.setItem('cookieConsent', 'declined');
+  const handleDismiss = () => {
+    localStorage.setItem('cookieConsent', 'acknowledged');
     localStorage.setItem('cookieConsentDate', new Date().toISOString());
     setShowBanner(false);
   };
@@ -30,27 +31,18 @@ const CookieBanner = () => {
   }
 
   return (
-    <div className="cookie-banner">
+    <div className="cookie-banner" role="dialog" aria-labelledby="cookie-banner-title">
       <div className="cookie-banner-content">
         <div className="cookie-banner-text">
-          <h3>🍪 Cookies et confidentialité</h3>
+          <h3 id="cookie-banner-title">{bandeauConfidentialite.titre}</h3>
           <p>
-            Ce site utilise des cookies pour améliorer votre expérience de navigation. 
-            En continuant à naviguer, vous acceptez notre utilisation des cookies.
+            {bandeauConfidentialite.texte}{' '}
+            <Link to="/politique-de-confidentialite">{bandeauConfidentialite.lien}</Link>.
           </p>
         </div>
         <div className="cookie-banner-buttons">
-          <button 
-            className="cookie-button accept" 
-            onClick={handleAccept}
-          >
-            J'accepte
-          </button>
-          <button 
-            className="cookie-button decline" 
-            onClick={handleDecline}
-          >
-            Je refuse
+          <button type="button" className="cookie-button accept" onClick={handleDismiss}>
+            {bandeauConfidentialite.bouton}
           </button>
         </div>
       </div>
