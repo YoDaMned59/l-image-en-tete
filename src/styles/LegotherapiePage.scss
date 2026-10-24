@@ -139,7 +139,20 @@
       }
     }
 
-    .themes-section h3,
+    .themes-section {
+      h3 {
+        color: $color-bleu-fonce;
+        margin-bottom: 0.75rem;
+      }
+
+      .themes-intro {
+        text-align: center;
+        max-width: 40rem;
+        margin: 0 auto 2rem;
+        color: $text-color;
+      }
+    }
+
     .theme-card h4 {
       color: $color-bleu-fonce;
     }

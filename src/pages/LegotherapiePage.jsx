@@ -73,6 +73,7 @@ const LegotherapiePage = () => {
 
           <div className="themes-section">
             <h3>{details.themes.titre}</h3>
+            <p className="themes-intro">{details.themes.description}</p>
             <div className="themes-grid">
               {details.themes.items.map((theme) => (
                 <div key={theme.titre} className="theme-card">

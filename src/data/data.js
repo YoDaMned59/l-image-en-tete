@@ -565,7 +565,8 @@ export const siteData = {
         ]
       },
       themes: {
-        titre: "Ateliers Légo",
+        titre: "Ateliers Lego ponctuels",
+        description: "Ces ateliers utilisent les Lego, mais ne font pas partie du cycle de légothérapie.",
         items: [
           {
             icone: "🔢",
