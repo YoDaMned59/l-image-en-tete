@@ -39,6 +39,11 @@
         line-height: 1.6;
         color: $text-muted;
         margin-bottom: 1rem;
+
+        a {
+          color: $secondary-color;
+          text-decoration: underline;
+        }
       }
       
       ul {

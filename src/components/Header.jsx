@@ -8,6 +8,7 @@ const navClass = ({ isActive }) => (isActive ? 'nav-link active' : 'nav-link');
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isServicesDismissed, setIsServicesDismissed] = useState(false);
   const location = useLocation();
   const servicesRef = useRef(null);
   const menuId = useId();
@@ -18,6 +19,12 @@ const Header = () => {
     setIsMenuOpen(false);
     setIsServicesOpen(false);
   }, [location.pathname]);
+
+  const handleServiceLinkClick = (event) => {
+    setIsServicesOpen(false);
+    setIsServicesDismissed(true);
+    event.currentTarget.blur();
+  };
 
   useEffect(() => {
     const onKeyDown = (event) => {
@@ -84,15 +91,24 @@ const Header = () => {
             {navigation.aPropos}
           </NavLink>
           <div
-            className={`dropdown${isServicesOpen ? ' open' : ''}${isServicePage ? ' is-active' : ''}`}
+            className={`dropdown${isServicesOpen ? ' open' : ''}${isServicePage ? ' is-active' : ''}${isServicesDismissed ? ' is-dismissed' : ''}`}
             ref={servicesRef}
+            onMouseEnter={() => setIsServicesDismissed(false)}
           >
             <button
               type="button"
               className="dropdown-toggle"
               aria-expanded={isServicesOpen}
               aria-haspopup="true"
-              onClick={() => setIsServicesOpen((open) => !open)}
+              onClick={() => {
+                setIsServicesDismissed(false);
+                setIsServicesOpen((open) => !open);
+              }}
+              onFocus={(event) => {
+                if (event.currentTarget.matches(':focus-visible')) {
+                  setIsServicesDismissed(false);
+                }
+              }}
             >
               {navigation.services}
             </button>
@@ -101,7 +117,7 @@ const Header = () => {
                 to="/services/bilan"
                 className="dropdown-item"
                 role="menuitem"
-                onClick={() => setIsServicesOpen(false)}
+                onClick={handleServiceLinkClick}
               >
                 {navigation.bilan}
               </NavLink>
@@ -109,9 +125,25 @@ const Header = () => {
                 to="/services/atelier"
                 className="dropdown-item"
                 role="menuitem"
-                onClick={() => setIsServicesOpen(false)}
+                onClick={handleServiceLinkClick}
               >
                 {navigation.ateliers}
+              </NavLink>
+              <NavLink
+                to="/services/6-bricks"
+                className="dropdown-item"
+                role="menuitem"
+                onClick={handleServiceLinkClick}
+              >
+                {navigation.bricks}
+              </NavLink>
+              <NavLink
+                to="/services/legotherapie"
+                className="dropdown-item"
+                role="menuitem"
+                onClick={handleServiceLinkClick}
+              >
+                {navigation.legotherapie}
               </NavLink>
             </div>
           </div>
@@ -134,6 +166,12 @@ const Header = () => {
           </NavLink>
           <NavLink to="/services/atelier" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
             {navigation.ateliers}
+          </NavLink>
+          <NavLink to="/services/6-bricks" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            {navigation.bricks}
+          </NavLink>
+          <NavLink to="/services/legotherapie" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            {navigation.legotherapie}
           </NavLink>
           <NavLink to="/contact" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
             {navigation.contact}

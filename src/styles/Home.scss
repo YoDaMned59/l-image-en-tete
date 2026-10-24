@@ -108,7 +108,7 @@
     
     .activities-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 2rem;
     }
     
@@ -131,6 +131,34 @@
       
       &.atelier-block {
         background: $gradient-secondary; // Bleu pour les ateliers
+      }
+
+      &.bricks-block {
+        background: $color-creme;
+      }
+
+      &.legotherapie-block,
+      &.bricks-block {
+        .service-content {
+          color: $color-bleu-fonce;
+
+          h3 {
+            font-size: clamp(1.15rem, 1.5vw, 1.6rem);
+            letter-spacing: 0.5px;
+          }
+        }
+      }
+
+      &.legotherapie-block {
+        background: $color-vert;
+
+        .service-image img {
+          // L'illustration a des marges blanches. On zoome juste assez
+          // pour les sortir du cadre, à la même hauteur que les autres cartes.
+          object-position: center 46%;
+          transform: scale(1.22);
+          transform-origin: center 46%;
+        }
       }
       
       &.reiki-block {
@@ -192,6 +220,7 @@
           margin-bottom: 1.5rem;
           text-transform: uppercase;
           letter-spacing: 1px;
+          overflow-wrap: break-word;
         }
         
         .service-description {
@@ -282,6 +311,29 @@
                 transform: translateY(-2px);
               }
             }
+          }
+        }
+      }
+
+      &.legotherapie-block,
+      &.bricks-block {
+        .service-buttons .cta-button {
+          &.primary,
+          &.secondary {
+            color: $color-bleu-fonce;
+            border-color: rgba(61, 86, 115, 0.45);
+            background: transparent;
+          }
+
+          &.primary {
+            background: rgba(61, 86, 115, 0.08);
+          }
+
+          &.primary:hover,
+          &.secondary:hover {
+            background: $color-bleu-fonce;
+            color: $white;
+            border-color: $color-bleu-fonce;
           }
         }
       }

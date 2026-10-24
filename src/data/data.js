@@ -50,6 +50,10 @@ export const siteData = {
     atelier6Bricks: {
       src: "/images/atelier-6-bricks.webp",
       alt: "Atelier 6 Bricks"
+    },
+    legotherapie: {
+      src: "/images/atelier-legotherapie.webp",
+      alt: "Séance de légothérapie autour des briques"
     }
   },
 
@@ -62,6 +66,8 @@ export const siteData = {
     services: "Services",
     bilan: "Mon bilan & suivi",
     ateliers: "Mes ateliers",
+    bricks: "6 Bricks",
+    legotherapie: "Légothérapie",
     contact: "Contact",
     ouvrirMenu: "Ouvrir le menu",
     fermerMenu: "Fermer le menu"
@@ -78,6 +84,13 @@ export const siteData = {
     creditAvant: "Site réalisé par",
     creditNom: "SDuvivierTech",
     creditUrl: "https://sduviviertech.fr/"
+  },
+
+  mediateur: {
+    titre: "Médiateur de la consommation",
+    nom: "Société Médiation Professionnelle",
+    url: "http://www.mediateur-consommation-smp.fr",
+    adresse: "Alteritae, 5 rue Salvaing, 12000 Rodez"
   },
 
   // ============================================
@@ -318,6 +331,27 @@ export const siteData = {
       modalites: ["Collectif", "À domicile"]
     },
     {
+      id: "legotherapie",
+      titre: "Légothérapie",
+      pourQui: "Jeunes de 6 à 25 ans",
+      resume: "Communication, coopération, gestion des émotions et fonctions exécutives",
+      objectifs: [
+        "Savoir demander de l'aide",
+        "Utiliser un vocabulaire adapté pour se faire comprendre",
+        "Être plus à l'aise à l'oral",
+        "S'intégrer à un groupe",
+        "Apprendre à gérer les désaccords",
+        "Prendre en compte les idées des autres",
+        "Apprendre à attendre son tour de parole",
+        "Avoir confiance en ses propres capacités",
+        "Favoriser l'engagement dans leurs études"
+      ],
+      format: "Séance de 1h30, groupe de 4 personnes, cycle de 5 ateliers minimum",
+      tarif: "À partir de 25 € en collectif",
+      ton: "coopératif et bienveillant",
+      modalites: ["Collectif", "Individuel"]
+    },
+    {
       id: "reiki",
       titre: "Soin Reiki",
       pourQui: "Tout public",
@@ -343,8 +377,10 @@ export const siteData = {
         "Développer la motricité fine"
       ],
       format: "Ateliers ludiques basés sur la manipulation de briques LEGO",
-      tarif: "Sur demande",
-      ton: "ludique et stimulant"
+      tarif: "À partir de 15 €",
+      ton: "ludique et stimulant",
+      resume: "Activités ludiques basées sur la manipulation de briques LEGO.",
+      modalites: ["Collectif"]
     }
   ],
 
@@ -430,13 +466,6 @@ export const siteData = {
             icone: "⏰",
             titre: "Organisation et gestion du temps",
             description: "Planning efficace, priorités, procrastination... Apprenez à gérer votre temps pour être plus productif et moins stressé."
-          },
-          {
-            visuel: "6bricks",
-            icone: "🧱",
-            titre: "Atelier 6 Bricks",
-            description: "Développez vos compétences à travers des activités ludiques basées sur la manipulation de briques LEGO. Une approche stimulante pour renforcer les compétences mathématiques, sociales, attentionnelles et bien plus encore.",
-            bouton: "Découvrir les 6 Bricks"
           }
         ]
       },
@@ -448,10 +477,112 @@ export const siteData = {
           "Thématiques variables : Chaque mois, un nouveau thème pour diversifier les apprentissages"
         ],
         cta: "Contactez-moi pour connaître les prochaines dates et réserver votre place !"
+      }
+    },
+    bricks: {
+      seo: {
+        title: "Atelier 6 Bricks - Activités ludiques",
+        description:
+          "Atelier 6 Bricks pour enfants, adolescents, adultes et personnes âgées. Manipulation de briques LEGO pour les maths, l'attention, le langage et la coopération. Dès 15 €. L'Image en Tête, à Richebourg."
       },
-      bricks: {
-        titreObjectifs: "Objectifs :",
-        boutonRdv: "Prendre rendez-vous"
+      intro: [
+        "Développez vos compétences à travers des activités ludiques basées sur la manipulation de briques LEGO.",
+        "Une approche stimulante pour renforcer les compétences mathématiques, sociales, attentionnelles et bien plus encore."
+      ]
+    },
+    legotherapie: {
+      seo: {
+        title: "Légothérapie - Compétences psychosociales",
+        description:
+          "Ateliers de légothérapie pour les 6-25 ans : communication, coopération et gestion des émotions, en groupe de 4. Dès 25 €. L'Image en Tête, à Richebourg."
+      },
+      intro: {
+        titre: "La légothérapie",
+        paragraphes: [
+          "La légothérapie permet le développement des compétences psychosociales, la communication, la coopération, la gestion des émotions, l'adaptation du comportement et des fonctions exécutives.",
+          "Elle a été développée par le Dr Legoff, neuropsychologue, suite à ses observations auprès d'enfants ayant un TSA."
+        ]
+      },
+      mentionMarque: "**LEGO**, le logo, la brique et ses caractéristiques sont des marques déposées par The Lego Group. Les ateliers de L'Image en Tête ne sont pas liés à la marque The Lego Group.",
+      pourQui: {
+        titre: "Pour qui ?",
+        items: [
+          "Tu as entre 6 et 25 ans",
+          "Tu peux avoir des difficultés à te faire comprendre et à collaborer",
+          "Tu peux avoir eu de mauvaises expériences sociales (harcèlement, phobie sociale)",
+          "Tu peux avoir du mal à t'intégrer à l'école ou dans la vie quotidienne",
+          "Tu peux avoir des besoins particuliers (TDAH, TSA, DYS…)"
+        ]
+      },
+      pourQuoi: {
+        titre: "Pour quoi ?",
+        introduction: "Ces ateliers s'adressent aux jeunes ayant des besoins particuliers ou ayant du mal à s'intégrer dans un groupe. Ils apportent de nombreux bénéfices :"
+      },
+      comment: {
+        titre: "Comment ?",
+        paragraphes: [
+          "À travers une construction commune réalisée en petit groupe de 4 personnes pendant 1h30, les participants sont amenés à communiquer, à s'écouter et à collaborer pour atteindre un objectif partagé.",
+          "Les thématiques varient selon les intérêts du groupe et des difficultés rencontrées.",
+          "Les séances se déroulent sur un cycle d'au moins 5 ateliers pour observer des progrès.",
+          "Un rapport détaillé des compétences évaluées est fourni à la fin de ce cycle pour chaque participant."
+        ]
+      },
+      tarifs: {
+        titre: "Tarifs",
+        items: [
+          { label: "Collectif", prix: "À partir de 25 € par participant" },
+          { label: "Individuel", prix: "À partir de 60 €" },
+          { label: "Structures", prix: "Sur devis" }
+        ]
+      },
+      galerie: {
+        titre: "Les ateliers en images",
+        photos: [
+          {
+            src: "/images/Image-Leogtherapie.webp",
+            alt: "Atelier de légothérapie : cartes, bacs de briques et construction autour d'une table"
+          },
+          {
+            src: "/images/Image-Leogtherapie1.webp",
+            alt: "Groupe autour d'une table ronde avec des fiches de consignes et des briques"
+          },
+          {
+            src: "/images/Image-Leogtherapie2.webp",
+            alt: "Tri de briques colorées à partir d'une fiche de consigne"
+          },
+          {
+            src: "/images/Image-Leogtherapie3.webp",
+            alt: "Petite construction en briques posée à côté de sa fiche"
+          },
+          {
+            src: "/images/Image-Leogtherapie4.webp",
+            alt: "Figurine en briques et meuble de rangement sur la table d'atelier"
+          },
+          {
+            src: "/images/Image-Leogtherapie5.webp",
+            alt: "Boîte de briques et assemblage autour de la table"
+          }
+        ]
+      },
+      themes: {
+        titre: "Ateliers Légo",
+        items: [
+          {
+            icone: "🔢",
+            titre: "Révise tes maths avec les légo",
+            lignes: ["Niveau primaire"]
+          },
+          {
+            icone: "📖",
+            titre: "Révise ton français avec les légo",
+            lignes: ["Grammaire / conjugaison", "Niveau primaire"]
+          },
+          {
+            icone: "🧠",
+            titre: "Développe tes fonctions cognitives",
+            lignes: ["Soutenir les apprentissages", "Individuel ou collectif"]
+          }
+        ]
       }
     },
     reiki: {
@@ -507,6 +638,7 @@ export const siteData = {
       description: "Conditions générales de vente - L'Image en Tête - Coaching scolaire"
     },
     titre: "Conditions Générales de Vente",
+    miseAJour: "23 octobre 2026",
     sections: [
       {
         titre: "1. Objet",
@@ -518,7 +650,7 @@ export const siteData = {
         titre: "2. Prestations",
         contenu: [
           "Les prestations proposées comprennent :",
-          ["Bilan et suivi individuel", "Ateliers collectifs", "Soins Reiki"]
+          ["Bilan et suivi individuel", "Ateliers collectifs", "Atelier 6 Bricks", "Légothérapie", "Soins Reiki"]
         ]
       },
       {
@@ -548,7 +680,17 @@ export const siteData = {
         ]
       },
       {
-        titre: "7. Droit applicable",
+        titre: "7. Litige – médiation de la consommation",
+        contenu: [
+          "En cas de litige entre le Client et l'entreprise, ceux-ci s'efforceront de le résoudre à l'amiable (le Client adressera une réclamation écrite auprès du professionnel ou, le cas échéant, auprès du Service Relations Clientèle du professionnel).",
+          "À défaut d'accord amiable ou en l'absence de réponse du professionnel dans un délai raisonnable d'un (1) mois, le Client consommateur au sens de l'article L.612-2 du code de la consommation a la possibilité de saisir gratuitement, si un désaccord subsiste, le médiateur compétent inscrit sur la liste des médiateurs établie par la Commission d'évaluation et de contrôle de la médiation de la consommation en application de l'article L.615-1 du code de la consommation, à savoir :",
+          "La Société Médiation Professionnelle",
+          "http://www.mediateur-consommation-smp.fr",
+          "Alteritae, 5 rue Salvaing, 12000 Rodez"
+        ]
+      },
+      {
+        titre: "8. Droit applicable",
         contenu: [
           "Les présentes conditions générales de vente sont soumises au droit français. En cas de litige, les tribunaux français seront seuls compétents."
         ]

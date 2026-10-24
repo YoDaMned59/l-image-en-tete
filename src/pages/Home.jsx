@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { siteData } from '../data/data';
 import SEO from '../components/SEO';
+import GoogleReviews from '../components/GoogleReviews';
 import { PAGE_SEO } from '../config/seoPages';
 import '../styles/Home.scss';
 
@@ -11,6 +12,8 @@ const Home = () => {
 
   const bilanService = services.find((s) => s.id === 'bilan');
   const atelierService = services.find((s) => s.id === 'atelier');
+  const bricksService = services.find((s) => s.id === 'atelier-6-bricks');
+  const legotherapieService = services.find((s) => s.id === 'legotherapie');
 
   const scrollToActivities = () => {
     activitiesSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -106,9 +109,73 @@ const Home = () => {
                 </div>
               </div>
             </div>
+
+            <div className="service-block bricks-block">
+              <div className="service-image">
+                <img
+                  src={images.atelier6Bricks.src}
+                  alt={images.atelier6Bricks.alt}
+                  loading="lazy"
+                  width="564"
+                  height="376"
+                />
+              </div>
+              <div className="service-content">
+                <h3>{bricksService.titre.toUpperCase()}</h3>
+                <p className="service-description">{bricksService.pourQui}</p>
+                <div className="objectives">
+                  <p>{bricksService.resume}</p>
+                </div>
+                <div className="modalities">
+                  <h4>{home.activites.titreModalites}</h4>
+                  {bricksService.modalites.map((modalite) => (
+                    <div key={modalite} className="modality-item"><span>{modalite}</span></div>
+                  ))}
+                  <div className="modality-item"><span>{bricksService.format}</span></div>
+                  <div className="modality-item"><span>{bricksService.tarif}</span></div>
+                </div>
+                <div className="service-buttons">
+                  <Link to="/contact" className="cta-button primary">{home.activites.boutonRdv}</Link>
+                  <Link to="/services/6-bricks" className="cta-button secondary">{home.activites.boutonPlus}</Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="service-block legotherapie-block">
+              <div className="service-image">
+                <img
+                  src={images.legotherapie.src}
+                  alt={images.legotherapie.alt}
+                  loading="lazy"
+                  width="1774"
+                  height="887"
+                />
+              </div>
+              <div className="service-content">
+                <h3>{legotherapieService.titre.toUpperCase()}</h3>
+                <p className="service-description">{legotherapieService.pourQui}</p>
+                <div className="objectives">
+                  <p>{legotherapieService.resume ?? legotherapieService.objectifs.join(', ')}</p>
+                </div>
+                <div className="modalities">
+                  <h4>{home.activites.titreModalites}</h4>
+                  {legotherapieService.modalites.map((modalite) => (
+                    <div key={modalite} className="modality-item"><span>{modalite}</span></div>
+                  ))}
+                  <div className="modality-item"><span>{legotherapieService.format}</span></div>
+                  <div className="modality-item"><span>{legotherapieService.tarif}</span></div>
+                </div>
+                <div className="service-buttons">
+                  <Link to="/contact" className="cta-button primary">{home.activites.boutonRdv}</Link>
+                  <Link to="/services/legotherapie" className="cta-button secondary">{home.activites.boutonPlus}</Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+      <GoogleReviews />
 
       <section className="cta-section">
         <div className="container">

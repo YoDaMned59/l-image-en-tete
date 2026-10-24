@@ -8,6 +8,8 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import BilanPage from './pages/BilanPage'
 import AtelierPage from './pages/AtelierPage'
+import BricksPage from './pages/BricksPage'
+import LegotherapiePage from './pages/LegotherapiePage'
 import ReikiPage from './pages/ReikiPage'
 import CGV from './pages/CGV'
 import MentionsLegales from './pages/MentionsLegales'
@@ -33,6 +35,8 @@ function App() {
           <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
           <Route path="/services/bilan" element={<BilanPage />} />
           <Route path="/services/atelier" element={<AtelierPage />} />
+          <Route path="/services/6-bricks" element={<BricksPage />} />
+          <Route path="/services/legotherapie" element={<LegotherapiePage />} />
           <Route path="/services/reiki" element={<ReikiPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

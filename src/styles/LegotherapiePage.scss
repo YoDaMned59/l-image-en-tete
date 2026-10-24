@@ -1,0 +1,196 @@
+// Page Légothérapie — bleu et bleu foncé de la charte
+@use 'variables' as *;
+@use 'service-base' as *;
+
+.service-page-legotherapie {
+  .service-hero h1 {
+    color: $color-bleu-fonce;
+  }
+
+  .objectives-section {
+    background: rgba(117, 145, 178, 0.12);
+
+    h2 {
+      color: $color-bleu-fonce;
+    }
+
+    .objectives-suite {
+      margin-top: 4rem;
+    }
+
+    .section-intro {
+      max-width: 800px;
+      margin: -0.5rem auto 2rem;
+      text-align: center;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: $text-color;
+    }
+
+    .objective-card {
+      border-left-color: $color-bleu;
+
+      .objective-check {
+        background: $color-bleu-fonce;
+      }
+    }
+  }
+
+  .galerie-section {
+    padding: 60px 20px;
+    background: rgba(247, 239, 227, 0.85);
+
+    h2 {
+      font-family: $font-subtitle;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: $color-bleu-fonce;
+    }
+
+    .galerie-grille {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    figure {
+      margin: 0;
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      background: $white;
+      box-shadow: 0 5px 15px $shadow-soft;
+      cursor: zoom-in;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+      &:hover,
+      &:focus-within {
+        z-index: 2;
+        transform: scale(1.15);
+        box-shadow: 0 12px 28px $shadow;
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .info-section {
+    h2 {
+      font-family: $font-subtitle;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: $color-bleu-fonce;
+    }
+
+    .info-card h3 {
+      color: $color-bleu;
+    }
+
+    .info-card p.price {
+      color: $color-bleu-fonce;
+      font-size: 1.35rem;
+    }
+  }
+
+  .content-section {
+    background: rgba(255, 255, 255, 0.85);
+
+    .texte-section {
+      margin-bottom: 4rem;
+
+      .texte-content {
+        max-width: 900px;
+        margin: 0 auto;
+        background: $white;
+        padding: 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px $shadow-soft;
+
+        p {
+          font-size: 1.1rem;
+          color: $text-color;
+          line-height: 1.8;
+          margin-bottom: 1.5rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        .mention-marque {
+          background: rgba(117, 145, 178, 0.12);
+          padding: 1.5rem;
+          border-radius: 10px;
+          border-left: 4px solid $color-bleu;
+          margin-top: 0.5rem;
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .themes-section h3,
+    .theme-card h4 {
+      color: $color-bleu-fonce;
+    }
+  }
+
+  .cta-section h2 {
+    color: $color-bleu-fonce;
+  }
+
+  .cta-button {
+    &.cta-primary,
+    &.cta-secondary {
+      color: $color-bleu-fonce;
+      border-color: $color-bleu-fonce;
+
+      &:hover {
+        background: $color-bleu-fonce;
+        color: $white;
+        box-shadow: 0 5px 15px rgba(61, 86, 115, 0.3);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .service-page-legotherapie {
+    .galerie-section .galerie-grille {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .galerie-section h2 {
+      font-size: 1.8rem;
+    }
+
+    .content-section .texte-section h2 {
+      font-size: 2rem;
+    }
+
+    .content-section .texte-section .texte-content {
+      padding: 1.5rem;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-page-legotherapie .galerie-section figure {
+    transition: none;
+  }
+
+  .service-page-legotherapie .galerie-section figure:hover,
+  .service-page-legotherapie .galerie-section figure:focus-within {
+    transform: none;
+  }
+}

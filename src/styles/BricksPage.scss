@@ -1,0 +1,54 @@
+@use 'variables' as *;
+@use 'service-base' as *;
+
+.service-page.service-page-bricks {
+  .service-hero {
+    h1 {
+      color: $color-bleu-fonce;
+    }
+  }
+
+  .content-section {
+    background: rgba(255, 255, 255, 0.85);
+
+    .texte-content {
+      max-width: 900px;
+      margin: 0 auto;
+      background: $white;
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px $shadow-soft;
+
+      p {
+        font-size: 1.1rem;
+        color: $text-color;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .objectives-section {
+    background: rgba(255, 255, 255, 0.85);
+
+    h2 {
+      color: $color-bleu-fonce;
+    }
+
+    .objective-card {
+      border-left-color: $color-vert;
+
+      .objective-check {
+        background: $color-bleu-fonce;
+      }
+    }
+  }
+
+  .info-section .info-card p.price {
+    color: $color-bleu-fonce;
+  }
+}

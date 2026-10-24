@@ -65,8 +65,33 @@
   .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 2rem;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
     text-align: center;
+
+    .footer-mediateur {
+      margin-bottom: 1.5rem;
+
+      p {
+        margin: 0.15rem 0;
+        opacity: 0.9;
+        font-size: 0.9rem;
+      }
+
+      .footer-mediateur-titre {
+        font-weight: 600;
+        margin-bottom: 0.35rem;
+      }
+
+      a {
+        color: white;
+        text-decoration: underline;
+
+        &:hover,
+        &:focus-visible {
+          color: $accent-color;
+        }
+      }
+    }
     
     p {
       margin: 0 0 0.35rem;

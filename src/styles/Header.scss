@@ -196,6 +196,7 @@
           min-width: 200px;
           opacity: 0;
           visibility: hidden;
+          pointer-events: none;
           z-index: 1000;
           display: flex;
           flex-direction: column;
@@ -226,11 +227,12 @@
           }
         }
 
-        &:hover .dropdown-content,
-        &:focus-within .dropdown-content,
-        &.open .dropdown-content {
+        &:hover:not(.is-dismissed) .dropdown-content,
+        &:focus-within:not(.is-dismissed) .dropdown-content,
+        &.open:not(.is-dismissed) .dropdown-content {
           opacity: 1;
           visibility: visible;
+          pointer-events: auto;
         }
       }
     }

@@ -1,8 +1,18 @@
 import { siteData } from '../data/data';
 import SEO from '../components/SEO';
-import { LEGAL_UPDATED_AT } from '../config/site';
 import { PAGE_SEO } from '../config/seoPages';
 import '../styles/CGV.scss';
+
+const avecLien = (texte) =>
+  texte.split(/(https?:\/\/[^\s]+)/g).map((morceau, index) =>
+    morceau.startsWith('http') ? (
+      <a key={index} href={morceau} target="_blank" rel="noopener noreferrer">
+        {morceau}
+      </a>
+    ) : (
+      morceau
+    )
+  );
 
 const CGV = () => {
   const { cgv } = siteData;
@@ -29,13 +39,13 @@ const CGV = () => {
                   </ul>
                 );
               }
-              return <p key={pIndex}>{paragraphe}</p>;
+              return <p key={pIndex}>{avecLien(paragraphe)}</p>;
             })}
           </section>
         ))}
 
         <div className="cgv-footer">
-          <p><strong>Dernière mise à jour :</strong> {LEGAL_UPDATED_AT}</p>
+          <p><strong>Dernière mise à jour :</strong> {cgv.miseAJour}</p>
         </div>
       </div>
     </div>

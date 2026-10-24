@@ -3,7 +3,7 @@ import { siteData } from '../data/data';
 import '../styles/Footer.scss';
 
 const Footer = () => {
-  const { contact, footer, navigation, siteName, slogan } = siteData;
+  const { contact, footer, mediateur, navigation, siteName, slogan } = siteData;
   const phoneHref = `tel:+33${contact.telephone.replace(/\D/g, '').replace(/^0/, '')}`;
 
   return (
@@ -21,6 +21,8 @@ const Footer = () => {
             <li><Link to="/about">{navigation.aPropos}</Link></li>
             <li><Link to="/services/bilan">{navigation.bilan}</Link></li>
             <li><Link to="/services/atelier">{navigation.ateliers}</Link></li>
+            <li><Link to="/services/6-bricks">{navigation.bricks}</Link></li>
+            <li><Link to="/services/legotherapie">{navigation.legotherapie}</Link></li>
             <li><Link to="/contact">{navigation.contact}</Link></li>
           </ul>
         </div>
@@ -47,6 +49,16 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
+        <div className="footer-mediateur">
+          <p className="footer-mediateur-titre">{mediateur.titre}</p>
+          <p>{mediateur.nom}</p>
+          <p>
+            <a href={mediateur.url} target="_blank" rel="noopener noreferrer">
+              {mediateur.url}
+            </a>
+          </p>
+          <p>{mediateur.adresse}</p>
+        </div>
         <p>
           &copy; {new Date().getFullYear()} {siteName}. {footer.copyright}
         </p>

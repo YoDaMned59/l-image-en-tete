@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { siteData } from '../data/data';
 import SEO from '../components/SEO';
 import { PAGE_SEO } from '../config/seoPages';
@@ -9,10 +8,8 @@ import '../styles/AtelierPage.scss';
 const AtelierPage = () => {
   const service = siteData.services.find((s) => s.id === 'atelier');
   const details = siteData.servicesDetails.atelier;
-  const atelier6BricksService = siteData.services.find((s) => s.id === 'atelier-6-bricks');
   const { labelsServices, images } = siteData;
   const [isSketchnoteExpanded, setIsSketchnoteExpanded] = useState(false);
-  const bricksSectionRef = useRef(null);
   const closeButtonRef = useRef(null);
 
   useEffect(() => {
@@ -36,11 +33,6 @@ const AtelierPage = () => {
       document.removeEventListener('keydown', onKeyDown);
     };
   }, [isSketchnoteExpanded]);
-
-  const scrollToBricksSection = (e) => {
-    e.preventDefault();
-    bricksSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
 
   return (
     <div className="service-page service-page-bleu">
@@ -132,31 +124,11 @@ const AtelierPage = () => {
                           height="376"
                         />
                       </button>
-                    ) : theme.visuel === '6bricks' ? (
-                      <div className="theme-icon lego-icon">
-                        <img
-                          src={images.atelier6Bricks.src}
-                          alt={images.atelier6Bricks.alt}
-                          className="lego-icon-image"
-                          loading="lazy"
-                          width="564"
-                          height="376"
-                        />
-                      </div>
                     ) : (
                       <div className="theme-icon">{theme.icone}</div>
                     )}
                     <h4>{theme.titre}</h4>
                     <p>{theme.description}</p>
-                    {theme.visuel === '6bricks' && theme.bouton ? (
-                      <button
-                        type="button"
-                        className="theme-button"
-                        onClick={scrollToBricksSection}
-                      >
-                        {theme.bouton}
-                      </button>
-                    ) : null}
                   </div>
                 ))}
               </div>
@@ -189,50 +161,6 @@ const AtelierPage = () => {
           )}
         </div>
       </section>
-
-      {atelier6BricksService && (
-        <section ref={bricksSectionRef} id="atelier-6-bricks" className="atelier-6-bricks-section">
-          <div className="service-container">
-            <div className="atelier-6-bricks-card">
-              <div className="bricks-card-image">
-                <img
-                  src={images.atelier6Bricks.src}
-                  alt={images.atelier6Bricks.alt}
-                  className="bricks-image"
-                  loading="lazy"
-                  width="564"
-                  height="376"
-                />
-              </div>
-              <div className="bricks-card-content">
-                <h2>{atelier6BricksService.titre}</h2>
-                <p className="bricks-description">{atelier6BricksService.pourQui}</p>
-                <div className="bricks-objectives">
-                  <h3>{details.bricks.titreObjectifs}</h3>
-                  <ul>
-                    {atelier6BricksService.objectifs.map((objectif) => (
-                      <li key={objectif}>{objectif}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="bricks-info">
-                  <div className="bricks-info-item">
-                    <strong>{labelsServices.format} :</strong> {atelier6BricksService.format}
-                  </div>
-                  <div className="bricks-info-item">
-                    <strong>{labelsServices.tarif} :</strong> {atelier6BricksService.tarif}
-                  </div>
-                </div>
-                <div className="bricks-cta">
-                  <Link to="/contact" className="cta-button cta-primary">
-                    {details.bricks.boutonRdv}
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
       {isSketchnoteExpanded ? (
         <div
