@@ -145,6 +145,14 @@ const Header = () => {
               >
                 {navigation.legotherapie}
               </NavLink>
+              <NavLink
+                to="/services/reiki"
+                className="dropdown-item"
+                role="menuitem"
+                onClick={handleServiceLinkClick}
+              >
+                {navigation.reiki}
+              </NavLink>
             </div>
           </div>
           <NavLink to="/contact" className={navClass}>
@@ -172,6 +180,9 @@ const Header = () => {
           </NavLink>
           <NavLink to="/services/legotherapie" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
             {navigation.legotherapie}
+          </NavLink>
+          <NavLink to="/services/reiki" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            {navigation.reiki}
           </NavLink>
           <NavLink to="/contact" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
             {navigation.contact}

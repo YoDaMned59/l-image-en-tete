@@ -68,6 +68,7 @@ export const siteData = {
     ateliers: "Mes ateliers",
     bricks: "6 Bricks",
     legotherapie: "Légothérapie",
+    reiki: "Soin Reiki",
     contact: "Contact",
     ouvrirMenu: "Ouvrir le menu",
     fermerMenu: "Fermer le menu"
